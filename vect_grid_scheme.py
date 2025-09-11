@@ -2,6 +2,7 @@ import numpy as np
 import scipy.stats as stats
 import matplotlib.pyplot as plt
 from numba import jit
+from time import time
 
 
 class GridScheme:
@@ -362,6 +363,7 @@ class GridScheme:
 
                     #fig.savefig('Numerical_experiments/Grid_scheme/2d/ub_1_and_ub_2_iter_{}.png'.format(p + 1),
                     #            bbox_inches='tight')
+                    print("Total time taken: ", time() - time_init, " seconds")
                     plt.show()
 
             self.L1_err_u = pic_err_u
@@ -370,5 +372,7 @@ class GridScheme:
             # temp = np.load('Numerical_experiments/NN_Picard_dim1/ub_err_1d.npy')
 
 
-A = GridScheme(d=1, r=2, R=3, M=40000, NbP=6, plot_iter=True)
-A.PicIter()
+if __name__ == "__main__":
+    A = GridScheme(d=1, r=2, R=3, M=40000, NbP=10, plot_iter=True)
+    time_init = time()
+    A.PicIter()

@@ -39,7 +39,7 @@ theta_bar = 1.5
 sig_X = 2.0
 
 c = 2.0             # Monotonicity constant mu= (c-1) = 2
-K_z = 0.0           # z-Lipschitz constant K_{f,z} = 1
+K_z = 1.0           # z-Lipschitz constant K_{f,z} = 1
 print("K_z=", K_z)
 
 
@@ -239,8 +239,9 @@ bn_layers = [
             )
             for _ in range(3)]
 
-zeros = np.zeros(d+1, dtype='float32')
-model_init = tf.keras.Sequential(layers.Lambda(lambda x: tf.constant([zeros for _ in range(len(x))])))
+#zeros = np.zeros(d+1, dtype='float32')
+#model_init = tf.keras.Sequential(layers.Lambda(lambda x: tf.constant([zeros for _ in range(len(x))])))
+model_init = tf.keras.Sequential([layers.Lambda(lambda x: tf.zeros((tf.shape(x)[0], d+1)))])
 
 NN = tf.keras.Sequential([layers.Dense(20 + d, input_shape=(d,), activation=activation),#activation=tf.keras.layers.LeakyReLu(alpha=0.01)),
                           bn_layers[0],
