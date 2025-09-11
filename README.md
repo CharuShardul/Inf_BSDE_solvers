@@ -2,7 +2,9 @@
 
 ## Mathematical setting
 
-This project proposed numerical solutions of infinite-horizon backward stochastic differential equations (BSDEs) for the following type:
+This project proposes numerical solutions of infinite-horizon backward stochastic differential equations (BSDEs). For an in-depth coverage, refer to the [PhD thesis](https://theses.hal.science/tel-04627360v1) of Charu Shardul done under the supervision of Prof. Emmanuel Gobet and Prof. Adrien Richou. 
+
+We consider BSDEs of the following type:
 
 $$Y_t = Y_T + \int_t^T f(X_s, Y_s, Z_s) ds -\int_t^T Z_s d W_s, \qquad \forall 0\leqslant t\leqslant T < +\infty,$$
 
@@ -56,58 +58,25 @@ $$\bar{u}(x) = \dfrac{1}{d}\left[\dfrac{1}{1+x_i^2} \right]_{i\in\{1, \dots, d\}
 The code implements Monte‑Carlo estimation of expectations above and interpolation (grid methods) or direct NN learning of the operators.
 
 
-## Dependencies (suggested conda env on Windows)
+## Dependencies
 
-Windows / PowerShell commands:
+* Using console commands:
 
-conda create -n infBSDE python=3.10 numpy scipy matplotlib numba scikit-learn -y
-conda activate infBSDE
-pip install tensorflow==2.14  # or the TF version you use
-or install tensorflow via conda-forge if preferred:
-conda install -c conda-forge tensorflow
-then:
-pip install tqdm
+    - conda create -n infBSDE python=3.10 numpy matplotlib numba -y
 
-Exact versions used during development:
-- numpy, scipy, matplotlib, numba, tensorflow (2.x)
+    - conda activate infBSDE
 
----
+    - pip install tensorflow==2.14
 
-## Quick start (examples)
-
-Run grid Picard (vectorized):
-- python vect_grid_scheme.py
-
-Run 1‑D SDE + Malliavin weights:
-- python 1d_generalSDE.py
-
-Run NN Picard:
-- python NN_Picard_mult.py
-
-Run NN direct scheme:
-- python NN_second_scheme_2.py
-
-Adjust parameters (M, NbP/NbP, dt, Ntilde, epochs, batch_size, learning rate) at top of each script.
-
----
-
-## Where to look in code
-
-- vect_grid_scheme.py: `GridScheme.phi`, `GridScheme.interpol`, `PicIter`.
-- 1d_generalSDE.py: `_sde_kernel` (numba), `GridScheme.phi`, `GridScheme.PicIter`.
-- NN_Picard_mult.py: `label`, `phi`, `model_init`, `NN` network definitions and Picard loop.
-- NN_second_scheme_2.py: `label`, `phi`, `NN_model` class with custom training loop.
-
----
+* Using `requirements.txt`:
+    - pip install -r requirements.txt
 
 ## Notes on extending / experiments
 
 - Replace `an_u`/`an_ub` and `f_0` with other models to test other analytic examples.
 - For higher-d NN experiments increase network width/depth, tune M (MC samples), and use batch normalization / learning‑rate schedules.
-- For SDE forward processes in >1D, extend `_sde_kernel` and Malliavin-weight computations carefully (numba/jitting advisable).
+- For SDE forward processes in >1D, extend `_sde_kernel`, `sigma`, `del_sigma` and Malliavin-weight computations (currently implemented for 1-d).
+- For new experiments with different model parameters, create lists of new class objects and store the required data or save the computed error values using `np.save()` command and plot them later.
 
 ---
 
-## License / contact
-
-This repository is provided as research code. No license file included. For questions, open an issue in
