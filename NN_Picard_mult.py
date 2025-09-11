@@ -3,7 +3,8 @@ import scipy.stats as stats
 import matplotlib.pyplot as plt
 import pickle as pickle
 import tensorflow as tf
-import tensorflow.keras.layers as layers
+from tensorflow import keras
+layers = keras.layers
 import time
 import logging
 from datetime import datetime
@@ -358,7 +359,7 @@ if d == 1:
     ax2.set_xlabel("$x$")
     ax2.set_ylabel(r"$\bar{u(x)}$")
     ax2.legend(loc='upper left')
-
+    plt.show()
     fig.savefig('Numerical_experiments/NN_Picard_dim1/Pic_iter.png', bbox_inches='tight')
 
 

@@ -1,5 +1,4 @@
 import numpy as np
-import scipy.stats as stats
 import matplotlib.pyplot as plt
 from numba import njit
 import time
@@ -10,11 +9,13 @@ epsilon = 0.9
 
 @njit(fastmath=True)
 def sig(x):
-    return np.ones_like(x)#1.0 + epsilon * np.tanh(x)
+    #return np.ones_like(x)
+    return 1.0 + epsilon * np.tanh(x)
 
 @njit(fastmath=True)
 def delsig(x):
-    return np.zeros_like(x)#epsilon * (1.0 - np.tanh(x)**2)
+    #return np.zeros_like(x)
+    return epsilon * (1.0 - np.tanh(x)**2)
 
 # Function to evolve all paths on a fixed time grid until their exponential clocks E_i are reached.
 @njit(fastmath=True)

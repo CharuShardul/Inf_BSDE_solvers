@@ -1,11 +1,11 @@
 import numpy as np
-import scipy.stats as stats
 import matplotlib.pyplot as plt
 import pickle as pickle
 import tensorflow as tf
 #from absl import flags
 #from absl import logging as absl_logging
-import tensorflow.keras.layers as layers
+from tensorflow import keras
+layers = keras.layers
 import time
 import logging
 from datetime import datetime
