@@ -15,6 +15,7 @@ $$X_t = x + \int_0^t b(X_s) ds + \int_0^t \sigma(X_s) dW_s, \quad 0 \leq t, $$
 where $X$ and $W$ have the same dimension $d$. Under certain assumptions, this decoupled system of forward and backward SDEs is equivalent to the following system of elliptic partial differential equations (PDEs):
 
 $$ \mathcal L u(x) + f(x, u(x), \nabla_x u(x)\sigma(x)) = 0, \quad \forall x\in\mathbb R^d, $$
+
 where $\mathcal L$ is the generator of the semi-group associated with the above SDE for $X$.
 
 We propose three algorithms based on two main approaches-
