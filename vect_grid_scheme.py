@@ -2,10 +2,11 @@ import numpy as np
 import matplotlib.pyplot as plt
 from numba import jit
 from time import time
+from numpy import linalg as LA
 
 
 class GridScheme:
-    def __init__(self, d=1, Ntilde=10, M=2000, K_z=1.0, r=1, R=4, NbP = 6, plot_iter=True):
+    def __init__(self, d=1, Ntilde=10, M=20000, K_z=1.0, r=1, R=4, NbP = 6, plot_iter=True):
         # Parameter initialization
         self.d = d  # dimension X and BM
         self.dp = 1  # dimension of Y
@@ -34,11 +35,13 @@ class GridScheme:
         self.theta = 1.5
         self.theta_bar = 1.5
 
-        # Log max errors
+        # Errors
         self.log_max_u = None   #0.0
         self.log_max_ub = None  #0.0
         self.L1_err_u = None    #0.0
         self.L1_err_ub = None   #0.0
+        self.picerr_u = []
+        self.picerr_ub = []
 
     # Function to convert a 1-d encoding of position vector into d-dimensions
     #@jit(nopython=True, fastmath=True)
@@ -145,9 +148,12 @@ class GridScheme:
     
     # Defining a utility function to to reshape a 1-d array into d-dimensions and clipping its boundard points
     def clipshape(self, x):
-        x = np.reshape(x, shape=tuple([2*self.Ntilde+1]*self.d + [x.shape[-1]]))
-        slicer = tuple([slice(self.r, -self.r)]*self.d + [slice(None)])
-        return x[slicer]
+        if self.r == 0:
+            return x
+        else: 
+            x = np.reshape(x, shape=tuple([2*self.Ntilde+1]*self.d + [x.shape[-1]]))
+            slicer = tuple([slice(self.r, -self.r)]*self.d + [slice(None)])
+            return x[slicer]
 
     # Defining the operators Phi and \bar{Phi} from the paper.
     def phi(self, u_grid, ub_grid):
@@ -203,11 +209,12 @@ class GridScheme:
             #an_ub_grid = np.array([self.an_ub(x) for x in domain]).reshape(len(domain), 1)
             #print("shapes 1 an_u", an_u_grid.shape, an_ub_grid.shape)
             an_u_grid = self.an_u(self.clipshape(self.x_grid))
+            #print("test 0 ", self.x_grid, self.clipshape(self.x_grid))
             an_ub_grid = self.an_ub(self.clipshape(self.x_grid))
             #print("shapes 2 an_u", an_u_grid.shape, an_ub_grid.shape)
 
             if self.plot_iter:
-                fig = plt.figure(figsize=(12, 5), dpi=75)
+                fig = plt.figure(figsize=(12, 5), dpi=75, tight_layout=True)
                 ax1 = fig.add_subplot(1, 2, 1)
                 ax1.set_title("$u(x)$")
                 ax2 = fig.add_subplot(1, 2, 2)
@@ -238,15 +245,18 @@ class GridScheme:
                 #err_u = np.linalg.norm(an_u_grid - self.clipshape(u_grid), ord=None)
                 #err_ub = np.linalg.norm(an_ub_grid - self.clipshape(ub_grid), ord=None)
                 #print("shapes err_u :", err_u.shape)
-                err_u = an_u_grid - self.clipshape(u_grid)
-                err_ub = an_ub_grid - self.clipshape(ub_grid)
+                err_u = np.abs(an_u_grid - self.clipshape(u_grid))
+                err_ub = np.abs(an_ub_grid - self.clipshape(ub_grid))
                 #print("shapes err_u :", err_u.shape)
+
+                #print("test", an_u_grid, "\n", self.clipshape(u_grid), "\n", err_u)
+                
                 pic_err_u.append(err_u)
                 pic_err_ub.append(err_ub)
 
             #print("pic_err_u = ", pic_err_u)
             #print("pic_err_ub = ", pic_err_ub)
-
+            #print(pic_err_u)
             print("Ntilde = ", self.Ntilde, "r = ", self.r, "pic_err_u_max = ", 
                   np.max(pic_err_u[-1]), "log_err_u_max = ", 
                   np.log(np.max(pic_err_u[-1])))
@@ -262,6 +272,9 @@ class GridScheme:
             self.L1_err_ub = np.mean(np.array(pic_err_ub)[-1]) #, axis=0)
             #print(self.L1_err_u.shape)
             #print("len", len(pic_err_u))
+            
+            self.picerr_u = pic_err_u
+            self.picerr_ub = pic_err_ub
             
             if self.plot_iter:
                 ax1.set_xlabel("$x$")
@@ -324,8 +337,8 @@ class GridScheme:
                 # if (p % 3 == 0):
 
                 err_u = np.max(np.abs(self.an_u(self.clipshape(self.x_grid)) - self.clipshape(u_grid)))
-                err_ub = [np.max(np.sum(np.abs(self.an_ub(self.clipshape(self.x_grid))[:, i, None] - self.clipshape(ub_grid[:, i, None]))))
-                           for i in range(self.d)]
+                err_ub = LA.norm([np.max(np.sum(np.abs(self.an_ub(self.clipshape(self.x_grid))[:, i, None] - self.clipshape(ub_grid[:, i, None]))))
+                           for i in range(self.d)])
 
                 #print("shapes: ", self.an_ub(self.x_grid).shape, err_u.shape, err_ub.shape)
 
@@ -372,6 +385,9 @@ class GridScheme:
 
 
 if __name__ == "__main__":
-    A = GridScheme(d=1, r=2, R=3, M=40000, NbP=10, plot_iter=True)
+    A = GridScheme(d=1, r=0, R=3, M=40000, NbP=10, K_z=1.0, plot_iter=True)
     time_init = time()
     A.PicIter()
+    
+
+    

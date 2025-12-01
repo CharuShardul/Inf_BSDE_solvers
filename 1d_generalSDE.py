@@ -291,7 +291,7 @@ class GridScheme:
             #print("shapes 2 an_u", an_u_grid.shape, an_ub_grid.shape)
 
             if self.plot_iter:
-                fig = plt.figure(figsize=(12, 5), dpi=75)
+                fig = plt.figure(figsize=(12, 5), dpi=75, tight_layout=True)
                 ax1 = fig.add_subplot(1, 2, 1)
                 ax1.set_title("$u(x)$")
                 ax2 = fig.add_subplot(1, 2, 2)
@@ -456,6 +456,6 @@ class GridScheme:
             '''
 
 if __name__ == "__main__":
-    A = GridScheme(r=2, R=4, M=8000, NbP=10, dt=0.005, plot_iter=True)
+    A = GridScheme(r=3, R=4, M=8000, NbP=10, dt=0.003, plot_iter=True)
     t_init = time.time()
     A.PicIter()
