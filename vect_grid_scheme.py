@@ -26,12 +26,16 @@ class GridScheme:
         self.u = np.zeros((self.grid_size, self.d))
         self.ub = np.zeros((self.grid_size, self.d))
         # Choosing the f_0 component of the generator and defining the resulting generator
-        self.c = 2.0  # Monotonicity constant mu = (c-1) = 1
-        self.K_z = K_z  # z-Lipschitz constant K_{f,z} = 1
+        self.c = 2.0  # Monotonicity constant mu = (c-1)
+        self.K_z = K_z  # z-Lipschitz constant K_{f,z}
 
         # M samples of the exponential and gamma distributed times and Brownian motion.
-        self.a = 2.0  # 7.0             # >0.5
-        self.b = 2.0  # 7.0             # >1.0
+        #self.a = 3.0               
+        #self.b = 3.0              
+        #self.theta = 2.5
+        #self.theta_bar = 2.5
+        self.a = 2.0  
+        self.b = 2.0  
         self.theta = 1.5
         self.theta_bar = 1.5
 
@@ -187,7 +191,7 @@ class GridScheme:
 
         phi_bar_Pu = np.mean((self.f(W_Eb_grid, gam_interp_grid_u, gam_interp_grid_ub) + self.b * gam_interp_grid_u
                               - self.f(self.x_grid[None, :, :], u_grid[None, :, :], ub_grid[None, :, :]) - self.b * u_grid[None, :, :])
-                             * (np.e ** (-Eb_grid[:, :, None] * (self.b - self.theta)))
+                             * (np.e ** (-Eb_grid[:, :, None] * (self.b - self.theta_bar)))
                              * np.sqrt(Eb_grid[:, :, None]) * (W_Eb_grid - self.x_grid[None, :, :])/Eb_grid[:, :, None]
                              * np.sqrt(np.pi/self.theta_bar), axis=0)
 
@@ -275,6 +279,9 @@ class GridScheme:
             
             self.picerr_u = pic_err_u
             self.picerr_ub = pic_err_ub
+
+            #np.save('Numerical_experiments/Grid_scheme/box_plots/u_err_{}d_r{}.npy'.format(self.d, self.r), np.array(pic_err_u))
+            #np.save('Numerical_experiments/Grid_scheme/box_plots/ub_err_{}d_r{}.npy'.format(self.d, self.r), np.array(pic_err_ub))
             
             if self.plot_iter:
                 ax1.set_xlabel("$x$")
@@ -385,9 +392,10 @@ class GridScheme:
 
 
 if __name__ == "__main__":
-    A = GridScheme(d=1, r=0, R=3, M=40000, NbP=10, K_z=1.0, plot_iter=True)
+    A = GridScheme(d=1, r=0, R=3, M=40000, NbP=10, K_z=0.1, plot_iter=True)
     time_init = time()
     A.PicIter()
+
     
 
     

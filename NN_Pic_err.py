@@ -31,6 +31,6 @@ ax1.boxplot(err_u)#, positions=([1,2,3,4,5,6,7,10,15]))
 ax2.boxplot(err_ub)#, positions=([1,2,3,4,5,6,7,10,15]))
 ax1.set_xticklabels([1,2,3,4,5,6,7,10,15, 50])
 ax2.set_xticklabels([1,2,3,4,5,6,7,10,15, 50])
-fig.savefig("Numerical_experiments/error_plots/err_box.png", bbox_inches='tight')
+#fig.savefig("Numerical_experiments/error_plots/err_box.png", bbox_inches='tight')
 
 plt.show()

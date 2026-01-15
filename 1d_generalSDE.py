@@ -5,7 +5,7 @@ import time
 
 
 # sigma and its derivative for the SDE and the Malliavin weights
-epsilon = 0.9
+epsilon = 0#0.9
 
 @njit(fastmath=True)
 def sig(x):
@@ -21,7 +21,7 @@ def delsig(x):
 @njit(fastmath=True)
 def _sde_kernel(x0, t_max, E, Eb, dW, dt):
     """
-    Evolve all paths on a time grid until their exponential and gamme clocks E and Eb are reached.
+    Evolve all paths on a time grid until their exponential and gamma clocks E and Eb are reached.
     
     Parameters
     ----------
@@ -91,8 +91,8 @@ class GridScheme:
         self.K_z = K_z  # z-Lipschitz constant K_{f,z} = 1
 
         # M samples of the exponential and gamma distributed times and Brownian motion.
-        self.a = 2.0  # 7.0             # >0.5
-        self.b = 2.0  # 7.0             # >1.0
+        self.a = 2.0  
+        self.b = 2.0  
         self.theta = 1.5
         self.theta_bar = 1.5
 
