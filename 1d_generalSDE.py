@@ -5,7 +5,7 @@ import time
 
 
 # sigma and its derivative for the SDE and the Malliavin weights
-epsilon = 0#0.9
+epsilon = 0.9
 
 @njit(fastmath=True)
 def sig(x):
