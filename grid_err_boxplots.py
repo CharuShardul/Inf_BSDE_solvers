@@ -59,7 +59,8 @@ ax2.set_xticklabels([f"{x:.1f}" for x in x_axis])
 ax2.legend([bp1["boxes"][0], bp2["boxes"][1]], [f"$p = {r[0]}$", f"$p = {r[1]}$"], loc="best")
 
 plt.tight_layout()
-plt.show()
+plt.savefig('plots_article/boxplot_grid_r.pdf', dpi=300)
+#plt.show()
 
 
 

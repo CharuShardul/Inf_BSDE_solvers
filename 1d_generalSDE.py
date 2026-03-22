@@ -291,7 +291,7 @@ class GridScheme:
             #print("shapes 2 an_u", an_u_grid.shape, an_ub_grid.shape)
 
             if self.plot_iter:
-                fig = plt.figure(figsize=(12, 5), dpi=75, tight_layout=True)
+                fig = plt.figure(figsize=(11, 5), dpi=75, tight_layout=True)
                 ax1 = fig.add_subplot(1, 2, 1)
                 ax1.set_title("$u(x)$")
                 ax2 = fig.add_subplot(1, 2, 2)
@@ -313,7 +313,7 @@ class GridScheme:
                 print("Running Picard iteration: ", p+1)
                 u_grid, ub_grid = self.phi(u_grid, ub_grid)
                 #print("shapes", u_grid.shape, ub_grid.shape)
-                if p % 2 == 1 and self.plot_iter:
+                if p % 2 == 0 and self.plot_iter:
                 #if p == self.NbP-1:
                     ax1.plot(self.clipshape(self.x_grid), self.clipshape(u_grid), 'x',
                              label="Iteration {}".format(p + 1))
@@ -356,9 +356,9 @@ class GridScheme:
                 ax2.legend(loc='upper left')
 
                 print("Total time taken: ", time.time() - t_init)
-                plt.show()
-                fig.savefig("Numerical_experiments/Grid_scheme/1d_generalSDE/u_and_ub_R{}_dt_{}_sig0.png".format(self.R, self.dt), bbox_inches='tight')
-
+                #plt.show()
+                #fig.savefig("Numerical_experiments/Grid_scheme/1d_generalSDE/u_and_ub_R{}_dt_{}_sig0.png".format(self.R, self.dt), bbox_inches='tight')
+                plt.savefig("plots_article/genSDE_piciter.pdf", dpi=300, bbox_inches='tight')
 
 
             #domain = (np.arange(2 * Ntilde + 1) - Ntilde) * delta

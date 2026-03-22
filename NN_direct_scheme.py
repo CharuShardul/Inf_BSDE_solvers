@@ -25,13 +25,13 @@ logging.info('Time:{}'.format(time_now))
 
 
 # Parameter initialization
-d = 2               # dimension X and BM
+d = 1               # dimension X and BM
 dp = 1              # dimension of Y
 #num_pic = 10        # number of Picard iterations
 Mx = 512            # number of samples of x for logging the loss values while training
 M = 3000             # number of samples of E, Eb, W, etc. for each x
 M_err = 1000        # number of samples used for error computation
-Ntilde = 21         # number of points in each axis of the grid (used for plotting and evaluating errors) = 2n+1
+Ntilde = 21         # number of points in each axis of the grid (used for plotting and evaluating errors) = 2Ntilde+1
 activation = 'relu'
 initial_learning_rate = 5e-4
 lr_decay = 0.6
@@ -46,8 +46,8 @@ theta = 1.5
 theta_bar = 1.5
 sig_X = 2.0
 
-c = 2.0             # Monotonicity constant mu= (c-1) = 2
-K_z = 1.0           # z-Lipschitz constant K_{f,z} = 1
+c = 2.0             # Monotonicity constant mu= (c-1)
+K_z = 1.0           # z-Lipschitz constant K_{f,z}
 
 
 #num_iter = 2000     # number of SGD iterations
@@ -441,8 +441,8 @@ elif d == 2:
                        color='gray',
                        label="Analytical u(x)")
     ax3.set_title(r"$\bar{u}^2(x_1, x_2)$")
-    plt.show()
-    #fig.savefig('Numerical_experiments/NN_dir_2d.png', bbox_inches='tight')
+    #plt.show()
+    plt.savefig('plots_article/NN_dir_2d.pdf', dpi=300, bbox_inches='tight')
 
 
 elif d>=3:

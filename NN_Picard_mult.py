@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pickle as pickle
 import tensorflow as tf
-from tensorflow import keras
+from tensorflow import keras # type: ignore
 layers = keras.layers
 import time
 import logging
@@ -19,7 +19,7 @@ logging.info('Time:{}'.format(time_now))
 # Parameter initialization
 d = 1               # dimension X and BM
 dp = 1              # dimension of Y
-num_pic = 5         # number of Picard iterations
+num_pic = 7         # number of Picard iterations
 M = 30000           # number of samples
 M_err = 1000        # number of samples for error computations
 Ntilde = 21         # number of points in each axis of the grid (used for plotting and evaluating errors) = 2n+1
@@ -280,7 +280,7 @@ start_time = time.time()
 if d == 1:
     x_axis = np.linspace(-3.0, 3.0, Ntilde).reshape(-1, 1)
     x_axis_1 = np.linspace(-3.0, 3.0, 10*Ntilde+1).reshape(-1, 1)
-    fig = plt.figure(figsize=(12, 5), dpi=75)
+    fig = plt.figure(figsize=(11, 5), dpi=75, tight_layout=True)
     ax1 = fig.add_subplot(1, 2, 1)
     ax1.set_title("$u(x)$")
     ax2 = fig.add_subplot(1, 2, 2)
@@ -293,7 +293,7 @@ if d == 1:
     ax2.plot(x_axis_1, yyb, color='brown', label=r"Analytical $\bar{u}(x)$")
 
     for p in range(num_pic):
-        print("Picard iteration, p = ", p + 1)
+        print("Picard iteration ", p + 1)
 
         X_train = sampleX()
         Y_train = label(X_train, model_0)
@@ -308,8 +308,8 @@ if d == 1:
 
         predict = model_1.predict(x_axis)
         if p % 1 == 0:
-            ax1.plot(x_axis, predict[:, 0], 'x', label="Iteration p={}".format(p + 1))
-            ax2.plot(x_axis, predict[:, 1], 'x', label="Iteration p={}".format(p + 1))
+            ax1.plot(x_axis, predict[:, 0], 'x', label="Iteration {}".format(p + 1))
+            ax2.plot(x_axis, predict[:, 1], 'x', label="Iteration {}".format(p + 1))
         # print("predict shape:", predict.shape)
 
         '''fig = plt.figure(figsize=(24, 14), dpi=75)
@@ -358,8 +358,9 @@ if d == 1:
     ax2.set_xlabel("$x$")
     ax2.set_ylabel(r"$\bar{u(x)}$")
     ax2.legend(loc='upper left')
-    plt.show()
-    fig.savefig('Numerical_experiments/NN_Picard_dim1/Pic_iter.png', bbox_inches='tight')
+    #plt.show()
+    #fig.savefig('Numerical_experiments/NN_Picard_dim1/Pic_iter.png', bbox_inches='tight')
+    plt.savefig('plots_article/NN_piciter.pdf', dpi=300, bbox_inches='tight')
 
 
 elif d == 2:
@@ -441,7 +442,8 @@ elif d == 2:
                           label=p + 1)
         ax.set_title(r"$\bar u^{1, n}(x^1, x^2)$, $n=%s$" %(p+1))
 
-        fig.savefig('Numerical_experiments/NN_Picard_mult/ub_1_and_ub_2_iter_{}.png'.format(p + 1), bbox_inches='tight')
+        #fig.savefig('Numerical_experiments/NN_Picard_mult/ub_1_and_ub_2_iter_{}.png'.format(p + 1), bbox_inches='tight')
+        plt.savefig('plots_article/ub_1_and_ub_2_iter_{}.pdf'.format(p + 1), bbox_inches='tight', dpi=300)
 
     x_axis_err = sampleX(num_sample=M_err)
     predict_err = model_1.predict(x_axis_err)
@@ -586,7 +588,7 @@ if d>=3:
     ax4.set_xlabel("Picard Iterations")
     ax4.set_ylabel("L^inf_mu error")
 
-    fig.savefig("Numerical_experiments/NN_Picard_multi_2/Pic_errors_ub_dim_{}.png".format(d))
+    #fig.savefig("Numerical_experiments/NN_Picard_multi_2/Pic_errors_ub_dim_{}.png".format(d))
     plt.show()
 
 
