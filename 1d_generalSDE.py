@@ -352,7 +352,7 @@ class GridScheme:
                 ax1.set_ylabel("$u(x)$")
                 ax1.legend(loc='upper left')
                 ax2.set_xlabel("$x$")
-                ax2.set_ylabel(r"$\bar{u(x)}$")
+                ax2.set_ylabel(r"$\bar{u}(x)$")
                 ax2.legend(loc='upper left')
 
                 print("Total time taken: ", time.time() - t_init)

@@ -20,8 +20,8 @@ if re_calculate:
         
 else:
     for K_z in K_z_values:
-        err_u.append(np.load('Numerical_experiments/error_plots/u_Kz_{}_1d.npy'.format(K_z)))
-        err_ub.append(np.load('Numerical_experiments/error_plots/ub_Kz_{}_1d.npy'.format(K_z)))
+        err_u.append(np.load('Numerical_experiments/error_plots/NN_Picard_mult/u_Kz_{}_1d.npy'.format(K_z)))
+        err_ub.append(np.load('Numerical_experiments/error_plots/NN_Picard_mult/ub_Kz_{}_1d.npy'.format(K_z)))
 
 fig = plt.figure(figsize=(10, 5), tight_layout=True)
 

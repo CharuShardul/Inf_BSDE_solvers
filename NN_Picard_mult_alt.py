@@ -1,3 +1,5 @@
+import os
+import sys
 import numpy as np
 import matplotlib.pyplot as plt
 import tensorflow as tf
@@ -6,6 +8,16 @@ layers = keras.layers
 import time
 import logging
 from datetime import datetime
+
+# Suppress TensorFlow logging at module level
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'  # Suppress INFO and WARNING messages
+tf_logger = logging.getLogger('tensorflow')
+tf_logger.setLevel(logging.ERROR)  # Only show ERROR level
+
+
+# Setup logging at module level (called once, not per instance)
+if not logging.root.handlers:
+    logging.basicConfig(filename='NN_Picard_mult_alt.log', level=logging.INFO)
 
 
 class NNPicardSolver:
@@ -56,8 +68,7 @@ class NNPicardSolver:
         self.u_err = None
         self.ub_err = None
         
-        # Setup logging
-        logging.basicConfig(filename='NN_Picard_mult.log', level=logging.INFO)
+        # Log instance creation
         time_now = datetime.now()
         logging.info('Time:{}'.format(time_now))
         logging.info('K_z={}'.format(K_z))
@@ -210,8 +221,7 @@ class NNPicardSolver:
         print("elapsed time: ", elapsed_time)
         logging.info('Elapsed time: {}'.format(elapsed_time))
         
-        return elapsed_time
-    
+        
     def _run_1d(self):
         """Run for 1D case."""
         x_axis = np.linspace(-3.0, 3.0, self.Ntilde).reshape(-1, 1)
@@ -236,27 +246,38 @@ class NNPicardSolver:
             X_train = self.sampleX()
             Y_train = self.label(X_train, model_0)
             
-            model_1.fit(X_train, Y_train,
-                        batch_size=self.batch_size,
-                        shuffle=False,
-                        epochs=self.epochs,
-                        verbose=1)
+            # Train with verbose=0 to suppress epoch-by-epoch loss output
+            history = model_1.fit(X_train, Y_train,
+                                  batch_size=self.batch_size,
+                                  shuffle=False,
+                                  epochs=self.epochs,
+                                  verbose=0)
+            
+            # Print only the final loss for this Picard iteration
+            final_loss = history.history['loss'][-1]
+            print(f"  Final loss: {final_loss:.6f}")
             
             model_0 = model_1
-            
-            predict = model_1.predict(x_axis)
+            predict = model_1.predict(x_axis, verbose=0)
+
             if p % 1 == 0:
                 ax1.plot(x_axis, predict[:, 0], 'x', label="Iteration {}".format(p + 1))
                 ax2.plot(x_axis, predict[:, 1], 'x', label="Iteration {}".format(p + 1))
-        
+                        
+
         x_axis_err = self.sampleX(num_sample=self.M_err)
-        predict_err = model_1.predict(x_axis_err)
+        predict_err = model_1.predict(x_axis_err, verbose=0)
         self.u_err = np.abs(predict_err[:, :1] - self.an_u(x_axis_err)).reshape(self.M_err)
         print("shape 1= ", self.u_err.shape)
         self.ub_err = np.sqrt(np.mean((predict_err[:, 1:] - self.an_ub(x_axis_err)) ** 2, axis=-1))
         print("shape 2= ", self.ub_err.shape)
-        np.save('Numerical_experiments/error_plots/NN_Picard_mult/u_Kz_{}_{}d.npy'.format(self.K_z, self.d), self.u_err)
-        np.save('Numerical_experiments/error_plots/NN_Picard_mult/ub_Kz_{}_{}d.npy'.format(self.K_z, self.d), self.ub_err)
+        
+        # Ensure output directory exists
+        output_dir = 'Numerical_experiments/error_plots/NN_Picard_mult'
+        os.makedirs(output_dir, exist_ok=True)
+        
+        np.save(os.path.join(output_dir, 'u_Kz_{}_{}d.npy'.format(self.K_z, self.d)), self.u_err)
+        np.save(os.path.join(output_dir, 'ub_Kz_{}_{}d.npy'.format(self.K_z, self.d)), self.ub_err)
         print("ave", np.mean(self.u_err), np.mean(self.ub_err))
         print("max", np.max(self.u_err), np.max(self.ub_err))
         
@@ -266,8 +287,17 @@ class NNPicardSolver:
         ax2.set_xlabel("$x$")
         ax2.set_ylabel(r"$\bar{u}(x)$")
         ax2.legend(loc='upper left')
-        #plt.savefig('plots_article/NN_piciter.pdf', dpi=300, bbox_inches='tight')
+
+        # Save the figure before showing (for non-interactive environments)
+        save_path = os.path.join(output_dir, 'NN_Picard_mult_1d.pdf')
+        plt.tight_layout()
+        #plt.savefig(save_path, dpi=300, bbox_inches='tight')
+
+        #plt.pause(0.5)
         #plt.show()
+
+        # Clear session to free memory after plot is shown
+        tf.keras.backend.clear_session()
     
     def _run_2d(self):
         """Run for 2D case."""
@@ -286,15 +316,19 @@ class NNPicardSolver:
             X_train = self.sampleX()
             Y_train = self.label(X_train, model_0)
             
-            model_1.fit(X_train, Y_train,
-                        batch_size=self.batch_size,
-                        shuffle=False,
-                        epochs=self.epochs,
-                        verbose=1)
+            # Train with verbose=0 to suppress epoch-by-epoch loss output
+            history = model_1.fit(X_train, Y_train,
+                                  batch_size=self.batch_size,
+                                  shuffle=False,
+                                  epochs=self.epochs,
+                                  verbose=0)
+            
+            # Print only the final loss for this Picard iteration
+            final_loss = history.history['loss'][-1]
+            print(f"  Final loss: {final_loss:.6f}")
             
             model_0 = model_1
-            
-            predict = model_1.predict(x_eval_points)
+            predict = model_1.predict(x_eval_points, verbose=0)
             
             fig = plt.figure(figsize=(24, 7), dpi=75)
             ax = fig.add_subplot(1, 3, 1, projection='3d')
@@ -318,20 +352,25 @@ class NNPicardSolver:
             #plt.show()
 
         x_axis_err = self.sampleX(num_sample=self.M_err)
-        predict_err = model_1.predict(x_axis_err)
+        predict_err = model_1.predict(x_axis_err, verbose=0)
         self.u_err = np.abs(predict_err[:, :1] - self.an_u(x_axis_err)).reshape(self.M_err)
         print("shape 1= ", self.u_err.shape)
         self.ub_err = np.sqrt(np.mean((predict_err[:, 1:] - self.an_ub(x_axis_err)) ** 2, axis=-1))
         print("shape 2= ", self.ub_err.shape)
-        np.save('Numerical_experiments/error_plots/u_Kz_{}_{}d.npy'.format(self.K_z, self.d), self.u_err)
-        np.save('Numerical_experiments/error_plots/ub_Kz_{}_{}d.npy'.format(self.K_z, self.d), self.ub_err)
+        
+        # Ensure output directory exists
+        output_dir = 'Numerical_experiments/error_plots/NN_Picard_mult'
+        os.makedirs(output_dir, exist_ok=True)
+        
+        np.save(os.path.join(output_dir, 'u_Kz_{}_{}d.npy'.format(self.K_z, self.d)), self.u_err)
+        np.save(os.path.join(output_dir, 'ub_Kz_{}_{}d.npy'.format(self.K_z, self.d)), self.ub_err)
         print("ave", np.mean(self.u_err), np.mean(self.ub_err))
         print("max", np.max(self.u_err), np.max(self.ub_err))
+        # Clear session to free memory
+        tf.keras.backend.clear_session()
     
     def _run_high_dim(self):
         """Run for high dimensional case (d >= 3)."""
-        errors = []
-        
         model_0 = self.model_init
         model_1 = self.NN
         
@@ -341,16 +380,21 @@ class NNPicardSolver:
             X_train = self.sampleX()
             Y_train = self.label(X_train, model_0)
             
-            model_1.fit(X_train, Y_train,
-                        batch_size=self.batch_size,
-                        shuffle=False,
-                        epochs=self.epochs,
-                        verbose=1)
+            # Train with verbose=0 to suppress epoch-by-epoch loss output
+            history = model_1.fit(X_train, Y_train,
+                                  batch_size=self.batch_size,
+                                  shuffle=False,
+                                  epochs=self.epochs,
+                                  verbose=0)
+            
+            # Print only the final loss for this Picard iteration
+            final_loss = history.history['loss'][-1]
+            print(f"  Final loss: {final_loss:.6f}")
             
             model_0 = model_1
             
             X_test = self.sampleX(sig=0.8*self.sig_X, num_sample=int(0.1*self.M))
-            Y_test = model_1.predict(X_test)
+            Y_test = model_1.predict(X_test, verbose=0)
             
             u_pred = Y_test[:, :1]
             ub_pred = Y_test[:, 1:]
@@ -371,19 +415,23 @@ class NNPicardSolver:
             
             print("mean L^2 error for u_bar:", L2_err_ub, "\t L^inf error for u_bar:", L_inf_err_ub,
                   "\t the error is maximum at:", arg_L_inf_err_ub)
-            
-            errors += [(L2_err_u, L_inf_err_u, arg_L_inf_err_u, L2_err_ub, L_inf_err_ub, arg_L_inf_err_ub)]
         
         x_axis_err = self.sampleX(num_sample=self.M_err)
-        predict_err = model_1.predict(x_axis_err)
+        predict_err = model_1.predict(x_axis_err, verbose=0)
         self.u_err = np.abs(predict_err[:, :1] - self.an_u(x_axis_err)).reshape(self.M_err)
-        #print("shape 1= ", self.u_err.shape)
         self.ub_err = np.sqrt(np.mean((predict_err[:, 1:] - self.an_ub(x_axis_err)) ** 2, axis=-1))
-        #print("shape 2= ", ub_err.shape)
-        #np.save('Numerical_experiments/error_plots/u_Kz_{}_{}d.npy'.format(self.K_z, self.d), self.u_err)
-        #np.save('Numerical_experiments/error_plots/ub_Kz_{}_{}d.npy'.format(self.K_z, self.d), self.ub_err)
+        
+        # Ensure output directory exists
+        output_dir = 'Numerical_experiments/error_plots/NN_Picard_mult'
+        os.makedirs(output_dir, exist_ok=True)
+        
+        np.save(os.path.join(output_dir, 'u_Kz_{}_{}d.npy'.format(self.K_z, self.d)), self.u_err)
+        np.save(os.path.join(output_dir, 'ub_Kz_{}_{}d.npy'.format(self.K_z, self.d)), self.ub_err)
         print("ave", np.mean(self.u_err), np.mean(self.ub_err))
         print("max", np.max(self.u_err), np.max(self.ub_err))
+                    
+        # Clear session to free memory
+        tf.keras.backend.clear_session()
 
 
 if __name__ == "__main__":
