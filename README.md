@@ -72,7 +72,7 @@ The code implements Monte‑Carlo estimation of expectations above and interpola
 * Using `requirements.txt`:
     - pip install -r requirements.txt
 
-## Notes on extending / experiments
+## Notes on extending the experiments
 
 - Replace `an_u`/`an_ub` and `f_0` with other models to test other analytic examples.
 - For higher-d NN experiments increase network width/depth, tune M (MC samples), and use batch normalization / learning‑rate schedules.
