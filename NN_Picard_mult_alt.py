@@ -406,8 +406,8 @@ class NNPicardSolver:
             L_inf_err_u = np.max(np.mean(np.abs(u_pred - an_u_test), axis=-1))
             arg_L_inf_err_u = X_test[np.argmax(np.mean(np.abs(u_pred - an_u_test), axis=-1))]
             
-            print("mean L^2 error for u:", L2_err_u, "\t L^inf error for u:", L_inf_err_u, "\t the error is maximum at:",
-                  arg_L_inf_err_u)
+            print("mean L^2 error for u: {L2_err_u: .4f},  L^inf error for u: {L_inf_err_u: .4f} at: {arg_L_inf_err_u: .4f}".format(
+                L2_err_u=L2_err_u, L_inf_err_u=L_inf_err_u, arg_L_inf_err_u=arg_L_inf_err_u))
             
             L2_err_ub = np.sqrt(np.mean(np.mean((ub_pred - an_ub_test) ** 2, axis=-1)))
             L_inf_err_ub = np.max(np.mean(np.abs(ub_pred - an_ub_test), axis=-1))

@@ -3,6 +3,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 from NN_Picard_mult_alt import NNPicardSolver
 import logging
+#from scipy.optimize import curve_fit
+from scipy.stats import norm
+from scipy.stats import quad
 
 # Suppress TensorFlow logging at module level
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'  # Suppress INFO and WARNING messages
@@ -14,10 +17,19 @@ tf_logger.setLevel(logging.ERROR)  # Only show ERROR level
 if not logging.root.handlers:
     logging.basicConfig(filename='NN_Picard_mult_alt.log', level=logging.INFO)
 
+
+def an_u(x, d):
+        """Analytical solution for u."""
+        return (1 / d) * np.sum(np.arctan(x), axis=-1, keepdims=True)
+    
+def an_ub(x, d):
+    """Analytical solution for ub (gradient of u)."""
+    return (1 / d) * (1 / (1 + x**2))
+
 def main():
     d_values = [1, 2, 3, 4, 5, 6, 7, 10, 15, 50]
     n_runs = 5
-    re_calculate = True  # Set to False to load existing error data instead of recalculating
+    re_calculate = False  # Set to False to load existing error data instead of recalculating
 
     output_dir = "Numerical_experiments/error_plots/NN_Picard_mult_experiments"
     os.makedirs(output_dir, exist_ok=True)
@@ -41,11 +53,11 @@ def main():
                     d=d,
                     K_z=0.1,
                     num_pic=5,
-                    M=20000,
+                    M=40000,
                     M_err=1000,
                     Ntilde=21,
                     batch_size=1000,
-                    epochs=100,
+                    epochs=120,
                     activation='relu',
                     initial_learning_rate=5e-4,
                     lr_decay=0.97,
@@ -82,26 +94,60 @@ def main():
         results["l2_u"] = np.load(os.path.join(output_dir, "results_l2_u.npy"), allow_pickle=True).item()
         results["l2_ub"] = np.load(os.path.join(output_dir, "results_l2_ub.npy"), allow_pickle=True).item() 
 
+    
+    # L^2 norm calculation for u and \bar{u} for relative errors
+    
+    l2_an_u = []
+    l2_an_ub = []
+    
+    sample_x1 = np.random.normal(loc=0.0, scale=2.0, size=(1000, 1))
+    '''sample_x = [np.random.normal(loc=0.0, scale=2.0, size=(1000, d_values[i])) for i in range(len(d_values))]
+    for i, d in enumerate(d_values):
+        an_u_vals = an_u(sample_x[i], d)
+        an_ub_vals = an_ub(sample_x[i], d)
+        l2_an_u.append(np.sqrt(np.mean(np.square(an_u_vals))))
+        l2_an_ub.append(np.sqrt(np.mean(np.square(an_ub_vals)))) 
+    '''   
+
+   
+    fig = plt.figure(figsize=(12, 6), dpi=100, tight_layout=True)
+    ax1 = fig.add_subplot(1, 2, 1)
+    ax2 = fig.add_subplot(1, 2, 2)
+
     # Boxplot for u
-    fig, ax = plt.subplots(figsize=(12, 7))
-    data_u = [results["l2_u"][d] for d in d_values]
-    ax.boxplot(data_u, labels=[str(d) for d in d_values], showmeans=True)
-    ax.set_title("L^2 Norm of errors (M_err=1000) across runs")
-    ax.set_xlabel("dimension d")
-    ax.set_ylabel("L^2 norm of u error")
-    ax.grid(True, linestyle='--', alpha=0.5)
-    plt.savefig(os.path.join(output_dir, "boxplot_l2_u.pdf"), dpi=300, bbox_inches='tight')
-    plt.close(fig)
+    data_u = np.array([results["l2_u"][d] for d in d_values])
+    data_u = data_u / np.array(l2_an_u)[:, None]            # Relative error for u
+    #data_u = np.sqrt(np.array(d_values))[:, None] * data_u
+
+    # Curve fitting for u
+    #weights = 1 / np.array(d_values)
+    #params, _ = curve_fit(lambda d, c, k: c + k*(np.sqrt(d)), d_values, np.mean(data_u, axis=1))
+                           #sigma=weights, absolute_sigma=True)
+    #c_fit, k_fit = params
+
+    ax1.boxplot(data_u.tolist(), labels=[str(d) for d in d_values], showmeans=True)
+    ax1.set_title("L^2 Norm of errors (M_err=1000) across runs")
+    ax1.set_xlabel("dimension d")
+    ax1.set_ylabel("L^2 norm of u error")
+    #ax1.plot(np.arange(len(d_values)), c_fit + k_fit*np.sqrt(d_values), linestyle='--', color='red', label=r"$\sqrt{d}$ scaling")  # Reference line for sqrt(d) scaling
+    ax1.set_xticklabels(d_values)
+    ax1.legend(frameon=False)
+    #ax1.grid(True, linestyle='--', alpha=0.5)
 
     # Boxplot for ub
-    fig, ax = plt.subplots(figsize=(12, 7))
-    data_ub = [results["l2_ub"][d] for d in d_values]
-    ax.boxplot(data_ub, labels=[str(d) for d in d_values], showmeans=True)
-    ax.set_title("L^2 Norm of ub Error (M_err=1000) across runs")
-    ax.set_xlabel("dimension d")
-    ax.set_ylabel("L^2 norm of ub error")
-    ax.grid(True, linestyle='--', alpha=0.5)
-    plt.savefig(os.path.join(output_dir, "boxplot_l2_ub.pdf"), dpi=300, bbox_inches='tight')
+    data_ub = np.array([results["l2_ub"][d] for d in d_values])
+    data_ub = data_ub / np.array(l2_an_ub)[:, None]         # Relative error for ub
+    #data_ub = np.sqrt(np.array(d_values))[:, None] * data_ub
+    
+    ax2.boxplot(data_ub.tolist(), labels=[str(d) for d in d_values], showmeans=True)
+    #ax2.plot(d_values, np.sqrt(d_values), linestyle='--', color='red', label=r"$\sqrt{d}$ scaling")  # Reference line for sqrt(d) scaling
+    ax2.set_title("L^2 Norm of ub Error (M_err=1000) across runs")
+    ax2.set_xlabel("dimension d")
+    ax2.set_ylabel("L^2 norm of ub error")   
+    ax2.set_xticklabels(d_values)
+    ax2.legend(frameon=False)
+    #ax2.grid(True, linestyle='--', alpha=0.5)
+    plt.savefig(os.path.join(output_dir, "boxplot_l2_err_d.pdf"), dpi=300, bbox_inches='tight')
     plt.close(fig)
 
     print("\nAll experiments completed. Outputs saved to:", output_dir)
