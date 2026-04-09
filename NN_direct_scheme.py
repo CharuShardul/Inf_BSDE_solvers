@@ -6,7 +6,17 @@ layers = keras.layers
 import time
 import logging
 from datetime import datetime
+import os
 
+# Suppress TensorFlow logging at module level
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'  # Suppress INFO and WARNING messages
+tf_logger = logging.getLogger('tensorflow')
+tf_logger.setLevel(logging.ERROR)  # Only show ERROR level
+
+
+# Setup logging at module level (called once, not per instance)
+if not logging.root.handlers:
+    logging.basicConfig(filename='NN_Picard_mult_alt.log', level=logging.INFO)
 
 class NNDirecSolver:
     """Class for direct NN BSDE scheme."""
@@ -139,7 +149,7 @@ class NNDirecSolver:
                 momentum=0.99,
                 epsilon=1e-6,
                 beta_initializer=tf.random_normal_initializer(0.0, stddev=0.1),
-                gamma_initializer=tf.random_uniform_initializer(0.1, 0.5)
+                gamma_initializer=tf.random_uniform_initializer(0.1, 0.5),
             )
             for _ in range(3)
         ]
@@ -190,7 +200,8 @@ class NNDirecSolver:
 
             print('1D: ave u_err, ub_err:', np.mean(self.u_err), np.mean(self.ub_err))
             print('1D: max u_err, ub_err:', np.max(self.u_err), np.max(self.ub_err))
-            plt.show()
+            #plt.show()
+            plt.close()
 
         elif self.d == 2:
             x_axis_0 = np.linspace(-3.0, 3.0, self.Ntilde)
@@ -295,7 +306,7 @@ class NN_model(tf.keras.Model):
 
         for step in range(self.num_steps):
             if step % solver.update_frequency == 0:
-                print('step:', step)
+                #print('step:', step)
                 inputs = solver.sampleX(num_sample=solver.batch_size)
                 y_label_out = solver.label(valid_data, self, training=False)
                 loss = self.loss_fn(valid_data, y_label_out, training=False).numpy()

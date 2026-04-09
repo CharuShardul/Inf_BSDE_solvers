@@ -5,7 +5,7 @@ from NN_Picard_mult_alt import NNPicardSolver
 import logging
 #from scipy.optimize import curve_fit
 from scipy.stats import norm
-from scipy.stats import quad
+from scipy.integrate import quad
 
 # Suppress TensorFlow logging at module level
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'  # Suppress INFO and WARNING messages
@@ -100,17 +100,23 @@ def main():
     l2_an_u = []
     l2_an_ub = []
     
-    sample_x1 = np.random.normal(loc=0.0, scale=2.0, size=(1000, 1))
+    #sample_x1 = np.random.normal(loc=0.0, scale=2.0, size=(1000, 1))
+    u_val = np.sqrt(quad(lambda x: norm.pdf(x, loc=0.0, scale=2.0) * (np.arctan(x))**2, -np.inf, np.inf)[0])
+    ub_val = np.sqrt(quad(lambda x: norm.pdf(x, loc=0.0, scale=2.0) * (1/(1+x**2)), -np.inf, np.inf)[0])
+    
+    l2_an_u = [(1/np.sqrt(d)) * u_val for d in d_values]
+    l2_an_ub = [(1/np.sqrt(d)) * ub_val for d in d_values]
+
     '''sample_x = [np.random.normal(loc=0.0, scale=2.0, size=(1000, d_values[i])) for i in range(len(d_values))]
     for i, d in enumerate(d_values):
         an_u_vals = an_u(sample_x[i], d)
         an_ub_vals = an_ub(sample_x[i], d)
         l2_an_u.append(np.sqrt(np.mean(np.square(an_u_vals))))
-        l2_an_ub.append(np.sqrt(np.mean(np.square(an_ub_vals)))) 
-    '''   
+        l2_an_ub.append(np.sqrt(np.mean(np.sum(np.square(an_ub_vals), axis=-1)))) 
+    '''  
 
    
-    fig = plt.figure(figsize=(12, 6), dpi=100, tight_layout=True)
+    fig = plt.figure(figsize=(10, 5), dpi=100, tight_layout=True)
     ax1 = fig.add_subplot(1, 2, 1)
     ax2 = fig.add_subplot(1, 2, 2)
 
@@ -125,10 +131,11 @@ def main():
                            #sigma=weights, absolute_sigma=True)
     #c_fit, k_fit = params
 
-    ax1.boxplot(data_u.tolist(), labels=[str(d) for d in d_values], showmeans=True)
-    ax1.set_title("L^2 Norm of errors (M_err=1000) across runs")
+    ax1.boxplot(data_u.tolist(), labels=[str(d) for d in d_values], showmeans=True, patch_artist=True, 
+                boxprops={'facecolor':'lightblue'})
+    ax1.set_title("Relative errors of $u$, $\Delta u^n_d$")
     ax1.set_xlabel("dimension d")
-    ax1.set_ylabel("L^2 norm of u error")
+    ax1.set_ylabel("$\Delta u^n_d$")
     #ax1.plot(np.arange(len(d_values)), c_fit + k_fit*np.sqrt(d_values), linestyle='--', color='red', label=r"$\sqrt{d}$ scaling")  # Reference line for sqrt(d) scaling
     ax1.set_xticklabels(d_values)
     ax1.legend(frameon=False)
@@ -139,11 +146,12 @@ def main():
     data_ub = data_ub / np.array(l2_an_ub)[:, None]         # Relative error for ub
     #data_ub = np.sqrt(np.array(d_values))[:, None] * data_ub
     
-    ax2.boxplot(data_ub.tolist(), labels=[str(d) for d in d_values], showmeans=True)
+    ax2.boxplot(data_ub.tolist(), labels=[str(d) for d in d_values], showmeans=True, patch_artist=True, 
+                boxprops={'facecolor':'peachpuff'})
     #ax2.plot(d_values, np.sqrt(d_values), linestyle='--', color='red', label=r"$\sqrt{d}$ scaling")  # Reference line for sqrt(d) scaling
-    ax2.set_title("L^2 Norm of ub Error (M_err=1000) across runs")
+    ax2.set_title(r"Relative errors of $\bar{u}$, $\Delta \bar{u}^n_d$")
     ax2.set_xlabel("dimension d")
-    ax2.set_ylabel("L^2 norm of ub error")   
+    ax2.set_ylabel(r"$\Delta \bar{u}^n_d$")
     ax2.set_xticklabels(d_values)
     ax2.legend(frameon=False)
     #ax2.grid(True, linestyle='--', alpha=0.5)

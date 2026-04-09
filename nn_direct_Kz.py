@@ -75,28 +75,33 @@ def main():
         results["l2_u"] = np.load(os.path.join(output_dir, "results_l2_u.npy"), allow_pickle=True).item()
         results["l2_ub"] = np.load(os.path.join(output_dir, "results_l2_ub.npy"), allow_pickle=True).item()
 
-    fig = plt.figure(figsize=(12, 6), dpi=100, tight_layout=True)
+    fig = plt.figure(figsize=(10, 5), dpi=100, tight_layout=True)
     ax1 = fig.add_subplot(1, 2, 1)
     ax2 = fig.add_subplot(1, 2, 2)
 
     data_u = np.array([results["l2_u"][float(K_z)] for K_z in Kz_values])
     data_ub = np.array([results["l2_ub"][float(K_z)] for K_z in Kz_values])
 
-    ax1.boxplot(data_u.tolist(), labels=[str(K_z) for K_z in Kz_values], showmeans=True)
-    ax1.set_title("L^2 norm of u error across K_z runs")
-    ax1.set_xlabel("K_z")
-    ax1.set_ylabel("L^2 norm of u error")
+    data_u = np.log(data_u)
+    data_ub = np.log(data_ub)
+
+    ax1.boxplot(data_u.tolist(), labels=[str(K_z) for K_z in Kz_values], showmeans=True, patch_artist=True, 
+                boxprops={'facecolor':'lightblue'})
+    ax1.set_title(r"log of $L^2_{\mu_0}$ errors for u")
+    ax1.set_xlabel("$K_z$")
+    ax1.set_ylabel(r"$\Delta u_{K_z}$")
     ax1.set_xticklabels([str(K_z) for K_z in Kz_values], rotation=45)
-    ax1.grid(True, linestyle='--', alpha=0.5)
+    #ax1.grid(True, linestyle='--', alpha=0.5)
 
-    ax2.boxplot(data_ub.tolist(), labels=[str(K_z) for K_z in Kz_values], showmeans=True)
-    ax2.set_title("L^2 norm of ub error across K_z runs")
-    ax2.set_xlabel("K_z")
-    ax2.set_ylabel("L^2 norm of ub error")
+    ax2.boxplot(data_ub.tolist(), labels=[str(K_z) for K_z in Kz_values], showmeans=True, patch_artist=True, 
+                boxprops={'facecolor':'peachpuff'})
+    ax2.set_title(r"log of $L^2_{\mu_0}$ errors for $\bar{u}$")
+    ax2.set_xlabel("$K_z$")
+    ax2.set_ylabel(r"$\Delta \bar{u}_{K_z}$")
     ax2.set_xticklabels([str(K_z) for K_z in Kz_values], rotation=45)
-    ax2.grid(True, linestyle='--', alpha=0.5)
+    #ax2.grid(True, linestyle='--', alpha=0.5)
 
-    plt.savefig(os.path.join(output_dir, "boxplot_l2_err_Kz.pdf"), dpi=300, bbox_inches='tight')
+    plt.savefig(os.path.join(output_dir, "boxplot_NNdir_l2_err_Kz.pdf"), dpi=300, bbox_inches='tight')
     plt.close(fig)
 
     print("\nDirect scheme K_z experiments completed. Outputs saved to:", output_dir)
