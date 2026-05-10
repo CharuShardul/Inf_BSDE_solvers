@@ -102,7 +102,7 @@ def main():
     
     #sample_x1 = np.random.normal(loc=0.0, scale=2.0, size=(1000, 1))
     u_val = np.sqrt(quad(lambda x: norm.pdf(x, loc=0.0, scale=2.0) * (np.arctan(x))**2, -np.inf, np.inf)[0])
-    ub_val = np.sqrt(quad(lambda x: norm.pdf(x, loc=0.0, scale=2.0) * (1/(1+x**2)), -np.inf, np.inf)[0])
+    ub_val = np.sqrt(quad(lambda x: norm.pdf(x, loc=0.0, scale=2.0) * (1/(1+x**2))**2, -np.inf, np.inf)[0])
     
     l2_an_u = [(1/np.sqrt(d)) * u_val for d in d_values]
     l2_an_ub = [(1/np.sqrt(d)) * ub_val for d in d_values]
