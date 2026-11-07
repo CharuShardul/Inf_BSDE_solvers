@@ -6,6 +6,7 @@ layers = keras.layers
 import time
 import logging
 from datetime import datetime
+from experiment_settings import DIRECT_N_STEPS
 import os
 
 # Suppress TensorFlow logging at module level
@@ -19,10 +20,13 @@ if not logging.root.handlers:
     logging.basicConfig(filename='NN_Picard_mult_alt.log', level=logging.INFO)
 
 class NNDirecSolver:
-    """Class for direct NN BSDE scheme."""
+    """Direct NN BSDE solver, trained for n_steps optimizer updates.
+
+    Inputs and labels are refreshed every update_frequency steps.
+    """
 
     def __init__(self, d=1, dp=1, Mx=512, M=3000, M_err=1000, Ntilde=21, activation='relu', initial_learning_rate=5e-4, lr_decay=0.6,
-                n_decays=10, n_steps=3000, batch_size=512, epochs=500, a=2.0, b=2.0, theta=1.5, theta_bar=1.5, sig_X=2.0, c=2.0,
+                n_decays=10, n_steps=DIRECT_N_STEPS, batch_size=512, a=2.0, b=2.0, theta=1.5, theta_bar=1.5, sig_X=2.0, c=2.0,
                 K_z=1.0, update_frequency=100):
         self.d = d
         self.dp = dp
@@ -36,7 +40,6 @@ class NNDirecSolver:
         self.n_decays = n_decays
         self.n_steps = n_steps
         self.batch_size = batch_size
-        self.epochs = epochs
         self.a = a
         self.b = b
         self.theta = theta
@@ -53,6 +56,8 @@ class NNDirecSolver:
         time_now = datetime.now()
         logging.info('Time:{}'.format(time_now))
         logging.info('K_z={}'.format(K_z))
+        logging.info('Direct NN: n_steps=%s, update_frequency=%s, M=%s, batch_size=%s',
+                     self.n_steps, self.update_frequency, self.M, self.batch_size)
 
         self._build_models()
 

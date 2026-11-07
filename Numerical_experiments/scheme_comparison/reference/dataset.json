@@ -1,0 +1,52 @@
+{
+  "created_utc": "2026-10-31T11:45:12.144674+00:00",
+  "figure": "plots_article/scheme_comparison.pdf",
+  "contents": {
+    "results.json": "All 45 tuning and 75 final run records, including seeds, settings, both errors, counts, and timing breakdowns.",
+    "results.csv": "Flat table of the same per-run measurements.",
+    "summary.csv": "Medians and quartiles for each method and budget.",
+    "selection.json": "Validation-only parameter choices and candidate scores.",
+    "evaluation_points.npz": "Exact float64 validation_x and test_x arrays.",
+    "source/": "Solver and driver snapshots; history/ contains the original numerical drivers.",
+    "provenance/": "Original source manifests, indexed by SHA-256.",
+    "environment.json": "Recorded Python, package, CPU, and platform versions.",
+    "requirements.txt": "Pinned runtime dependency closure."
+  },
+  "metric": "max(relative L2 error in u, relative L2 error in ub); each error is normalized by the empirical analytical-solution norm on the same sample.",
+  "sample_distribution": "N(0, 4); validation and test sets are independent of training.",
+  "M_meanings": {
+    "grid": "MC pairs per grid node per Picard iteration",
+    "picard": "Training points per Picard iteration",
+    "direct": "Inner MC pairs per training point per label refresh"
+  },
+  "boxplot": {
+    "box": [
+      25,
+      75
+    ],
+    "median": 50,
+    "whiskers": "1.5 times IQR",
+    "points": "All five individual final runs",
+    "x": "Median elapsed time of the last checkpoint completed within the budget"
+  },
+  "timing": "Solve time includes construction, tracing, sampling, labels, and training. Runtime startup and test evaluation are separate; overruns are recorded and excluded from plotted checkpoints.",
+  "replot_command": "python compare_schemes.py",
+  "independent_rerun_command": "python compare_schemes.py --run --output-dir Numerical_experiments/scheme_comparison/reproduction",
+  "reproducibility": "The plot is reconstructed from saved numerical results. Fresh time-limited training varies with hardware and load, even with fixed seeds. Model weights were not saved.",
+  "software_versions_cross_checked_against_runs": [
+    "numpy",
+    "tensorflow"
+  ],
+  "updated_utc": "2026-10-31T12:20:30.204135+00:00",
+  "final_repetitions": {
+    "count": 5,
+    "seeds": [
+      2100,
+      2101,
+      2102,
+      2103,
+      2104
+    ],
+    "extension": "Seeds 2103 and 2104 were added to the original three runs; validation-selected configurations were frozen, with no additional tuning."
+  }
+}

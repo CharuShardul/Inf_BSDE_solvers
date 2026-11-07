@@ -8,6 +8,7 @@ layers = keras.layers
 import time
 import logging
 from datetime import datetime
+from experiment_settings import NN_PICARD_EPOCHS
 
 # Suppress TensorFlow logging at module level
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'  # Suppress INFO and WARNING messages
@@ -24,7 +25,7 @@ class NNPicardSolver:
     """Class for solving infinite-horizon BSDEs using Neural Network Picard iterations."""
     
     def __init__(self, d=1, dp=1, num_pic=5, M=30000, M_err=1000, Ntilde=21, 
-                 batch_size=1000, epochs=200, activation='relu',
+                 batch_size=1000, epochs=NN_PICARD_EPOCHS, activation='relu',
                  initial_learning_rate=5e-4, lr_decay=0.97, decay_steps=1000,
                  a=2.0, b=2.0, theta=1.5, theta_bar=1.5, sig_X=2.0, K_z=1.0):
         """
@@ -38,7 +39,7 @@ class NNPicardSolver:
             M_err: number of samples for error computations
             Ntilde: number of points in each axis of grid
             batch_size: batch size for training
-            epochs: number of training epochs
+            epochs: number of training epochs per Picard iteration (default 200)
             activation: activation function
             initial_learning_rate: initial learning rate
             lr_decay: learning rate decay rate
@@ -72,6 +73,8 @@ class NNPicardSolver:
         time_now = datetime.now()
         logging.info('Time:{}'.format(time_now))
         logging.info('K_z={}'.format(K_z))
+        logging.info('NN Picard: epochs_per_picard=%s, num_pic=%s, M=%s, batch_size=%s',
+                     self.epochs, self.num_pic, self.M, self.batch_size)
         
         # Initialize models
         self._build_models()
@@ -130,11 +133,11 @@ class NNPicardSolver:
         """Compute phi function for labels."""
         phi = (1/self.theta) * (self.f(w_E, u_E, ub_E) + self.a * u_E) * (np.e ** (-E * (self.a - self.theta)))
         
-        phi_bar_var_red = np.sqrt(np.pi / self.theta_bar).astype('float32') * \
+        phi_bar_var_red = tf.cast(np.sqrt(np.pi / self.theta_bar), u_E_bar.dtype) * \
                           (self.f(w_E_bar, u_E_bar, ub_E_bar) + self.b * u_E_bar - self.f(x, u_x, ub_x) - self.b * u_x) * \
                           (np.e ** (-E_bar * (self.b - self.theta_bar))) * \
-                          np.sqrt(E_bar).astype('float32') * \
-                          tf.cast((w_E_bar - x) / E_bar, tf.float32)
+                          tf.cast(np.sqrt(E_bar), u_E_bar.dtype) * \
+                          tf.cast((w_E_bar - x) / E_bar, u_E_bar.dtype)
         
         return [phi, phi_bar_var_red]
     
@@ -178,7 +181,7 @@ class NNPicardSolver:
             staircase=True)
         
         # Initial model
-        self.model_init = tf.keras.Sequential([layers.Lambda(lambda x: tf.zeros((tf.shape(x)[0], self.d+1)))])
+        self.model_init = tf.keras.Sequential([layers.Lambda(lambda x: tf.zeros((tf.shape(x)[0], self.d+1), dtype=tf.keras.backend.floatx()))])
         self.model_init.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=lr_schedule),
                                 loss=self.loss_fn,
                                 metrics=['accuracy'])

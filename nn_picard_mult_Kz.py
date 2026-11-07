@@ -2,6 +2,7 @@ import os
 import numpy as np
 import matplotlib.pyplot as plt
 from NN_Picard_mult_alt import NNPicardSolver
+from experiment_settings import NN_PICARD_EPOCHS
 
 
 def main():
@@ -9,7 +10,7 @@ def main():
     n_runs = 5
     re_calculate = False  # Set to True to rerun experiments and regenerate saved data
 
-    output_dir = "Numerical_experiments/NN_Picard_mult_Kz"
+    output_dir = f"Numerical_experiments/NN_Picard_mult_Kz/epochs_{NN_PICARD_EPOCHS}"
     os.makedirs(output_dir, exist_ok=True)
 
     results = {
@@ -35,7 +36,7 @@ def main():
                     M_err=1000,
                     Ntilde=21,
                     batch_size=1000,
-                    epochs=120,
+                    epochs=NN_PICARD_EPOCHS,
                     activation='relu',
                     initial_learning_rate=5e-4,
                     lr_decay=0.97,

@@ -1,2 +1,6 @@
 NN_Picard_mult.log
-Numerical_experiments/
+/Numerical_experiments/*
+!/Numerical_experiments/scheme_comparison/
+/Numerical_experiments/scheme_comparison/*
+!/Numerical_experiments/scheme_comparison/reference/
+__pycache__/

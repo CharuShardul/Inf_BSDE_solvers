@@ -1,0 +1,5003 @@
+[
+  {
+    "stage": "tune",
+    "method": "grid",
+    "budget": 5.0,
+    "config_index": 0,
+    "seed": 1101,
+    "settings": {
+      "Ntilde": 10,
+      "M": 2000,
+      "R": 6,
+      "r": 0
+    },
+    "startup_seconds": 0.4268641260005097,
+    "setup_seconds": 4.6568000470870174e-05,
+    "solve_seconds": 4.993075776000296,
+    "execution_seconds": 5.01016724100009,
+    "overrun_seconds": 0.010167241000090144,
+    "counts": {
+      "picard_iterations": 272,
+      "epochs": 0,
+      "optimizer_steps": 0,
+      "label_refreshes": 0,
+      "generated_pairs": 11424000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": null,
+    "validation": {
+      "relative_u": 0.012730438384922263,
+      "relative_ub": 0.05128508519342098,
+      "score": 0.05128508519342098
+    },
+    "evaluation_seconds": 0.0010320399996999186,
+    "cold_solve_seconds": 5.419939902000806,
+    "process_seconds": 5.544120937000116,
+    "input_manifest_sha256": "c12ef4350096b3218c587487f86559d7c3b80dade4835cc5ed36e8483176dec4"
+  },
+  {
+    "stage": "tune",
+    "method": "grid",
+    "budget": 5.0,
+    "config_index": 1,
+    "seed": 1101,
+    "settings": {
+      "Ntilde": 20,
+      "M": 10000,
+      "R": 6,
+      "r": 0
+    },
+    "startup_seconds": 0.326639220999823,
+    "setup_seconds": 3.235199983464554e-05,
+    "solve_seconds": 4.884503872000096,
+    "execution_seconds": 5.118844365999394,
+    "overrun_seconds": 0.11884436599939363,
+    "counts": {
+      "picard_iterations": 23,
+      "epochs": 0,
+      "optimizer_steps": 0,
+      "label_refreshes": 0,
+      "generated_pairs": 9430000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": null,
+    "validation": {
+      "relative_u": 0.004359964194482712,
+      "relative_ub": 0.015507592225978067,
+      "score": 0.015507592225978067
+    },
+    "evaluation_seconds": 0.0020453629995245137,
+    "cold_solve_seconds": 5.211143092999919,
+    "process_seconds": 5.5767837570001575,
+    "input_manifest_sha256": "c12ef4350096b3218c587487f86559d7c3b80dade4835cc5ed36e8483176dec4"
+  },
+  {
+    "stage": "tune",
+    "method": "grid",
+    "budget": 5.0,
+    "config_index": 2,
+    "seed": 1101,
+    "settings": {
+      "Ntilde": 40,
+      "M": 40000,
+      "R": 6,
+      "r": 0
+    },
+    "startup_seconds": 0.32853822199922433,
+    "setup_seconds": 3.521700000419514e-05,
+    "solve_seconds": 3.7394798759996775,
+    "execution_seconds": 5.529120127000169,
+    "overrun_seconds": 0.5291201270001693,
+    "counts": {
+      "picard_iterations": 2,
+      "epochs": 0,
+      "optimizer_steps": 0,
+      "label_refreshes": 0,
+      "generated_pairs": 6480000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": null,
+    "validation": {
+      "relative_u": 0.08093597690465065,
+      "relative_ub": 0.1178687009210522,
+      "score": 0.1178687009210522
+    },
+    "evaluation_seconds": 0.0014240239997889148,
+    "cold_solve_seconds": 4.068018097998902,
+    "process_seconds": 5.971002653000141,
+    "input_manifest_sha256": "c12ef4350096b3218c587487f86559d7c3b80dade4835cc5ed36e8483176dec4"
+  },
+  {
+    "stage": "tune",
+    "method": "grid",
+    "budget": 10.0,
+    "config_index": 0,
+    "seed": 1101,
+    "settings": {
+      "Ntilde": 10,
+      "M": 2000,
+      "R": 6,
+      "r": 0
+    },
+    "startup_seconds": 0.31889367399980983,
+    "setup_seconds": 2.966700003526057e-05,
+    "solve_seconds": 9.98717190100001,
+    "execution_seconds": 10.002784826000152,
+    "overrun_seconds": 0.002784826000151952,
+    "counts": {
+      "picard_iterations": 615,
+      "epochs": 0,
+      "optimizer_steps": 0,
+      "label_refreshes": 0,
+      "generated_pairs": 25830000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": null,
+    "validation": {
+      "relative_u": 0.013512123280585746,
+      "relative_ub": 0.06515448206509103,
+      "score": 0.06515448206509103
+    },
+    "evaluation_seconds": 0.0011832469999717432,
+    "cold_solve_seconds": 10.30606557499982,
+    "process_seconds": 10.418853620999926,
+    "reused_from": "Numerical_experiments/scheme_comparison/full_protocol/tune_grid_b10_c0_s1101.json",
+    "source_manifest_sha256": "3b07bb5ec297ab63a6eaf729b89cbdec70eb575614dd45778760a31d84f774fe",
+    "input_manifest_sha256": "b0a030b2d1e60b312a33070134fc273464735499060846a64dcc4d7d59a63fd7"
+  },
+  {
+    "stage": "tune",
+    "method": "grid",
+    "budget": 10.0,
+    "config_index": 1,
+    "seed": 1101,
+    "settings": {
+      "Ntilde": 20,
+      "M": 10000,
+      "R": 6,
+      "r": 0
+    },
+    "startup_seconds": 0.3065176009995412,
+    "setup_seconds": 3.3614000130910426e-05,
+    "solve_seconds": 9.940772001000369,
+    "execution_seconds": 10.135203763999925,
+    "overrun_seconds": 0.13520376399992529,
+    "counts": {
+      "picard_iterations": 48,
+      "epochs": 0,
+      "optimizer_steps": 0,
+      "label_refreshes": 0,
+      "generated_pairs": 19680000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": null,
+    "validation": {
+      "relative_u": 0.004782570972223353,
+      "relative_ub": 0.014678076658081173,
+      "score": 0.014678076658081173
+    },
+    "evaluation_seconds": 0.0013807319992338307,
+    "cold_solve_seconds": 10.24728960199991,
+    "process_seconds": 10.543495414999597,
+    "input_manifest_sha256": "b0a030b2d1e60b312a33070134fc273464735499060846a64dcc4d7d59a63fd7"
+  },
+  {
+    "stage": "tune",
+    "method": "grid",
+    "budget": 10.0,
+    "config_index": 2,
+    "seed": 1101,
+    "settings": {
+      "Ntilde": 40,
+      "M": 40000,
+      "R": 6,
+      "r": 0
+    },
+    "startup_seconds": 0.3168778470003417,
+    "setup_seconds": 3.092799988735351e-05,
+    "solve_seconds": 9.561166857999979,
+    "execution_seconds": 11.122356555999886,
+    "overrun_seconds": 1.122356555999886,
+    "counts": {
+      "picard_iterations": 6,
+      "epochs": 0,
+      "optimizer_steps": 0,
+      "label_refreshes": 0,
+      "generated_pairs": 19440000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": null,
+    "validation": {
+      "relative_u": 0.0027013763661304317,
+      "relative_ub": 0.008830636123726237,
+      "score": 0.008830636123726237
+    },
+    "evaluation_seconds": 0.0016285319998132763,
+    "cold_solve_seconds": 9.87804470500032,
+    "process_seconds": 11.565605293000317,
+    "reused_from": "Numerical_experiments/scheme_comparison/full_protocol/tune_grid_b10_c2_s1101.json",
+    "source_manifest_sha256": "3b07bb5ec297ab63a6eaf729b89cbdec70eb575614dd45778760a31d84f774fe",
+    "input_manifest_sha256": "b0a030b2d1e60b312a33070134fc273464735499060846a64dcc4d7d59a63fd7"
+  },
+  {
+    "stage": "tune",
+    "method": "grid",
+    "budget": 20.0,
+    "config_index": 0,
+    "seed": 1101,
+    "settings": {
+      "Ntilde": 10,
+      "M": 2000,
+      "R": 6,
+      "r": 0
+    },
+    "startup_seconds": 0.3226307109998743,
+    "setup_seconds": 3.137900057481602e-05,
+    "solve_seconds": 19.98876797000048,
+    "execution_seconds": 20.005620466000437,
+    "overrun_seconds": 0.005620466000436863,
+    "counts": {
+      "picard_iterations": 1166,
+      "epochs": 0,
+      "optimizer_steps": 0,
+      "label_refreshes": 0,
+      "generated_pairs": 48972000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": null,
+    "validation": {
+      "relative_u": 0.011930768233937768,
+      "relative_ub": 0.03700115551137194,
+      "score": 0.03700115551137194
+    },
+    "evaluation_seconds": 0.0011148570001751068,
+    "cold_solve_seconds": 20.311398681000355,
+    "process_seconds": 20.42950043000019,
+    "input_manifest_sha256": "c12ef4350096b3218c587487f86559d7c3b80dade4835cc5ed36e8483176dec4"
+  },
+  {
+    "stage": "tune",
+    "method": "grid",
+    "budget": 20.0,
+    "config_index": 1,
+    "seed": 1101,
+    "settings": {
+      "Ntilde": 20,
+      "M": 10000,
+      "R": 6,
+      "r": 0
+    },
+    "startup_seconds": 0.33309503799955564,
+    "setup_seconds": 3.517700042721117e-05,
+    "solve_seconds": 19.936489209000683,
+    "execution_seconds": 20.13900267400004,
+    "overrun_seconds": 0.1390026740000394,
+    "counts": {
+      "picard_iterations": 98,
+      "epochs": 0,
+      "optimizer_steps": 0,
+      "label_refreshes": 0,
+      "generated_pairs": 40180000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": null,
+    "validation": {
+      "relative_u": 0.005984579672515737,
+      "relative_ub": 0.01558428300443688,
+      "score": 0.01558428300443688
+    },
+    "evaluation_seconds": 0.0016538400004719733,
+    "cold_solve_seconds": 20.26958424700024,
+    "process_seconds": 20.577508170999863,
+    "input_manifest_sha256": "c12ef4350096b3218c587487f86559d7c3b80dade4835cc5ed36e8483176dec4"
+  },
+  {
+    "stage": "tune",
+    "method": "grid",
+    "budget": 20.0,
+    "config_index": 2,
+    "seed": 1101,
+    "settings": {
+      "Ntilde": 40,
+      "M": 40000,
+      "R": 6,
+      "r": 0
+    },
+    "startup_seconds": 0.40590173300006427,
+    "setup_seconds": 3.5676999686984345e-05,
+    "solve_seconds": 19.35252184700039,
+    "execution_seconds": 21.15939632699974,
+    "overrun_seconds": 1.1593963269997403,
+    "counts": {
+      "picard_iterations": 10,
+      "epochs": 0,
+      "optimizer_steps": 0,
+      "label_refreshes": 0,
+      "generated_pairs": 32400000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": null,
+    "validation": {
+      "relative_u": 0.0024570947998810407,
+      "relative_ub": 0.0073109773393512665,
+      "score": 0.0073109773393512665
+    },
+    "evaluation_seconds": 0.0016101769997476367,
+    "cold_solve_seconds": 19.758423580000454,
+    "process_seconds": 21.681816495999556,
+    "input_manifest_sha256": "c12ef4350096b3218c587487f86559d7c3b80dade4835cc5ed36e8483176dec4"
+  },
+  {
+    "stage": "tune",
+    "method": "grid",
+    "budget": 30.0,
+    "config_index": 0,
+    "seed": 1101,
+    "settings": {
+      "Ntilde": 10,
+      "M": 2000,
+      "R": 6,
+      "r": 0
+    },
+    "startup_seconds": 0.32670997800050827,
+    "setup_seconds": 3.5928000215790235e-05,
+    "solve_seconds": 29.99156503999984,
+    "execution_seconds": 30.00956476600004,
+    "overrun_seconds": 0.009564766000039526,
+    "counts": {
+      "picard_iterations": 1780,
+      "epochs": 0,
+      "optimizer_steps": 0,
+      "label_refreshes": 0,
+      "generated_pairs": 74760000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": null,
+    "validation": {
+      "relative_u": 0.014207974162661606,
+      "relative_ub": 0.048611648559688775,
+      "score": 0.048611648559688775
+    },
+    "evaluation_seconds": 0.0010479900001882925,
+    "cold_solve_seconds": 30.31827501800035,
+    "process_seconds": 30.458083079000062,
+    "input_manifest_sha256": "b0a030b2d1e60b312a33070134fc273464735499060846a64dcc4d7d59a63fd7"
+  },
+  {
+    "stage": "tune",
+    "method": "grid",
+    "budget": 30.0,
+    "config_index": 1,
+    "seed": 1101,
+    "settings": {
+      "Ntilde": 20,
+      "M": 10000,
+      "R": 6,
+      "r": 0
+    },
+    "startup_seconds": 0.3210066569999981,
+    "setup_seconds": 2.9597000320791267e-05,
+    "solve_seconds": 29.89971694199994,
+    "execution_seconds": 30.105120503000308,
+    "overrun_seconds": 0.10512050300030751,
+    "counts": {
+      "picard_iterations": 152,
+      "epochs": 0,
+      "optimizer_steps": 0,
+      "label_refreshes": 0,
+      "generated_pairs": 62320000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": null,
+    "validation": {
+      "relative_u": 0.004675671349109477,
+      "relative_ub": 0.016770476135059626,
+      "score": 0.016770476135059626
+    },
+    "evaluation_seconds": 0.0013371089999054675,
+    "cold_solve_seconds": 30.22072359899994,
+    "process_seconds": 30.53476505000026,
+    "reused_from": "Numerical_experiments/scheme_comparison/full_protocol/tune_grid_b30_c1_s1101.json",
+    "source_manifest_sha256": "3b07bb5ec297ab63a6eaf729b89cbdec70eb575614dd45778760a31d84f774fe",
+    "input_manifest_sha256": "b0a030b2d1e60b312a33070134fc273464735499060846a64dcc4d7d59a63fd7"
+  },
+  {
+    "stage": "tune",
+    "method": "grid",
+    "budget": 30.0,
+    "config_index": 2,
+    "seed": 1101,
+    "settings": {
+      "Ntilde": 40,
+      "M": 40000,
+      "R": 6,
+      "r": 0
+    },
+    "startup_seconds": 0.3270627470001273,
+    "setup_seconds": 2.997699994011782e-05,
+    "solve_seconds": 29.591376277000563,
+    "execution_seconds": 31.31232578700019,
+    "overrun_seconds": 1.3123257870001908,
+    "counts": {
+      "picard_iterations": 18,
+      "epochs": 0,
+      "optimizer_steps": 0,
+      "label_refreshes": 0,
+      "generated_pairs": 58320000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": null,
+    "validation": {
+      "relative_u": 0.00245909054156696,
+      "relative_ub": 0.00820227985779033,
+      "score": 0.00820227985779033
+    },
+    "evaluation_seconds": 0.0019487699992168928,
+    "cold_solve_seconds": 29.91843902400069,
+    "process_seconds": 31.75842229799946,
+    "input_manifest_sha256": "b0a030b2d1e60b312a33070134fc273464735499060846a64dcc4d7d59a63fd7"
+  },
+  {
+    "stage": "tune",
+    "method": "grid",
+    "budget": 100.0,
+    "config_index": 0,
+    "seed": 1101,
+    "settings": {
+      "Ntilde": 10,
+      "M": 2000,
+      "R": 6,
+      "r": 0
+    },
+    "startup_seconds": 0.3332987359999606,
+    "setup_seconds": 3.363399991940241e-05,
+    "solve_seconds": 99.99980207299996,
+    "execution_seconds": 100.01630317200033,
+    "overrun_seconds": 0.016303172000334598,
+    "counts": {
+      "picard_iterations": 6121,
+      "epochs": 0,
+      "optimizer_steps": 0,
+      "label_refreshes": 0,
+      "generated_pairs": 257082000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": null,
+    "validation": {
+      "relative_u": 0.011033724571306552,
+      "relative_ub": 0.05368027240261942,
+      "score": 0.05368027240261942
+    },
+    "evaluation_seconds": 0.0009886070001812186,
+    "cold_solve_seconds": 100.33310080899992,
+    "process_seconds": 100.44634298300025,
+    "input_manifest_sha256": "b0a030b2d1e60b312a33070134fc273464735499060846a64dcc4d7d59a63fd7"
+  },
+  {
+    "stage": "tune",
+    "method": "grid",
+    "budget": 100.0,
+    "config_index": 1,
+    "seed": 1101,
+    "settings": {
+      "Ntilde": 20,
+      "M": 10000,
+      "R": 6,
+      "r": 0
+    },
+    "startup_seconds": 0.33964367899989156,
+    "setup_seconds": 3.173000004608184e-05,
+    "solve_seconds": 99.92897068299953,
+    "execution_seconds": 100.1183532240002,
+    "overrun_seconds": 0.11835322400020232,
+    "counts": {
+      "picard_iterations": 511,
+      "epochs": 0,
+      "optimizer_steps": 0,
+      "label_refreshes": 0,
+      "generated_pairs": 209510000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": null,
+    "validation": {
+      "relative_u": 0.005491248360940302,
+      "relative_ub": 0.011302344474566184,
+      "score": 0.011302344474566184
+    },
+    "evaluation_seconds": 0.0011661039998216438,
+    "cold_solve_seconds": 100.26861436199943,
+    "process_seconds": 100.56345201400018,
+    "input_manifest_sha256": "b0a030b2d1e60b312a33070134fc273464735499060846a64dcc4d7d59a63fd7"
+  },
+  {
+    "stage": "tune",
+    "method": "grid",
+    "budget": 100.0,
+    "config_index": 2,
+    "seed": 1101,
+    "settings": {
+      "Ntilde": 40,
+      "M": 40000,
+      "R": 6,
+      "r": 0
+    },
+    "startup_seconds": 0.36077473200020904,
+    "setup_seconds": 2.9476000236172695e-05,
+    "solve_seconds": 99.19397362500058,
+    "execution_seconds": 100.8252775230003,
+    "overrun_seconds": 0.8252775230002953,
+    "counts": {
+      "picard_iterations": 62,
+      "epochs": 0,
+      "optimizer_steps": 0,
+      "label_refreshes": 0,
+      "generated_pairs": 200880000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": null,
+    "validation": {
+      "relative_u": 0.0023059334578212375,
+      "relative_ub": 0.007445056639872594,
+      "score": 0.007445056639872594
+    },
+    "evaluation_seconds": 0.0016810420002002502,
+    "cold_solve_seconds": 99.55474835700079,
+    "process_seconds": 101.2964756070005,
+    "input_manifest_sha256": "b0a030b2d1e60b312a33070134fc273464735499060846a64dcc4d7d59a63fd7"
+  },
+  {
+    "stage": "tune",
+    "method": "picard",
+    "budget": 5.0,
+    "config_index": 0,
+    "seed": 1101,
+    "settings": {
+      "M": 10000,
+      "batch_size": 1000,
+      "epochs": 200
+    },
+    "startup_seconds": 2.9554847620001965,
+    "setup_seconds": 0.044189039999764645,
+    "solve_seconds": 4.9754561059999105,
+    "execution_seconds": 5.0707635399994615,
+    "overrun_seconds": 0.0707635399994615,
+    "counts": {
+      "picard_iterations": 0,
+      "epochs": 61,
+      "optimizer_steps": 610,
+      "label_refreshes": 1,
+      "generated_pairs": 10000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.49117131471850906,
+      "relative_ub": 0.3879076784086303,
+      "score": 0.49117131471850906
+    },
+    "evaluation_seconds": 0.023199475000183156,
+    "cold_solve_seconds": 7.930940868000107,
+    "process_seconds": 8.772765927000364,
+    "input_manifest_sha256": "c12ef4350096b3218c587487f86559d7c3b80dade4835cc5ed36e8483176dec4"
+  },
+  {
+    "stage": "tune",
+    "method": "picard",
+    "budget": 5.0,
+    "config_index": 1,
+    "seed": 1101,
+    "settings": {
+      "M": 30000,
+      "batch_size": 1000,
+      "epochs": 200
+    },
+    "startup_seconds": 2.586124443000699,
+    "setup_seconds": 0.04503784000007727,
+    "solve_seconds": 4.984340115000123,
+    "execution_seconds": 5.209258060000138,
+    "overrun_seconds": 0.20925806000013836,
+    "counts": {
+      "picard_iterations": 0,
+      "epochs": 28,
+      "optimizer_steps": 840,
+      "label_refreshes": 1,
+      "generated_pairs": 30000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.20095521754094556,
+      "relative_ub": 0.5003019091923311,
+      "score": 0.5003019091923311
+    },
+    "evaluation_seconds": 0.02010123400032171,
+    "cold_solve_seconds": 7.570464558000822,
+    "process_seconds": 8.521046929000477,
+    "input_manifest_sha256": "c12ef4350096b3218c587487f86559d7c3b80dade4835cc5ed36e8483176dec4"
+  },
+  {
+    "stage": "tune",
+    "method": "picard",
+    "budget": 5.0,
+    "config_index": 2,
+    "seed": 1101,
+    "settings": {
+      "M": 60000,
+      "batch_size": 1000,
+      "epochs": 200
+    },
+    "startup_seconds": 2.721222277999914,
+    "setup_seconds": 0.04359362900049746,
+    "solve_seconds": 4.888179405000301,
+    "execution_seconds": 5.034410090000165,
+    "overrun_seconds": 0.03441009000016493,
+    "counts": {
+      "picard_iterations": 0,
+      "epochs": 19,
+      "optimizer_steps": 1140,
+      "label_refreshes": 1,
+      "generated_pairs": 60000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.26693518989942533,
+      "relative_ub": 0.4824857116135851,
+      "score": 0.4824857116135851
+    },
+    "evaluation_seconds": 0.0203342929999053,
+    "cold_solve_seconds": 7.609401683000215,
+    "process_seconds": 8.496373107000181,
+    "input_manifest_sha256": "c12ef4350096b3218c587487f86559d7c3b80dade4835cc5ed36e8483176dec4"
+  },
+  {
+    "stage": "tune",
+    "method": "picard",
+    "budget": 10.0,
+    "config_index": 0,
+    "seed": 1101,
+    "settings": {
+      "M": 10000,
+      "batch_size": 1000,
+      "epochs": 200
+    },
+    "startup_seconds": 2.5196430910000345,
+    "setup_seconds": 0.043286475000059,
+    "solve_seconds": 9.944801025999368,
+    "execution_seconds": 10.041233602999455,
+    "overrun_seconds": 0.04123360299945489,
+    "counts": {
+      "picard_iterations": 0,
+      "epochs": 142,
+      "optimizer_steps": 1420,
+      "label_refreshes": 1,
+      "generated_pairs": 10000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.2918952487218712,
+      "relative_ub": 0.4636590670028635,
+      "score": 0.4636590670028635
+    },
+    "evaluation_seconds": 0.02282670899967343,
+    "cold_solve_seconds": 12.464444116999402,
+    "process_seconds": 13.24680967399945,
+    "input_manifest_sha256": "b0a030b2d1e60b312a33070134fc273464735499060846a64dcc4d7d59a63fd7"
+  },
+  {
+    "stage": "tune",
+    "method": "picard",
+    "budget": 10.0,
+    "config_index": 1,
+    "seed": 1101,
+    "settings": {
+      "M": 30000,
+      "batch_size": 1000,
+      "epochs": 200
+    },
+    "startup_seconds": 2.5039805870001146,
+    "setup_seconds": 0.04359543999999005,
+    "solve_seconds": 9.962077538999893,
+    "execution_seconds": 10.178434075999576,
+    "overrun_seconds": 0.17843407599957573,
+    "counts": {
+      "picard_iterations": 0,
+      "epochs": 64,
+      "optimizer_steps": 1920,
+      "label_refreshes": 1,
+      "generated_pairs": 30000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.2687020743013809,
+      "relative_ub": 0.4812011954546939,
+      "score": 0.4812011954546939
+    },
+    "evaluation_seconds": 0.025267904000429553,
+    "cold_solve_seconds": 12.466058126000007,
+    "process_seconds": 13.437409836999905,
+    "reused_from": "Numerical_experiments/scheme_comparison/full_protocol/tune_picard_b10_c1_s1101.json",
+    "source_manifest_sha256": "3b07bb5ec297ab63a6eaf729b89cbdec70eb575614dd45778760a31d84f774fe",
+    "input_manifest_sha256": "b0a030b2d1e60b312a33070134fc273464735499060846a64dcc4d7d59a63fd7"
+  },
+  {
+    "stage": "tune",
+    "method": "picard",
+    "budget": 10.0,
+    "config_index": 2,
+    "seed": 1101,
+    "settings": {
+      "M": 60000,
+      "batch_size": 1000,
+      "epochs": 200
+    },
+    "startup_seconds": 2.530570489999718,
+    "setup_seconds": 0.0467476860003444,
+    "solve_seconds": 9.93984428900012,
+    "execution_seconds": 10.11665532500001,
+    "overrun_seconds": 0.11665532500001063,
+    "counts": {
+      "picard_iterations": 0,
+      "epochs": 45,
+      "optimizer_steps": 2700,
+      "label_refreshes": 1,
+      "generated_pairs": 60000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.2770413546666851,
+      "relative_ub": 0.4683267095786235,
+      "score": 0.4683267095786235
+    },
+    "evaluation_seconds": 0.023388946000068245,
+    "cold_solve_seconds": 12.470414778999839,
+    "process_seconds": 13.400011102000008,
+    "reused_from": "Numerical_experiments/scheme_comparison/full_protocol/tune_picard_b10_c2_s1101.json",
+    "source_manifest_sha256": "3b07bb5ec297ab63a6eaf729b89cbdec70eb575614dd45778760a31d84f774fe",
+    "input_manifest_sha256": "b0a030b2d1e60b312a33070134fc273464735499060846a64dcc4d7d59a63fd7"
+  },
+  {
+    "stage": "tune",
+    "method": "picard",
+    "budget": 20.0,
+    "config_index": 0,
+    "seed": 1101,
+    "settings": {
+      "M": 10000,
+      "batch_size": 1000,
+      "epochs": 200
+    },
+    "startup_seconds": 2.6182337919999554,
+    "setup_seconds": 0.044274551000853535,
+    "solve_seconds": 19.975050951000412,
+    "execution_seconds": 20.070681589000742,
+    "overrun_seconds": 0.07068158900074195,
+    "counts": {
+      "picard_iterations": 1,
+      "epochs": 292,
+      "optimizer_steps": 2920,
+      "label_refreshes": 2,
+      "generated_pairs": 20000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.08548589236923664,
+      "relative_ub": 0.14918151355266399,
+      "score": 0.14918151355266399
+    },
+    "evaluation_seconds": 0.017867272999865236,
+    "cold_solve_seconds": 22.593284743000368,
+    "process_seconds": 23.591475996000554,
+    "input_manifest_sha256": "c12ef4350096b3218c587487f86559d7c3b80dade4835cc5ed36e8483176dec4"
+  },
+  {
+    "stage": "tune",
+    "method": "picard",
+    "budget": 20.0,
+    "config_index": 1,
+    "seed": 1101,
+    "settings": {
+      "M": 30000,
+      "batch_size": 1000,
+      "epochs": 200
+    },
+    "startup_seconds": 2.558043782999448,
+    "setup_seconds": 0.04349940500014782,
+    "solve_seconds": 19.872549038000216,
+    "execution_seconds": 20.088579037000272,
+    "overrun_seconds": 0.08857903700027236,
+    "counts": {
+      "picard_iterations": 0,
+      "epochs": 135,
+      "optimizer_steps": 4050,
+      "label_refreshes": 1,
+      "generated_pairs": 30000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.2737726995615884,
+      "relative_ub": 0.46502993954502164,
+      "score": 0.46502993954502164
+    },
+    "evaluation_seconds": 0.024519765000150073,
+    "cold_solve_seconds": 22.430592820999664,
+    "process_seconds": 23.398324920999585,
+    "input_manifest_sha256": "c12ef4350096b3218c587487f86559d7c3b80dade4835cc5ed36e8483176dec4"
+  },
+  {
+    "stage": "tune",
+    "method": "picard",
+    "budget": 20.0,
+    "config_index": 2,
+    "seed": 1101,
+    "settings": {
+      "M": 60000,
+      "batch_size": 1000,
+      "epochs": 200
+    },
+    "startup_seconds": 2.7237052000000403,
+    "setup_seconds": 0.047505776999969385,
+    "solve_seconds": 19.965066527999625,
+    "execution_seconds": 20.13181415500003,
+    "overrun_seconds": 0.13181415500002913,
+    "counts": {
+      "picard_iterations": 0,
+      "epochs": 117,
+      "optimizer_steps": 7020,
+      "label_refreshes": 1,
+      "generated_pairs": 60000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.2899817095137428,
+      "relative_ub": 0.4672298922871835,
+      "score": 0.4672298922871835
+    },
+    "evaluation_seconds": 0.01834599799985881,
+    "cold_solve_seconds": 22.688771727999665,
+    "process_seconds": 23.63366004099953,
+    "input_manifest_sha256": "c12ef4350096b3218c587487f86559d7c3b80dade4835cc5ed36e8483176dec4"
+  },
+  {
+    "stage": "tune",
+    "method": "picard",
+    "budget": 30.0,
+    "config_index": 0,
+    "seed": 1101,
+    "settings": {
+      "M": 10000,
+      "batch_size": 1000,
+      "epochs": 200
+    },
+    "startup_seconds": 2.6036207639999702,
+    "setup_seconds": 0.06065820699950564,
+    "solve_seconds": 29.976173591999213,
+    "execution_seconds": 30.070461749999595,
+    "overrun_seconds": 0.07046174999959476,
+    "counts": {
+      "picard_iterations": 2,
+      "epochs": 451,
+      "optimizer_steps": 4510,
+      "label_refreshes": 3,
+      "generated_pairs": 30000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.03938206171752009,
+      "relative_ub": 0.09546096818661243,
+      "score": 0.09546096818661243
+    },
+    "evaluation_seconds": 0.018586438999591337,
+    "cold_solve_seconds": 32.579794355999184,
+    "process_seconds": 33.4016840889999,
+    "input_manifest_sha256": "b0a030b2d1e60b312a33070134fc273464735499060846a64dcc4d7d59a63fd7"
+  },
+  {
+    "stage": "tune",
+    "method": "picard",
+    "budget": 30.0,
+    "config_index": 1,
+    "seed": 1101,
+    "settings": {
+      "M": 30000,
+      "batch_size": 1000,
+      "epochs": 200
+    },
+    "startup_seconds": 2.449866934000056,
+    "setup_seconds": 0.04150287800030128,
+    "solve_seconds": 29.965734950000297,
+    "execution_seconds": 30.192251412000132,
+    "overrun_seconds": 0.1922514120001324,
+    "counts": {
+      "picard_iterations": 1,
+      "epochs": 205,
+      "optimizer_steps": 6150,
+      "label_refreshes": 2,
+      "generated_pairs": 60000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.20774033545702858,
+      "relative_ub": 0.43358730241204474,
+      "score": 0.43358730241204474
+    },
+    "evaluation_seconds": 0.013709597999877587,
+    "cold_solve_seconds": 32.41560188400035,
+    "process_seconds": 33.300604227999884,
+    "reused_from": "Numerical_experiments/scheme_comparison/full_protocol/tune_picard_b30_c1_s1101.json",
+    "source_manifest_sha256": "3b07bb5ec297ab63a6eaf729b89cbdec70eb575614dd45778760a31d84f774fe",
+    "input_manifest_sha256": "b0a030b2d1e60b312a33070134fc273464735499060846a64dcc4d7d59a63fd7"
+  },
+  {
+    "stage": "tune",
+    "method": "picard",
+    "budget": 30.0,
+    "config_index": 2,
+    "seed": 1101,
+    "settings": {
+      "M": 60000,
+      "batch_size": 1000,
+      "epochs": 200
+    },
+    "startup_seconds": 2.4573090479998427,
+    "setup_seconds": 0.041242132000206766,
+    "solve_seconds": 29.90408946000025,
+    "execution_seconds": 30.057043480000175,
+    "overrun_seconds": 0.057043480000174895,
+    "counts": {
+      "picard_iterations": 1,
+      "epochs": 202,
+      "optimizer_steps": 12120,
+      "label_refreshes": 2,
+      "generated_pairs": 120000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.08603603271474486,
+      "relative_ub": 0.1791302691972815,
+      "score": 0.1791302691972815
+    },
+    "evaluation_seconds": 0.014716072999817698,
+    "cold_solve_seconds": 32.36139850800009,
+    "process_seconds": 33.177764041000046,
+    "reused_from": "Numerical_experiments/scheme_comparison/full_protocol/tune_picard_b30_c2_s1101.json",
+    "source_manifest_sha256": "3b07bb5ec297ab63a6eaf729b89cbdec70eb575614dd45778760a31d84f774fe",
+    "input_manifest_sha256": "b0a030b2d1e60b312a33070134fc273464735499060846a64dcc4d7d59a63fd7"
+  },
+  {
+    "stage": "tune",
+    "method": "picard",
+    "budget": 100.0,
+    "config_index": 0,
+    "seed": 1101,
+    "settings": {
+      "M": 10000,
+      "batch_size": 1000,
+      "epochs": 200
+    },
+    "startup_seconds": 2.5189553039999737,
+    "setup_seconds": 0.04246056800002407,
+    "solve_seconds": 99.95357018300001,
+    "execution_seconds": 100.0555770599999,
+    "overrun_seconds": 0.05557705999990503,
+    "counts": {
+      "picard_iterations": 7,
+      "epochs": 1563,
+      "optimizer_steps": 15630,
+      "label_refreshes": 8,
+      "generated_pairs": 80000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.019508956808555394,
+      "relative_ub": 0.05981433774152649,
+      "score": 0.05981433774152649
+    },
+    "evaluation_seconds": 0.01742018699997061,
+    "cold_solve_seconds": 102.47252548699998,
+    "process_seconds": 103.228610162,
+    "reused_from": "Numerical_experiments/scheme_comparison/full_protocol/tune_picard_b100_c0_s1101.json",
+    "source_manifest_sha256": "3b07bb5ec297ab63a6eaf729b89cbdec70eb575614dd45778760a31d84f774fe",
+    "input_manifest_sha256": "b0a030b2d1e60b312a33070134fc273464735499060846a64dcc4d7d59a63fd7"
+  },
+  {
+    "stage": "tune",
+    "method": "picard",
+    "budget": 100.0,
+    "config_index": 1,
+    "seed": 1101,
+    "settings": {
+      "M": 30000,
+      "batch_size": 1000,
+      "epochs": 200
+    },
+    "startup_seconds": 2.618738382999936,
+    "setup_seconds": 0.043269010999893,
+    "solve_seconds": 99.98694950699996,
+    "execution_seconds": 100.21479975299985,
+    "overrun_seconds": 0.214799752999852,
+    "counts": {
+      "picard_iterations": 3,
+      "epochs": 701,
+      "optimizer_steps": 21030,
+      "label_refreshes": 4,
+      "generated_pairs": 120000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.015062127848191862,
+      "relative_ub": 0.029784989786672066,
+      "score": 0.029784989786672066
+    },
+    "evaluation_seconds": 0.013551508000091417,
+    "cold_solve_seconds": 102.6056878899999,
+    "process_seconds": 103.48945977900007,
+    "reused_from": "Numerical_experiments/scheme_comparison/full_protocol/tune_picard_b100_c1_s1101.json",
+    "source_manifest_sha256": "3b07bb5ec297ab63a6eaf729b89cbdec70eb575614dd45778760a31d84f774fe",
+    "input_manifest_sha256": "b0a030b2d1e60b312a33070134fc273464735499060846a64dcc4d7d59a63fd7"
+  },
+  {
+    "stage": "tune",
+    "method": "picard",
+    "budget": 100.0,
+    "config_index": 2,
+    "seed": 1101,
+    "settings": {
+      "M": 60000,
+      "batch_size": 1000,
+      "epochs": 200
+    },
+    "startup_seconds": 2.6854028130001097,
+    "setup_seconds": 0.0418381950003095,
+    "solve_seconds": 99.97862329500003,
+    "execution_seconds": 100.14347261400053,
+    "overrun_seconds": 0.14347261400052957,
+    "counts": {
+      "picard_iterations": 3,
+      "epochs": 625,
+      "optimizer_steps": 37500,
+      "label_refreshes": 4,
+      "generated_pairs": 240000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.011122357050602518,
+      "relative_ub": 0.05435518752589592,
+      "score": 0.05435518752589592
+    },
+    "evaluation_seconds": 0.01665085399963573,
+    "cold_solve_seconds": 102.66402610800014,
+    "process_seconds": 103.56897427699914,
+    "input_manifest_sha256": "b0a030b2d1e60b312a33070134fc273464735499060846a64dcc4d7d59a63fd7"
+  },
+  {
+    "stage": "tune",
+    "method": "direct",
+    "budget": 5.0,
+    "config_index": 0,
+    "seed": 1101,
+    "settings": {
+      "M": 300,
+      "batch_size": 512,
+      "update_frequency": 100
+    },
+    "startup_seconds": 2.7220970059997853,
+    "setup_seconds": 0.04303144099958445,
+    "solve_seconds": 4.667205183999613,
+    "execution_seconds": 5.135111083999618,
+    "overrun_seconds": 0.13511108399961813,
+    "counts": {
+      "picard_iterations": 0,
+      "epochs": 0,
+      "optimizer_steps": 700,
+      "label_refreshes": 7,
+      "generated_pairs": 1075200
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.35593597137501154,
+      "relative_ub": 0.16365036809536787,
+      "score": 0.35593597137501154
+    },
+    "evaluation_seconds": 0.01661541399971611,
+    "cold_solve_seconds": 7.389302189999398,
+    "process_seconds": 8.617565379000553,
+    "input_manifest_sha256": "c12ef4350096b3218c587487f86559d7c3b80dade4835cc5ed36e8483176dec4"
+  },
+  {
+    "stage": "tune",
+    "method": "direct",
+    "budget": 5.0,
+    "config_index": 1,
+    "seed": 1101,
+    "settings": {
+      "M": 1000,
+      "batch_size": 512,
+      "update_frequency": 100
+    },
+    "startup_seconds": 2.911130329000116,
+    "setup_seconds": 0.039925138000398874,
+    "solve_seconds": 4.013523479000469,
+    "execution_seconds": 6.655235980000725,
+    "overrun_seconds": 1.6552359800007252,
+    "counts": {
+      "picard_iterations": 0,
+      "epochs": 0,
+      "optimizer_steps": 100,
+      "label_refreshes": 1,
+      "generated_pairs": 512000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.9558311876056199,
+      "relative_ub": 0.5128774609973563,
+      "score": 0.9558311876056199
+    },
+    "evaluation_seconds": 0.01749936499982141,
+    "cold_solve_seconds": 6.924653808000585,
+    "process_seconds": 10.374157029999878,
+    "input_manifest_sha256": "c12ef4350096b3218c587487f86559d7c3b80dade4835cc5ed36e8483176dec4"
+  },
+  {
+    "stage": "tune",
+    "method": "direct",
+    "budget": 5.0,
+    "config_index": 2,
+    "seed": 1101,
+    "settings": {
+      "M": 3000,
+      "batch_size": 512,
+      "update_frequency": 100
+    },
+    "startup_seconds": 2.5413569660004214,
+    "setup_seconds": 0.04026488900035474,
+    "solve_seconds": 0.04026488900035474,
+    "execution_seconds": 7.617077640000389,
+    "overrun_seconds": 2.617077640000389,
+    "counts": {
+      "picard_iterations": 0,
+      "epochs": 0,
+      "optimizer_steps": 0,
+      "label_refreshes": 0,
+      "generated_pairs": 0
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 1.031387865396254,
+      "relative_ub": 0.6357763296757216,
+      "score": 1.031387865396254
+    },
+    "evaluation_seconds": 0.017573484999957145,
+    "cold_solve_seconds": 2.581621855000776,
+    "process_seconds": 10.968810739999753,
+    "input_manifest_sha256": "c12ef4350096b3218c587487f86559d7c3b80dade4835cc5ed36e8483176dec4"
+  },
+  {
+    "stage": "tune",
+    "method": "direct",
+    "budget": 10.0,
+    "config_index": 0,
+    "seed": 1101,
+    "settings": {
+      "M": 300,
+      "batch_size": 512,
+      "update_frequency": 100
+    },
+    "startup_seconds": 2.730276175999279,
+    "setup_seconds": 0.038846379999995406,
+    "solve_seconds": 9.85561970100025,
+    "execution_seconds": 10.326811320999695,
+    "overrun_seconds": 0.32681132099969545,
+    "counts": {
+      "picard_iterations": 0,
+      "epochs": 0,
+      "optimizer_steps": 1700,
+      "label_refreshes": 17,
+      "generated_pairs": 2611200
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.08002416317507718,
+      "relative_ub": 0.09123485641591193,
+      "score": 0.09123485641591193
+    },
+    "evaluation_seconds": 0.01640402799966978,
+    "cold_solve_seconds": 12.58589587699953,
+    "process_seconds": 13.87816479600042,
+    "input_manifest_sha256": "b0a030b2d1e60b312a33070134fc273464735499060846a64dcc4d7d59a63fd7"
+  },
+  {
+    "stage": "tune",
+    "method": "direct",
+    "budget": 10.0,
+    "config_index": 1,
+    "seed": 1101,
+    "settings": {
+      "M": 1000,
+      "batch_size": 512,
+      "update_frequency": 100
+    },
+    "startup_seconds": 2.435208300999875,
+    "setup_seconds": 0.03531489600027271,
+    "solve_seconds": 8.97437612900012,
+    "execution_seconds": 10.78111299000011,
+    "overrun_seconds": 0.7811129900001106,
+    "counts": {
+      "picard_iterations": 0,
+      "epochs": 0,
+      "optimizer_steps": 400,
+      "label_refreshes": 4,
+      "generated_pairs": 2048000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.6740914736706229,
+      "relative_ub": 0.22176622334210525,
+      "score": 0.6740914736706229
+    },
+    "evaluation_seconds": 0.01506170699985887,
+    "cold_solve_seconds": 11.409584429999995,
+    "process_seconds": 13.933496965999893,
+    "reused_from": "Numerical_experiments/scheme_comparison/full_protocol/tune_direct_b10_c1_s1101.json",
+    "source_manifest_sha256": "3b07bb5ec297ab63a6eaf729b89cbdec70eb575614dd45778760a31d84f774fe",
+    "input_manifest_sha256": "b0a030b2d1e60b312a33070134fc273464735499060846a64dcc4d7d59a63fd7"
+  },
+  {
+    "stage": "tune",
+    "method": "direct",
+    "budget": 10.0,
+    "config_index": 2,
+    "seed": 1101,
+    "settings": {
+      "M": 3000,
+      "batch_size": 512,
+      "update_frequency": 100
+    },
+    "startup_seconds": 2.516073813000048,
+    "setup_seconds": 0.03799352100008946,
+    "solve_seconds": 7.620756786000129,
+    "execution_seconds": 14.079096720000052,
+    "overrun_seconds": 4.079096720000052,
+    "counts": {
+      "picard_iterations": 0,
+      "epochs": 0,
+      "optimizer_steps": 100,
+      "label_refreshes": 1,
+      "generated_pairs": 1536000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.9560938874826646,
+      "relative_ub": 0.5141136454564539,
+      "score": 0.9560938874826646
+    },
+    "evaluation_seconds": 0.01620968600013839,
+    "cold_solve_seconds": 10.136830599000177,
+    "process_seconds": 17.281516027999942,
+    "reused_from": "Numerical_experiments/scheme_comparison/full_protocol/tune_direct_b10_c2_s1101.json",
+    "source_manifest_sha256": "3b07bb5ec297ab63a6eaf729b89cbdec70eb575614dd45778760a31d84f774fe",
+    "input_manifest_sha256": "b0a030b2d1e60b312a33070134fc273464735499060846a64dcc4d7d59a63fd7"
+  },
+  {
+    "stage": "tune",
+    "method": "direct",
+    "budget": 20.0,
+    "config_index": 0,
+    "seed": 1101,
+    "settings": {
+      "M": 300,
+      "batch_size": 512,
+      "update_frequency": 100
+    },
+    "startup_seconds": 2.567047284000182,
+    "setup_seconds": 0.04108529400036787,
+    "solve_seconds": 19.6515507969998,
+    "execution_seconds": 20.081028030000198,
+    "overrun_seconds": 0.08102803000019776,
+    "counts": {
+      "picard_iterations": 0,
+      "epochs": 0,
+      "optimizer_steps": 3300,
+      "label_refreshes": 33,
+      "generated_pairs": 5068800
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.030905811544032553,
+      "relative_ub": 0.0391367920661002,
+      "score": 0.0391367920661002
+    },
+    "evaluation_seconds": 0.014341398000397021,
+    "cold_solve_seconds": 22.218598080999982,
+    "process_seconds": 23.37245568200069,
+    "input_manifest_sha256": "c12ef4350096b3218c587487f86559d7c3b80dade4835cc5ed36e8483176dec4"
+  },
+  {
+    "stage": "tune",
+    "method": "direct",
+    "budget": 20.0,
+    "config_index": 1,
+    "seed": 1101,
+    "settings": {
+      "M": 1000,
+      "batch_size": 512,
+      "update_frequency": 100
+    },
+    "startup_seconds": 5.303614106000168,
+    "setup_seconds": 0.041041946000405005,
+    "solve_seconds": 18.35683193800014,
+    "execution_seconds": 20.49321427399991,
+    "overrun_seconds": 0.4932142739999108,
+    "counts": {
+      "picard_iterations": 0,
+      "epochs": 0,
+      "optimizer_steps": 800,
+      "label_refreshes": 8,
+      "generated_pairs": 4096000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.3818919994874474,
+      "relative_ub": 0.34488933810523126,
+      "score": 0.3818919994874474
+    },
+    "evaluation_seconds": 0.01660989599986351,
+    "cold_solve_seconds": 23.66044604400031,
+    "process_seconds": 26.614392284000132,
+    "input_manifest_sha256": "c12ef4350096b3218c587487f86559d7c3b80dade4835cc5ed36e8483176dec4"
+  },
+  {
+    "stage": "tune",
+    "method": "direct",
+    "budget": 20.0,
+    "config_index": 2,
+    "seed": 1101,
+    "settings": {
+      "M": 3000,
+      "batch_size": 512,
+      "update_frequency": 100
+    },
+    "startup_seconds": 2.600033765000262,
+    "setup_seconds": 0.039271681000172975,
+    "solve_seconds": 16.255110027999763,
+    "execution_seconds": 22.22421255900008,
+    "overrun_seconds": 2.2242125590000796,
+    "counts": {
+      "picard_iterations": 0,
+      "epochs": 0,
+      "optimizer_steps": 200,
+      "label_refreshes": 2,
+      "generated_pairs": 3072000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.8954181706731533,
+      "relative_ub": 0.4050962453092746,
+      "score": 0.8954181706731533
+    },
+    "evaluation_seconds": 0.014883287999509776,
+    "cold_solve_seconds": 18.855143793000025,
+    "process_seconds": 25.633923409999625,
+    "input_manifest_sha256": "c12ef4350096b3218c587487f86559d7c3b80dade4835cc5ed36e8483176dec4"
+  },
+  {
+    "stage": "tune",
+    "method": "direct",
+    "budget": 30.0,
+    "config_index": 0,
+    "seed": 1101,
+    "settings": {
+      "M": 300,
+      "batch_size": 512,
+      "update_frequency": 100
+    },
+    "startup_seconds": 2.435608583999965,
+    "setup_seconds": 0.03783148699994854,
+    "solve_seconds": 29.997907510000005,
+    "execution_seconds": 30.013878952999676,
+    "overrun_seconds": 0.013878952999675676,
+    "counts": {
+      "picard_iterations": 0,
+      "epochs": 0,
+      "optimizer_steps": 5660,
+      "label_refreshes": 57,
+      "generated_pairs": 8755200
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.010569657422417628,
+      "relative_ub": 0.023457760718524838,
+      "score": 0.023457760718524838
+    },
+    "evaluation_seconds": 0.015185531000042829,
+    "cold_solve_seconds": 32.43351609399997,
+    "process_seconds": 33.14305761200012,
+    "reused_from": "Numerical_experiments/scheme_comparison/full_protocol/tune_direct_b30_c0_s1101.json",
+    "source_manifest_sha256": "3b07bb5ec297ab63a6eaf729b89cbdec70eb575614dd45778760a31d84f774fe",
+    "input_manifest_sha256": "b0a030b2d1e60b312a33070134fc273464735499060846a64dcc4d7d59a63fd7"
+  },
+  {
+    "stage": "tune",
+    "method": "direct",
+    "budget": 30.0,
+    "config_index": 1,
+    "seed": 1101,
+    "settings": {
+      "M": 1000,
+      "batch_size": 512,
+      "update_frequency": 100
+    },
+    "startup_seconds": 2.521485936999852,
+    "setup_seconds": 0.037300205000065034,
+    "solve_seconds": 28.992988953999884,
+    "execution_seconds": 31.424101519000033,
+    "overrun_seconds": 1.4241015190000326,
+    "counts": {
+      "picard_iterations": 0,
+      "epochs": 0,
+      "optimizer_steps": 1300,
+      "label_refreshes": 13,
+      "generated_pairs": 6656000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.06152892050858815,
+      "relative_ub": 0.079326646001124,
+      "score": 0.079326646001124
+    },
+    "evaluation_seconds": 0.015337781000198447,
+    "cold_solve_seconds": 31.514474890999736,
+    "process_seconds": 34.6790432530006,
+    "input_manifest_sha256": "b0a030b2d1e60b312a33070134fc273464735499060846a64dcc4d7d59a63fd7"
+  },
+  {
+    "stage": "tune",
+    "method": "direct",
+    "budget": 30.0,
+    "config_index": 2,
+    "seed": 1101,
+    "settings": {
+      "M": 3000,
+      "batch_size": 512,
+      "update_frequency": 100
+    },
+    "startup_seconds": 2.877472810000654,
+    "setup_seconds": 0.037743330000012065,
+    "solve_seconds": 28.040541974000007,
+    "execution_seconds": 34.01379376299974,
+    "overrun_seconds": 4.01379376299974,
+    "counts": {
+      "picard_iterations": 0,
+      "epochs": 0,
+      "optimizer_steps": 400,
+      "label_refreshes": 4,
+      "generated_pairs": 6144000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.6671859529998185,
+      "relative_ub": 0.21455949491972579,
+      "score": 0.6671859529998185
+    },
+    "evaluation_seconds": 0.017494342999270884,
+    "cold_solve_seconds": 30.91801478400066,
+    "process_seconds": 37.64713418000065,
+    "input_manifest_sha256": "b0a030b2d1e60b312a33070134fc273464735499060846a64dcc4d7d59a63fd7"
+  },
+  {
+    "stage": "tune",
+    "method": "direct",
+    "budget": 100.0,
+    "config_index": 0,
+    "seed": 1101,
+    "settings": {
+      "M": 300,
+      "batch_size": 512,
+      "update_frequency": 100
+    },
+    "startup_seconds": 2.5374843640001927,
+    "setup_seconds": 0.03794448700045905,
+    "solve_seconds": 99.71403179299978,
+    "execution_seconds": 100.13263219100008,
+    "overrun_seconds": 0.13263219100008428,
+    "counts": {
+      "picard_iterations": 0,
+      "epochs": 0,
+      "optimizer_steps": 19300,
+      "label_refreshes": 193,
+      "generated_pairs": 29644800
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.020045957184419923,
+      "relative_ub": 0.02117167497305925,
+      "score": 0.02117167497305925
+    },
+    "evaluation_seconds": 0.014137852000203566,
+    "cold_solve_seconds": 102.25151615699997,
+    "process_seconds": 103.38837012400018,
+    "input_manifest_sha256": "b0a030b2d1e60b312a33070134fc273464735499060846a64dcc4d7d59a63fd7"
+  },
+  {
+    "stage": "tune",
+    "method": "direct",
+    "budget": 100.0,
+    "config_index": 1,
+    "seed": 1101,
+    "settings": {
+      "M": 1000,
+      "batch_size": 512,
+      "update_frequency": 100
+    },
+    "startup_seconds": 2.64697809900008,
+    "setup_seconds": 0.03803856100057601,
+    "solve_seconds": 98.94068175800021,
+    "execution_seconds": 100.91437542600033,
+    "overrun_seconds": 0.9143754260003334,
+    "counts": {
+      "picard_iterations": 0,
+      "epochs": 0,
+      "optimizer_steps": 4700,
+      "label_refreshes": 47,
+      "generated_pairs": 24064000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.01902879730266586,
+      "relative_ub": 0.0606704507643594,
+      "score": 0.0606704507643594
+    },
+    "evaluation_seconds": 0.0153235540001333,
+    "cold_solve_seconds": 101.58765985700029,
+    "process_seconds": 104.26207636900017,
+    "input_manifest_sha256": "b0a030b2d1e60b312a33070134fc273464735499060846a64dcc4d7d59a63fd7"
+  },
+  {
+    "stage": "tune",
+    "method": "direct",
+    "budget": 100.0,
+    "config_index": 2,
+    "seed": 1101,
+    "settings": {
+      "M": 3000,
+      "batch_size": 512,
+      "update_frequency": 100
+    },
+    "startup_seconds": 2.4369271289999688,
+    "setup_seconds": 0.037065602999973635,
+    "solve_seconds": 99.36629354399997,
+    "execution_seconds": 106.4969721739999,
+    "overrun_seconds": 6.496972173999893,
+    "counts": {
+      "picard_iterations": 0,
+      "epochs": 0,
+      "optimizer_steps": 1500,
+      "label_refreshes": 15,
+      "generated_pairs": 23040000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.019758804227210762,
+      "relative_ub": 0.019138943446236057,
+      "score": 0.019758804227210762
+    },
+    "evaluation_seconds": 0.018333437999899616,
+    "cold_solve_seconds": 101.80322067299994,
+    "process_seconds": 109.66412701100012,
+    "reused_from": "Numerical_experiments/scheme_comparison/full_protocol/tune_direct_b100_c2_s1101.json",
+    "source_manifest_sha256": "3b07bb5ec297ab63a6eaf729b89cbdec70eb575614dd45778760a31d84f774fe",
+    "input_manifest_sha256": "b0a030b2d1e60b312a33070134fc273464735499060846a64dcc4d7d59a63fd7"
+  },
+  {
+    "stage": "test",
+    "method": "grid",
+    "budget": 5.0,
+    "config_index": 1,
+    "seed": 2100,
+    "settings": {
+      "Ntilde": 20,
+      "M": 10000,
+      "R": 6,
+      "r": 0
+    },
+    "startup_seconds": 0.33045784599926264,
+    "setup_seconds": 3.0618999517173506e-05,
+    "solve_seconds": 4.851865122999698,
+    "execution_seconds": 5.085797719999391,
+    "overrun_seconds": 0.08579771999939112,
+    "counts": {
+      "picard_iterations": 24,
+      "epochs": 0,
+      "optimizer_steps": 0,
+      "label_refreshes": 0,
+      "generated_pairs": 9840000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": null,
+    "validation": {
+      "relative_u": 0.004748099190104197,
+      "relative_ub": 0.021803415940175336,
+      "score": 0.021803415940175336
+    },
+    "test": {
+      "relative_u": 0.004766002175809133,
+      "relative_ub": 0.02164223369080107,
+      "score": 0.02164223369080107
+    },
+    "evaluation_seconds": 0.011978937999629125,
+    "cold_solve_seconds": 5.18232296899896,
+    "process_seconds": 5.549258322000242,
+    "input_manifest_sha256": "c12ef4350096b3218c587487f86559d7c3b80dade4835cc5ed36e8483176dec4"
+  },
+  {
+    "stage": "test",
+    "method": "grid",
+    "budget": 5.0,
+    "config_index": 1,
+    "seed": 2101,
+    "settings": {
+      "Ntilde": 20,
+      "M": 10000,
+      "R": 6,
+      "r": 0
+    },
+    "startup_seconds": 0.326578617999985,
+    "setup_seconds": 3.565699989849236e-05,
+    "solve_seconds": 4.842430452000372,
+    "execution_seconds": 5.043480018000082,
+    "overrun_seconds": 0.043480018000082055,
+    "counts": {
+      "picard_iterations": 23,
+      "epochs": 0,
+      "optimizer_steps": 0,
+      "label_refreshes": 0,
+      "generated_pairs": 9430000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": null,
+    "validation": {
+      "relative_u": 0.003027971362820497,
+      "relative_ub": 0.015968621105176092,
+      "score": 0.015968621105176092
+    },
+    "test": {
+      "relative_u": 0.0030492328865339936,
+      "relative_ub": 0.015770219439286803,
+      "score": 0.015770219439286803
+    },
+    "evaluation_seconds": 0.010502410000299278,
+    "cold_solve_seconds": 5.169009070000357,
+    "process_seconds": 5.4871329050001805,
+    "input_manifest_sha256": "c12ef4350096b3218c587487f86559d7c3b80dade4835cc5ed36e8483176dec4"
+  },
+  {
+    "stage": "test",
+    "method": "grid",
+    "budget": 5.0,
+    "config_index": 1,
+    "seed": 2102,
+    "settings": {
+      "Ntilde": 20,
+      "M": 10000,
+      "R": 6,
+      "r": 0
+    },
+    "startup_seconds": 0.34455722000075184,
+    "setup_seconds": 3.69099998351885e-05,
+    "solve_seconds": 4.921658745000059,
+    "execution_seconds": 5.123593768000319,
+    "overrun_seconds": 0.12359376800031896,
+    "counts": {
+      "picard_iterations": 23,
+      "epochs": 0,
+      "optimizer_steps": 0,
+      "label_refreshes": 0,
+      "generated_pairs": 9430000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": null,
+    "validation": {
+      "relative_u": 0.00486582784953802,
+      "relative_ub": 0.012718789910506097,
+      "score": 0.012718789910506097
+    },
+    "test": {
+      "relative_u": 0.0048609575354234495,
+      "relative_ub": 0.012661462215993765,
+      "score": 0.012661462215993765
+    },
+    "evaluation_seconds": 0.011462764000498282,
+    "cold_solve_seconds": 5.266215965000811,
+    "process_seconds": 5.583834025000215,
+    "input_manifest_sha256": "c12ef4350096b3218c587487f86559d7c3b80dade4835cc5ed36e8483176dec4"
+  },
+  {
+    "stage": "test",
+    "method": "grid",
+    "budget": 5.0,
+    "config_index": 1,
+    "seed": 2103,
+    "settings": {
+      "Ntilde": 20,
+      "M": 10000,
+      "R": 6,
+      "r": 0
+    },
+    "startup_seconds": 0.33568735099834157,
+    "setup_seconds": 3.561799894669093e-05,
+    "solve_seconds": 4.899008620999666,
+    "execution_seconds": 5.116680955999982,
+    "overrun_seconds": 0.11668095599998196,
+    "counts": {
+      "picard_iterations": 22,
+      "epochs": 0,
+      "optimizer_steps": 0,
+      "label_refreshes": 0,
+      "generated_pairs": 9020000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": null,
+    "validation": {
+      "relative_u": 0.0052131935666452625,
+      "relative_ub": 0.02308189880818453,
+      "score": 0.02308189880818453
+    },
+    "test": {
+      "relative_u": 0.005250083989601779,
+      "relative_ub": 0.023109720995813987,
+      "score": 0.023109720995813987
+    },
+    "evaluation_seconds": 0.011182821999682346,
+    "cold_solve_seconds": 5.234695971998008,
+    "process_seconds": 5.578856677000658,
+    "input_manifest_sha256": "8132190ef27dde3f975b9ee671cd46453ac1add4119e39941dffd7cdbbd766b6"
+  },
+  {
+    "stage": "test",
+    "method": "grid",
+    "budget": 5.0,
+    "config_index": 1,
+    "seed": 2104,
+    "settings": {
+      "Ntilde": 20,
+      "M": 10000,
+      "R": 6,
+      "r": 0
+    },
+    "startup_seconds": 0.34566194400031236,
+    "setup_seconds": 3.6758998248842545e-05,
+    "solve_seconds": 4.931249409999509,
+    "execution_seconds": 5.167971303999366,
+    "overrun_seconds": 0.16797130399936577,
+    "counts": {
+      "picard_iterations": 22,
+      "epochs": 0,
+      "optimizer_steps": 0,
+      "label_refreshes": 0,
+      "generated_pairs": 9020000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": null,
+    "validation": {
+      "relative_u": 0.005770625774581791,
+      "relative_ub": 0.01829569225768846,
+      "score": 0.01829569225768846
+    },
+    "test": {
+      "relative_u": 0.005807858608165777,
+      "relative_ub": 0.018135930685042528,
+      "score": 0.018135930685042528
+    },
+    "evaluation_seconds": 0.01198042699979851,
+    "cold_solve_seconds": 5.276911353999822,
+    "process_seconds": 5.657865956000023,
+    "input_manifest_sha256": "8132190ef27dde3f975b9ee671cd46453ac1add4119e39941dffd7cdbbd766b6"
+  },
+  {
+    "stage": "test",
+    "method": "grid",
+    "budget": 10.0,
+    "config_index": 2,
+    "seed": 2100,
+    "settings": {
+      "Ntilde": 40,
+      "M": 40000,
+      "R": 6,
+      "r": 0
+    },
+    "startup_seconds": 0.3476106099997196,
+    "setup_seconds": 3.3043000257748645e-05,
+    "solve_seconds": 8.2557957730005,
+    "execution_seconds": 10.091967384000782,
+    "overrun_seconds": 0.09196738400078175,
+    "counts": {
+      "picard_iterations": 5,
+      "epochs": 0,
+      "optimizer_steps": 0,
+      "label_refreshes": 0,
+      "generated_pairs": 16200000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": null,
+    "validation": {
+      "relative_u": 0.004029766304196802,
+      "relative_ub": 0.009667041709725226,
+      "score": 0.009667041709725226
+    },
+    "test": {
+      "relative_u": 0.004038638323205557,
+      "relative_ub": 0.00958561807393298,
+      "score": 0.00958561807393298
+    },
+    "evaluation_seconds": 0.01092865900045581,
+    "cold_solve_seconds": 8.60340638300022,
+    "process_seconds": 10.559107082000082,
+    "input_manifest_sha256": "b0a030b2d1e60b312a33070134fc273464735499060846a64dcc4d7d59a63fd7"
+  },
+  {
+    "stage": "test",
+    "method": "grid",
+    "budget": 10.0,
+    "config_index": 2,
+    "seed": 2101,
+    "settings": {
+      "Ntilde": 40,
+      "M": 40000,
+      "R": 6,
+      "r": 0
+    },
+    "startup_seconds": 0.34939414899963595,
+    "setup_seconds": 3.291299981356133e-05,
+    "solve_seconds": 8.390127106999898,
+    "execution_seconds": 10.151632160999725,
+    "overrun_seconds": 0.15163216099972487,
+    "counts": {
+      "picard_iterations": 5,
+      "epochs": 0,
+      "optimizer_steps": 0,
+      "label_refreshes": 0,
+      "generated_pairs": 16200000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": null,
+    "validation": {
+      "relative_u": 0.004098736835565046,
+      "relative_ub": 0.011709895400100135,
+      "score": 0.011709895400100135
+    },
+    "test": {
+      "relative_u": 0.004115000558249587,
+      "relative_ub": 0.01157371330530882,
+      "score": 0.01157371330530882
+    },
+    "evaluation_seconds": 0.011175116000231355,
+    "cold_solve_seconds": 8.739521255999534,
+    "process_seconds": 10.616366292999373,
+    "input_manifest_sha256": "b0a030b2d1e60b312a33070134fc273464735499060846a64dcc4d7d59a63fd7"
+  },
+  {
+    "stage": "test",
+    "method": "grid",
+    "budget": 10.0,
+    "config_index": 2,
+    "seed": 2102,
+    "settings": {
+      "Ntilde": 40,
+      "M": 40000,
+      "R": 6,
+      "r": 0
+    },
+    "startup_seconds": 0.4226027860004251,
+    "setup_seconds": 4.2691000089689624e-05,
+    "solve_seconds": 9.054042716999902,
+    "execution_seconds": 10.706385434000367,
+    "overrun_seconds": 0.7063854340003672,
+    "counts": {
+      "picard_iterations": 5,
+      "epochs": 0,
+      "optimizer_steps": 0,
+      "label_refreshes": 0,
+      "generated_pairs": 16200000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": null,
+    "validation": {
+      "relative_u": 0.004392142504762486,
+      "relative_ub": 0.009733887536197184,
+      "score": 0.009733887536197184
+    },
+    "test": {
+      "relative_u": 0.004386234116359792,
+      "relative_ub": 0.009730821277882504,
+      "score": 0.009730821277882504
+    },
+    "evaluation_seconds": 0.010833940000338771,
+    "cold_solve_seconds": 9.476645503000327,
+    "process_seconds": 11.25594336999984,
+    "input_manifest_sha256": "b0a030b2d1e60b312a33070134fc273464735499060846a64dcc4d7d59a63fd7"
+  },
+  {
+    "stage": "test",
+    "method": "grid",
+    "budget": 10.0,
+    "config_index": 2,
+    "seed": 2103,
+    "settings": {
+      "Ntilde": 40,
+      "M": 40000,
+      "R": 6,
+      "r": 0
+    },
+    "startup_seconds": 0.3368284339994716,
+    "setup_seconds": 3.294199996162206e-05,
+    "solve_seconds": 8.625816232999568,
+    "execution_seconds": 10.54266373199971,
+    "overrun_seconds": 0.5426637319997099,
+    "counts": {
+      "picard_iterations": 5,
+      "epochs": 0,
+      "optimizer_steps": 0,
+      "label_refreshes": 0,
+      "generated_pairs": 16200000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": null,
+    "validation": {
+      "relative_u": 0.004266563272866823,
+      "relative_ub": 0.009886929035895463,
+      "score": 0.009886929035895463
+    },
+    "test": {
+      "relative_u": 0.004262018577701513,
+      "relative_ub": 0.009831124132509927,
+      "score": 0.009831124132509927
+    },
+    "evaluation_seconds": 0.010989685000822647,
+    "cold_solve_seconds": 8.96264466699904,
+    "process_seconds": 11.002928926000095,
+    "input_manifest_sha256": "8132190ef27dde3f975b9ee671cd46453ac1add4119e39941dffd7cdbbd766b6"
+  },
+  {
+    "stage": "test",
+    "method": "grid",
+    "budget": 10.0,
+    "config_index": 2,
+    "seed": 2104,
+    "settings": {
+      "Ntilde": 40,
+      "M": 40000,
+      "R": 6,
+      "r": 0
+    },
+    "startup_seconds": 0.3516523779999261,
+    "setup_seconds": 3.7482001062016934e-05,
+    "solve_seconds": 9.393832105999536,
+    "execution_seconds": 11.4688855280001,
+    "overrun_seconds": 1.4688855280001007,
+    "counts": {
+      "picard_iterations": 5,
+      "epochs": 0,
+      "optimizer_steps": 0,
+      "label_refreshes": 0,
+      "generated_pairs": 16200000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": null,
+    "validation": {
+      "relative_u": 0.00395707664741129,
+      "relative_ub": 0.008993851354423547,
+      "score": 0.008993851354423547
+    },
+    "test": {
+      "relative_u": 0.003939762357721944,
+      "relative_ub": 0.008916901798507995,
+      "score": 0.008916901798507995
+    },
+    "evaluation_seconds": 0.017040021999491728,
+    "cold_solve_seconds": 9.745484483999462,
+    "process_seconds": 12.006777954999052,
+    "input_manifest_sha256": "8132190ef27dde3f975b9ee671cd46453ac1add4119e39941dffd7cdbbd766b6"
+  },
+  {
+    "stage": "test",
+    "method": "grid",
+    "budget": 20.0,
+    "config_index": 2,
+    "seed": 2100,
+    "settings": {
+      "Ntilde": 40,
+      "M": 40000,
+      "R": 6,
+      "r": 0
+    },
+    "startup_seconds": 0.3338586359996043,
+    "setup_seconds": 3.112899958068738e-05,
+    "solve_seconds": 19.02599081199969,
+    "execution_seconds": 20.86141540799963,
+    "overrun_seconds": 0.8614154079996297,
+    "counts": {
+      "picard_iterations": 11,
+      "epochs": 0,
+      "optimizer_steps": 0,
+      "label_refreshes": 0,
+      "generated_pairs": 35640000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": null,
+    "validation": {
+      "relative_u": 0.002404655055858308,
+      "relative_ub": 0.007252717363010813,
+      "score": 0.007252717363010813
+    },
+    "test": {
+      "relative_u": 0.0024090844154827516,
+      "relative_ub": 0.007165911677836915,
+      "score": 0.007165911677836915
+    },
+    "evaluation_seconds": 0.011246402000324451,
+    "cold_solve_seconds": 19.359849447999295,
+    "process_seconds": 21.327885705999506,
+    "input_manifest_sha256": "c12ef4350096b3218c587487f86559d7c3b80dade4835cc5ed36e8483176dec4"
+  },
+  {
+    "stage": "test",
+    "method": "grid",
+    "budget": 20.0,
+    "config_index": 2,
+    "seed": 2101,
+    "settings": {
+      "Ntilde": 40,
+      "M": 40000,
+      "R": 6,
+      "r": 0
+    },
+    "startup_seconds": 0.33340761300041777,
+    "setup_seconds": 3.1319999834522605e-05,
+    "solve_seconds": 19.29307147899999,
+    "execution_seconds": 21.118022086000565,
+    "overrun_seconds": 1.1180220860005647,
+    "counts": {
+      "picard_iterations": 11,
+      "epochs": 0,
+      "optimizer_steps": 0,
+      "label_refreshes": 0,
+      "generated_pairs": 35640000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": null,
+    "validation": {
+      "relative_u": 0.0024796796706846357,
+      "relative_ub": 0.009624536524722036,
+      "score": 0.009624536524722036
+    },
+    "test": {
+      "relative_u": 0.0024821618573588797,
+      "relative_ub": 0.009419216704675474,
+      "score": 0.009419216704675474
+    },
+    "evaluation_seconds": 0.010619532000418985,
+    "cold_solve_seconds": 19.62647909200041,
+    "process_seconds": 21.564457946999937,
+    "input_manifest_sha256": "c12ef4350096b3218c587487f86559d7c3b80dade4835cc5ed36e8483176dec4"
+  },
+  {
+    "stage": "test",
+    "method": "grid",
+    "budget": 20.0,
+    "config_index": 2,
+    "seed": 2102,
+    "settings": {
+      "Ntilde": 40,
+      "M": 40000,
+      "R": 6,
+      "r": 0
+    },
+    "startup_seconds": 0.37629684300009103,
+    "setup_seconds": 4.319199979363475e-05,
+    "solve_seconds": 18.152185431999897,
+    "execution_seconds": 20.013720498999646,
+    "overrun_seconds": 0.013720498999646225,
+    "counts": {
+      "picard_iterations": 10,
+      "epochs": 0,
+      "optimizer_steps": 0,
+      "label_refreshes": 0,
+      "generated_pairs": 32400000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": null,
+    "validation": {
+      "relative_u": 0.0019551138785745773,
+      "relative_ub": 0.008197777596090318,
+      "score": 0.008197777596090318
+    },
+    "test": {
+      "relative_u": 0.001994476275786778,
+      "relative_ub": 0.008236263509929996,
+      "score": 0.008236263509929996
+    },
+    "evaluation_seconds": 0.012534177000816271,
+    "cold_solve_seconds": 18.528482274999988,
+    "process_seconds": 20.545211790000394,
+    "input_manifest_sha256": "c12ef4350096b3218c587487f86559d7c3b80dade4835cc5ed36e8483176dec4"
+  },
+  {
+    "stage": "test",
+    "method": "grid",
+    "budget": 20.0,
+    "config_index": 2,
+    "seed": 2103,
+    "settings": {
+      "Ntilde": 40,
+      "M": 40000,
+      "R": 6,
+      "r": 0
+    },
+    "startup_seconds": 0.33569155400073214,
+    "setup_seconds": 3.8502999814227223e-05,
+    "solve_seconds": 19.720565642999645,
+    "execution_seconds": 21.467345519000446,
+    "overrun_seconds": 1.467345519000446,
+    "counts": {
+      "picard_iterations": 11,
+      "epochs": 0,
+      "optimizer_steps": 0,
+      "label_refreshes": 0,
+      "generated_pairs": 35640000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": null,
+    "validation": {
+      "relative_u": 0.0022236384589017426,
+      "relative_ub": 0.008210158045353562,
+      "score": 0.008210158045353562
+    },
+    "test": {
+      "relative_u": 0.002242187983844515,
+      "relative_ub": 0.007966522352809279,
+      "score": 0.007966522352809279
+    },
+    "evaluation_seconds": 0.013206112998886965,
+    "cold_solve_seconds": 20.056257197000377,
+    "process_seconds": 21.932243789000495,
+    "input_manifest_sha256": "8132190ef27dde3f975b9ee671cd46453ac1add4119e39941dffd7cdbbd766b6"
+  },
+  {
+    "stage": "test",
+    "method": "grid",
+    "budget": 20.0,
+    "config_index": 2,
+    "seed": 2104,
+    "settings": {
+      "Ntilde": 40,
+      "M": 40000,
+      "R": 6,
+      "r": 0
+    },
+    "startup_seconds": 0.3729557080005179,
+    "setup_seconds": 3.510599890432786e-05,
+    "solve_seconds": 18.93520812799943,
+    "execution_seconds": 20.884063490999324,
+    "overrun_seconds": 0.8840634909993241,
+    "counts": {
+      "picard_iterations": 10,
+      "epochs": 0,
+      "optimizer_steps": 0,
+      "label_refreshes": 0,
+      "generated_pairs": 32400000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": null,
+    "validation": {
+      "relative_u": 0.00208065501972473,
+      "relative_ub": 0.008853338433539302,
+      "score": 0.008853338433539302
+    },
+    "test": {
+      "relative_u": 0.0020824730888407187,
+      "relative_ub": 0.008880579675045455,
+      "score": 0.008880579675045455
+    },
+    "evaluation_seconds": 0.012792097999408725,
+    "cold_solve_seconds": 19.30816383599995,
+    "process_seconds": 21.386217205999856,
+    "input_manifest_sha256": "8132190ef27dde3f975b9ee671cd46453ac1add4119e39941dffd7cdbbd766b6"
+  },
+  {
+    "stage": "test",
+    "method": "grid",
+    "budget": 30.0,
+    "config_index": 2,
+    "seed": 2100,
+    "settings": {
+      "Ntilde": 40,
+      "M": 40000,
+      "R": 6,
+      "r": 0
+    },
+    "startup_seconds": 0.35012528500010376,
+    "setup_seconds": 3.067800025746692e-05,
+    "solve_seconds": 29.925981123999918,
+    "execution_seconds": 31.653571974000442,
+    "overrun_seconds": 1.6535719740004424,
+    "counts": {
+      "picard_iterations": 17,
+      "epochs": 0,
+      "optimizer_steps": 0,
+      "label_refreshes": 0,
+      "generated_pairs": 55080000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": null,
+    "validation": {
+      "relative_u": 0.0025012395183269844,
+      "relative_ub": 0.007872551758384362,
+      "score": 0.007872551758384362
+    },
+    "test": {
+      "relative_u": 0.0024907095256939482,
+      "relative_ub": 0.007804543758979996,
+      "score": 0.007804543758979996
+    },
+    "evaluation_seconds": 0.013309832000231836,
+    "cold_solve_seconds": 30.276106409000022,
+    "process_seconds": 32.14982390899968,
+    "input_manifest_sha256": "b0a030b2d1e60b312a33070134fc273464735499060846a64dcc4d7d59a63fd7"
+  },
+  {
+    "stage": "test",
+    "method": "grid",
+    "budget": 30.0,
+    "config_index": 2,
+    "seed": 2101,
+    "settings": {
+      "Ntilde": 40,
+      "M": 40000,
+      "R": 6,
+      "r": 0
+    },
+    "startup_seconds": 0.3310852889999296,
+    "setup_seconds": 3.438499970798148e-05,
+    "solve_seconds": 28.69813441399947,
+    "execution_seconds": 30.335283620000155,
+    "overrun_seconds": 0.33528362000015477,
+    "counts": {
+      "picard_iterations": 17,
+      "epochs": 0,
+      "optimizer_steps": 0,
+      "label_refreshes": 0,
+      "generated_pairs": 55080000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": null,
+    "validation": {
+      "relative_u": 0.0024450113617327674,
+      "relative_ub": 0.0071362320273044315,
+      "score": 0.0071362320273044315
+    },
+    "test": {
+      "relative_u": 0.002455899618746991,
+      "relative_ub": 0.007067634377447702,
+      "score": 0.007067634377447702
+    },
+    "evaluation_seconds": 0.010400125000160187,
+    "cold_solve_seconds": 29.0292197029994,
+    "process_seconds": 30.780451573999926,
+    "input_manifest_sha256": "b0a030b2d1e60b312a33070134fc273464735499060846a64dcc4d7d59a63fd7"
+  },
+  {
+    "stage": "test",
+    "method": "grid",
+    "budget": 30.0,
+    "config_index": 2,
+    "seed": 2102,
+    "settings": {
+      "Ntilde": 40,
+      "M": 40000,
+      "R": 6,
+      "r": 0
+    },
+    "startup_seconds": 0.3335882549999951,
+    "setup_seconds": 4.3041999560955446e-05,
+    "solve_seconds": 29.689067796000018,
+    "execution_seconds": 31.55490296699918,
+    "overrun_seconds": 1.5549029669991796,
+    "counts": {
+      "picard_iterations": 17,
+      "epochs": 0,
+      "optimizer_steps": 0,
+      "label_refreshes": 0,
+      "generated_pairs": 55080000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": null,
+    "validation": {
+      "relative_u": 0.00248754786157445,
+      "relative_ub": 0.006070168540393652,
+      "score": 0.006070168540393652
+    },
+    "test": {
+      "relative_u": 0.002496053257969414,
+      "relative_ub": 0.006031142600321896,
+      "score": 0.006031142600321896
+    },
+    "evaluation_seconds": 0.011351903000104357,
+    "cold_solve_seconds": 30.022656051000013,
+    "process_seconds": 32.017057647,
+    "input_manifest_sha256": "b0a030b2d1e60b312a33070134fc273464735499060846a64dcc4d7d59a63fd7"
+  },
+  {
+    "stage": "test",
+    "method": "grid",
+    "budget": 30.0,
+    "config_index": 2,
+    "seed": 2103,
+    "settings": {
+      "Ntilde": 40,
+      "M": 40000,
+      "R": 6,
+      "r": 0
+    },
+    "startup_seconds": 0.3415916060002928,
+    "setup_seconds": 3.36539997078944e-05,
+    "solve_seconds": 28.9810509179988,
+    "execution_seconds": 30.740552998999192,
+    "overrun_seconds": 0.7405529989991919,
+    "counts": {
+      "picard_iterations": 16,
+      "epochs": 0,
+      "optimizer_steps": 0,
+      "label_refreshes": 0,
+      "generated_pairs": 51840000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": null,
+    "validation": {
+      "relative_u": 0.002739879155993538,
+      "relative_ub": 0.005862985892467695,
+      "score": 0.005862985892467695
+    },
+    "test": {
+      "relative_u": 0.0027722270127061564,
+      "relative_ub": 0.005884705864576515,
+      "score": 0.005884705864576515
+    },
+    "evaluation_seconds": 0.011589196999921114,
+    "cold_solve_seconds": 29.322642523999093,
+    "process_seconds": 31.207460218998676,
+    "input_manifest_sha256": "8132190ef27dde3f975b9ee671cd46453ac1add4119e39941dffd7cdbbd766b6"
+  },
+  {
+    "stage": "test",
+    "method": "grid",
+    "budget": 30.0,
+    "config_index": 2,
+    "seed": 2104,
+    "settings": {
+      "Ntilde": 40,
+      "M": 40000,
+      "R": 6,
+      "r": 0
+    },
+    "startup_seconds": 0.34060824799962575,
+    "setup_seconds": 4.375299977255054e-05,
+    "solve_seconds": 28.254466504000447,
+    "execution_seconds": 30.27478225699997,
+    "overrun_seconds": 0.27478225699996983,
+    "counts": {
+      "picard_iterations": 15,
+      "epochs": 0,
+      "optimizer_steps": 0,
+      "label_refreshes": 0,
+      "generated_pairs": 48600000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": null,
+    "validation": {
+      "relative_u": 0.0020494652010926637,
+      "relative_ub": 0.006660680866617696,
+      "score": 0.006660680866617696
+    },
+    "test": {
+      "relative_u": 0.00207171662652536,
+      "relative_ub": 0.006574991113852371,
+      "score": 0.006574991113852371
+    },
+    "evaluation_seconds": 0.0124664169998141,
+    "cold_solve_seconds": 28.595074752000073,
+    "process_seconds": 30.75176271499913,
+    "input_manifest_sha256": "8132190ef27dde3f975b9ee671cd46453ac1add4119e39941dffd7cdbbd766b6"
+  },
+  {
+    "stage": "test",
+    "method": "grid",
+    "budget": 100.0,
+    "config_index": 2,
+    "seed": 2100,
+    "settings": {
+      "Ntilde": 40,
+      "M": 40000,
+      "R": 6,
+      "r": 0
+    },
+    "startup_seconds": 0.3276672130004954,
+    "setup_seconds": 5.566600066231331e-05,
+    "solve_seconds": 99.87202164500013,
+    "execution_seconds": 101.58170289000009,
+    "overrun_seconds": 1.5817028900000878,
+    "counts": {
+      "picard_iterations": 59,
+      "epochs": 0,
+      "optimizer_steps": 0,
+      "label_refreshes": 0,
+      "generated_pairs": 191160000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": null,
+    "validation": {
+      "relative_u": 0.002435910906740468,
+      "relative_ub": 0.007627911856195343,
+      "score": 0.007627911856195343
+    },
+    "test": {
+      "relative_u": 0.0024692642118729242,
+      "relative_ub": 0.007611522999439202,
+      "score": 0.007611522999439202
+    },
+    "evaluation_seconds": 0.011070522000409255,
+    "cold_solve_seconds": 100.19968885800063,
+    "process_seconds": 102.02622077200067,
+    "input_manifest_sha256": "b0a030b2d1e60b312a33070134fc273464735499060846a64dcc4d7d59a63fd7"
+  },
+  {
+    "stage": "test",
+    "method": "grid",
+    "budget": 100.0,
+    "config_index": 2,
+    "seed": 2101,
+    "settings": {
+      "Ntilde": 40,
+      "M": 40000,
+      "R": 6,
+      "r": 0
+    },
+    "startup_seconds": 0.33698312399974384,
+    "setup_seconds": 3.237100008846028e-05,
+    "solve_seconds": 98.41862128400044,
+    "execution_seconds": 100.10022805900007,
+    "overrun_seconds": 0.1002280590000737,
+    "counts": {
+      "picard_iterations": 56,
+      "epochs": 0,
+      "optimizer_steps": 0,
+      "label_refreshes": 0,
+      "generated_pairs": 181440000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": null,
+    "validation": {
+      "relative_u": 0.0023905054085851638,
+      "relative_ub": 0.007591154038253212,
+      "score": 0.007591154038253212
+    },
+    "test": {
+      "relative_u": 0.0024263074225255475,
+      "relative_ub": 0.007529718053106961,
+      "score": 0.007529718053106961
+    },
+    "evaluation_seconds": 0.012374011999781942,
+    "cold_solve_seconds": 98.75560440800018,
+    "process_seconds": 100.56827251300001,
+    "input_manifest_sha256": "b0a030b2d1e60b312a33070134fc273464735499060846a64dcc4d7d59a63fd7"
+  },
+  {
+    "stage": "test",
+    "method": "grid",
+    "budget": 100.0,
+    "config_index": 2,
+    "seed": 2102,
+    "settings": {
+      "Ntilde": 40,
+      "M": 40000,
+      "R": 6,
+      "r": 0
+    },
+    "startup_seconds": 0.3321473779997177,
+    "setup_seconds": 3.278199983469676e-05,
+    "solve_seconds": 99.93053786699966,
+    "execution_seconds": 101.586340758,
+    "overrun_seconds": 1.5863407580000057,
+    "counts": {
+      "picard_iterations": 57,
+      "epochs": 0,
+      "optimizer_steps": 0,
+      "label_refreshes": 0,
+      "generated_pairs": 184680000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": null,
+    "validation": {
+      "relative_u": 0.002507564802894876,
+      "relative_ub": 0.00637823111161702,
+      "score": 0.00637823111161702
+    },
+    "test": {
+      "relative_u": 0.00252872331707681,
+      "relative_ub": 0.006308347470518018,
+      "score": 0.006308347470518018
+    },
+    "evaluation_seconds": 0.011050193000301078,
+    "cold_solve_seconds": 100.26268524499937,
+    "process_seconds": 102.04984516599961,
+    "input_manifest_sha256": "b0a030b2d1e60b312a33070134fc273464735499060846a64dcc4d7d59a63fd7"
+  },
+  {
+    "stage": "test",
+    "method": "grid",
+    "budget": 100.0,
+    "config_index": 2,
+    "seed": 2103,
+    "settings": {
+      "Ntilde": 40,
+      "M": 40000,
+      "R": 6,
+      "r": 0
+    },
+    "startup_seconds": 0.3303505469993979,
+    "setup_seconds": 3.6127999919699505e-05,
+    "solve_seconds": 99.3908976570001,
+    "execution_seconds": 101.08890697899915,
+    "overrun_seconds": 1.0889069789991481,
+    "counts": {
+      "picard_iterations": 56,
+      "epochs": 0,
+      "optimizer_steps": 0,
+      "label_refreshes": 0,
+      "generated_pairs": 181440000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": null,
+    "validation": {
+      "relative_u": 0.002128830212165247,
+      "relative_ub": 0.006183181469037883,
+      "score": 0.006183181469037883
+    },
+    "test": {
+      "relative_u": 0.0021107889676940856,
+      "relative_ub": 0.0061010036409590565,
+      "score": 0.0061010036409590565
+    },
+    "evaluation_seconds": 0.011129349999464466,
+    "cold_solve_seconds": 99.7212482039995,
+    "process_seconds": 101.54750978300035,
+    "input_manifest_sha256": "8132190ef27dde3f975b9ee671cd46453ac1add4119e39941dffd7cdbbd766b6"
+  },
+  {
+    "stage": "test",
+    "method": "grid",
+    "budget": 100.0,
+    "config_index": 2,
+    "seed": 2104,
+    "settings": {
+      "Ntilde": 40,
+      "M": 40000,
+      "R": 6,
+      "r": 0
+    },
+    "startup_seconds": 0.38188146500033326,
+    "setup_seconds": 3.2731999453972094e-05,
+    "solve_seconds": 99.76990725299947,
+    "execution_seconds": 101.52341224499833,
+    "overrun_seconds": 1.523412244998326,
+    "counts": {
+      "picard_iterations": 55,
+      "epochs": 0,
+      "optimizer_steps": 0,
+      "label_refreshes": 0,
+      "generated_pairs": 178200000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": null,
+    "validation": {
+      "relative_u": 0.0023106086598802976,
+      "relative_ub": 0.00686054813876992,
+      "score": 0.00686054813876992
+    },
+    "test": {
+      "relative_u": 0.0023113319907352306,
+      "relative_ub": 0.006810011834851116,
+      "score": 0.006810011834851116
+    },
+    "evaluation_seconds": 0.012794852000297396,
+    "cold_solve_seconds": 100.1517887179998,
+    "process_seconds": 102.03692493600101,
+    "input_manifest_sha256": "8132190ef27dde3f975b9ee671cd46453ac1add4119e39941dffd7cdbbd766b6"
+  },
+  {
+    "stage": "test",
+    "method": "picard",
+    "budget": 5.0,
+    "config_index": 2,
+    "seed": 2100,
+    "settings": {
+      "M": 60000,
+      "batch_size": 1000,
+      "epochs": 200
+    },
+    "startup_seconds": 4.083370624000054,
+    "setup_seconds": 0.06162655500065739,
+    "solve_seconds": 4.7170084950003,
+    "execution_seconds": 5.02159667000069,
+    "overrun_seconds": 0.02159667000069021,
+    "counts": {
+      "picard_iterations": 0,
+      "epochs": 11,
+      "optimizer_steps": 660,
+      "label_refreshes": 1,
+      "generated_pairs": 60000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.2078820808064592,
+      "relative_ub": 0.3187963453059079,
+      "score": 0.3187963453059079
+    },
+    "test": {
+      "relative_u": 0.20814691029670138,
+      "relative_ub": 0.31767871829871847,
+      "score": 0.31767871829871847
+    },
+    "evaluation_seconds": 0.3369504800002687,
+    "cold_solve_seconds": 8.800379119000354,
+    "process_seconds": 10.40608011599943,
+    "input_manifest_sha256": "c12ef4350096b3218c587487f86559d7c3b80dade4835cc5ed36e8483176dec4"
+  },
+  {
+    "stage": "test",
+    "method": "picard",
+    "budget": 5.0,
+    "config_index": 2,
+    "seed": 2101,
+    "settings": {
+      "M": 60000,
+      "batch_size": 1000,
+      "epochs": 200
+    },
+    "startup_seconds": 2.691414370999155,
+    "setup_seconds": 0.06331988799956889,
+    "solve_seconds": 4.932135359999847,
+    "execution_seconds": 5.088146946000052,
+    "overrun_seconds": 0.08814694600005168,
+    "counts": {
+      "picard_iterations": 0,
+      "epochs": 23,
+      "optimizer_steps": 1380,
+      "label_refreshes": 1,
+      "generated_pairs": 60000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.26406129993927624,
+      "relative_ub": 0.47160878019516034,
+      "score": 0.47160878019516034
+    },
+    "test": {
+      "relative_u": 0.26430082045467995,
+      "relative_ub": 0.4664222913713072,
+      "score": 0.4664222913713072
+    },
+    "evaluation_seconds": 0.1811213900000439,
+    "cold_solve_seconds": 7.623549730999002,
+    "process_seconds": 8.672971512999538,
+    "input_manifest_sha256": "c12ef4350096b3218c587487f86559d7c3b80dade4835cc5ed36e8483176dec4"
+  },
+  {
+    "stage": "test",
+    "method": "picard",
+    "budget": 5.0,
+    "config_index": 2,
+    "seed": 2102,
+    "settings": {
+      "M": 60000,
+      "batch_size": 1000,
+      "epochs": 200
+    },
+    "startup_seconds": 2.5580113699998037,
+    "setup_seconds": 0.042797496000275714,
+    "solve_seconds": 4.998621804000322,
+    "execution_seconds": 5.033673394000289,
+    "overrun_seconds": 0.03367339400028868,
+    "counts": {
+      "picard_iterations": 0,
+      "epochs": 20,
+      "optimizer_steps": 1200,
+      "label_refreshes": 1,
+      "generated_pairs": 60000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.30943303557290075,
+      "relative_ub": 0.47810586971262875,
+      "score": 0.47810586971262875
+    },
+    "test": {
+      "relative_u": 0.3096084245345339,
+      "relative_ub": 0.4743077766688037,
+      "score": 0.4743077766688037
+    },
+    "evaluation_seconds": 0.1818720149994988,
+    "cold_solve_seconds": 7.556633174000126,
+    "process_seconds": 8.790324861000045,
+    "input_manifest_sha256": "c12ef4350096b3218c587487f86559d7c3b80dade4835cc5ed36e8483176dec4"
+  },
+  {
+    "stage": "test",
+    "method": "picard",
+    "budget": 5.0,
+    "config_index": 2,
+    "seed": 2103,
+    "settings": {
+      "M": 60000,
+      "batch_size": 1000,
+      "epochs": 200
+    },
+    "startup_seconds": 2.7656802229994355,
+    "setup_seconds": 0.0446296540012554,
+    "solve_seconds": 4.9950133620004635,
+    "execution_seconds": 5.146500968001419,
+    "overrun_seconds": 0.1465009680014191,
+    "counts": {
+      "picard_iterations": 0,
+      "epochs": 22,
+      "optimizer_steps": 1320,
+      "label_refreshes": 1,
+      "generated_pairs": 60000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.2900690842955977,
+      "relative_ub": 0.4766672799542892,
+      "score": 0.4766672799542892
+    },
+    "test": {
+      "relative_u": 0.29034143715080374,
+      "relative_ub": 0.4720890591959995,
+      "score": 0.4720890591959995
+    },
+    "evaluation_seconds": 0.19579903600060788,
+    "cold_solve_seconds": 7.760693584999899,
+    "process_seconds": 8.858272510999086,
+    "input_manifest_sha256": "8132190ef27dde3f975b9ee671cd46453ac1add4119e39941dffd7cdbbd766b6"
+  },
+  {
+    "stage": "test",
+    "method": "picard",
+    "budget": 5.0,
+    "config_index": 2,
+    "seed": 2104,
+    "settings": {
+      "M": 60000,
+      "batch_size": 1000,
+      "epochs": 200
+    },
+    "startup_seconds": 2.667146515999775,
+    "setup_seconds": 0.051037699999142205,
+    "solve_seconds": 4.956855841999641,
+    "execution_seconds": 5.112983760000134,
+    "overrun_seconds": 0.11298376000013377,
+    "counts": {
+      "picard_iterations": 0,
+      "epochs": 17,
+      "optimizer_steps": 1020,
+      "label_refreshes": 1,
+      "generated_pairs": 60000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.2885555033241501,
+      "relative_ub": 0.4766769671452762,
+      "score": 0.4766769671452762
+    },
+    "test": {
+      "relative_u": 0.28890610606150613,
+      "relative_ub": 0.47195870483300306,
+      "score": 0.47195870483300306
+    },
+    "evaluation_seconds": 0.20368435799900908,
+    "cold_solve_seconds": 7.624002357999416,
+    "process_seconds": 8.758061070000622,
+    "input_manifest_sha256": "8132190ef27dde3f975b9ee671cd46453ac1add4119e39941dffd7cdbbd766b6"
+  },
+  {
+    "stage": "test",
+    "method": "picard",
+    "budget": 10.0,
+    "config_index": 0,
+    "seed": 2100,
+    "settings": {
+      "M": 10000,
+      "batch_size": 1000,
+      "epochs": 200
+    },
+    "startup_seconds": 2.550499814000432,
+    "setup_seconds": 0.050558873999762,
+    "solve_seconds": 9.980755868000415,
+    "execution_seconds": 10.083102589000191,
+    "overrun_seconds": 0.08310258900019107,
+    "counts": {
+      "picard_iterations": 0,
+      "epochs": 141,
+      "optimizer_steps": 1410,
+      "label_refreshes": 1,
+      "generated_pairs": 10000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.28808407184336543,
+      "relative_ub": 0.47214937170939475,
+      "score": 0.47214937170939475
+    },
+    "test": {
+      "relative_u": 0.2876973062334564,
+      "relative_ub": 0.46664179730233984,
+      "score": 0.46664179730233984
+    },
+    "evaluation_seconds": 0.18355498599976272,
+    "cold_solve_seconds": 12.531255682000847,
+    "process_seconds": 13.538116446999993,
+    "input_manifest_sha256": "b0a030b2d1e60b312a33070134fc273464735499060846a64dcc4d7d59a63fd7"
+  },
+  {
+    "stage": "test",
+    "method": "picard",
+    "budget": 10.0,
+    "config_index": 0,
+    "seed": 2101,
+    "settings": {
+      "M": 10000,
+      "batch_size": 1000,
+      "epochs": 200
+    },
+    "startup_seconds": 2.8919605699993554,
+    "setup_seconds": 0.05390649000037229,
+    "solve_seconds": 9.947803646000466,
+    "execution_seconds": 10.040967931000523,
+    "overrun_seconds": 0.040967931000523095,
+    "counts": {
+      "picard_iterations": 0,
+      "epochs": 141,
+      "optimizer_steps": 1410,
+      "label_refreshes": 1,
+      "generated_pairs": 10000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.2926027576324726,
+      "relative_ub": 0.4601011073532818,
+      "score": 0.4601011073532818
+    },
+    "test": {
+      "relative_u": 0.29239504822660645,
+      "relative_ub": 0.45492260128318346,
+      "score": 0.45492260128318346
+    },
+    "evaluation_seconds": 0.19993162900027528,
+    "cold_solve_seconds": 12.839764215999821,
+    "process_seconds": 14.028299282000262,
+    "input_manifest_sha256": "b0a030b2d1e60b312a33070134fc273464735499060846a64dcc4d7d59a63fd7"
+  },
+  {
+    "stage": "test",
+    "method": "picard",
+    "budget": 10.0,
+    "config_index": 0,
+    "seed": 2102,
+    "settings": {
+      "M": 10000,
+      "batch_size": 1000,
+      "epochs": 200
+    },
+    "startup_seconds": 2.558450401999835,
+    "setup_seconds": 0.045798357000421674,
+    "solve_seconds": 9.941469362000134,
+    "execution_seconds": 10.035139827999956,
+    "overrun_seconds": 0.03513982799995574,
+    "counts": {
+      "picard_iterations": 0,
+      "epochs": 140,
+      "optimizer_steps": 1400,
+      "label_refreshes": 1,
+      "generated_pairs": 10000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.26951838113816073,
+      "relative_ub": 0.4667733734169946,
+      "score": 0.4667733734169946
+    },
+    "test": {
+      "relative_u": 0.2701400342236012,
+      "relative_ub": 0.4633802801699732,
+      "score": 0.4633802801699732
+    },
+    "evaluation_seconds": 0.18631012100013322,
+    "cold_solve_seconds": 12.49991976399997,
+    "process_seconds": 13.514062770000237,
+    "input_manifest_sha256": "b0a030b2d1e60b312a33070134fc273464735499060846a64dcc4d7d59a63fd7"
+  },
+  {
+    "stage": "test",
+    "method": "picard",
+    "budget": 10.0,
+    "config_index": 0,
+    "seed": 2103,
+    "settings": {
+      "M": 10000,
+      "batch_size": 1000,
+      "epochs": 200
+    },
+    "startup_seconds": 2.7013185739997425,
+    "setup_seconds": 0.05232656599946495,
+    "solve_seconds": 9.969013751999228,
+    "execution_seconds": 10.060853975999635,
+    "overrun_seconds": 0.06085397599963471,
+    "counts": {
+      "picard_iterations": 0,
+      "epochs": 130,
+      "optimizer_steps": 1300,
+      "label_refreshes": 1,
+      "generated_pairs": 10000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.273084830095213,
+      "relative_ub": 0.46756967050071396,
+      "score": 0.46756967050071396
+    },
+    "test": {
+      "relative_u": 0.2734651003965035,
+      "relative_ub": 0.46430512834740545,
+      "score": 0.46430512834740545
+    },
+    "evaluation_seconds": 0.2177438019989495,
+    "cold_solve_seconds": 12.67033232599897,
+    "process_seconds": 13.744320747000529,
+    "input_manifest_sha256": "8132190ef27dde3f975b9ee671cd46453ac1add4119e39941dffd7cdbbd766b6"
+  },
+  {
+    "stage": "test",
+    "method": "picard",
+    "budget": 10.0,
+    "config_index": 0,
+    "seed": 2104,
+    "settings": {
+      "M": 10000,
+      "batch_size": 1000,
+      "epochs": 200
+    },
+    "startup_seconds": 2.7958541909993073,
+    "setup_seconds": 0.04997982200075057,
+    "solve_seconds": 9.935165429000335,
+    "execution_seconds": 10.031538114000796,
+    "overrun_seconds": 0.03153811400079576,
+    "counts": {
+      "picard_iterations": 0,
+      "epochs": 138,
+      "optimizer_steps": 1380,
+      "label_refreshes": 1,
+      "generated_pairs": 10000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.27205456820651,
+      "relative_ub": 0.48770313842637714,
+      "score": 0.48770313842637714
+    },
+    "test": {
+      "relative_u": 0.27306382353043457,
+      "relative_ub": 0.4839860366495312,
+      "score": 0.4839860366495312
+    },
+    "evaluation_seconds": 0.22844015999908152,
+    "cold_solve_seconds": 12.731019619999643,
+    "process_seconds": 13.842103368000608,
+    "input_manifest_sha256": "8132190ef27dde3f975b9ee671cd46453ac1add4119e39941dffd7cdbbd766b6"
+  },
+  {
+    "stage": "test",
+    "method": "picard",
+    "budget": 20.0,
+    "config_index": 0,
+    "seed": 2100,
+    "settings": {
+      "M": 10000,
+      "batch_size": 1000,
+      "epochs": 200
+    },
+    "startup_seconds": 2.6771339070000977,
+    "setup_seconds": 0.04335293999974965,
+    "solve_seconds": 19.99447447900002,
+    "execution_seconds": 20.09449573100028,
+    "overrun_seconds": 0.09449573100027919,
+    "counts": {
+      "picard_iterations": 1,
+      "epochs": 281,
+      "optimizer_steps": 2810,
+      "label_refreshes": 2,
+      "generated_pairs": 20000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.0988953981834896,
+      "relative_ub": 0.10184520970749947,
+      "score": 0.10184520970749947
+    },
+    "test": {
+      "relative_u": 0.09894645693723479,
+      "relative_ub": 0.10003624880827094,
+      "score": 0.10003624880827094
+    },
+    "evaluation_seconds": 0.18237841599966487,
+    "cold_solve_seconds": 22.671608386000116,
+    "process_seconds": 23.665592247999484,
+    "input_manifest_sha256": "c12ef4350096b3218c587487f86559d7c3b80dade4835cc5ed36e8483176dec4"
+  },
+  {
+    "stage": "test",
+    "method": "picard",
+    "budget": 20.0,
+    "config_index": 0,
+    "seed": 2101,
+    "settings": {
+      "M": 10000,
+      "batch_size": 1000,
+      "epochs": 200
+    },
+    "startup_seconds": 2.6322981990006156,
+    "setup_seconds": 0.043925907999437186,
+    "solve_seconds": 19.9975281549996,
+    "execution_seconds": 20.09342980600013,
+    "overrun_seconds": 0.09342980600013107,
+    "counts": {
+      "picard_iterations": 1,
+      "epochs": 294,
+      "optimizer_steps": 2940,
+      "label_refreshes": 2,
+      "generated_pairs": 20000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.07052905642786163,
+      "relative_ub": 0.15936231771729373,
+      "score": 0.15936231771729373
+    },
+    "test": {
+      "relative_u": 0.07060529446365127,
+      "relative_ub": 0.15895633213037422,
+      "score": 0.15895633213037422
+    },
+    "evaluation_seconds": 0.17573869999978342,
+    "cold_solve_seconds": 22.629826354000215,
+    "process_seconds": 23.60564798299947,
+    "input_manifest_sha256": "c12ef4350096b3218c587487f86559d7c3b80dade4835cc5ed36e8483176dec4"
+  },
+  {
+    "stage": "test",
+    "method": "picard",
+    "budget": 20.0,
+    "config_index": 0,
+    "seed": 2102,
+    "settings": {
+      "M": 10000,
+      "batch_size": 1000,
+      "epochs": 200
+    },
+    "startup_seconds": 2.7418154090000826,
+    "setup_seconds": 0.04442082800051139,
+    "solve_seconds": 19.941477502000453,
+    "execution_seconds": 20.040087395000228,
+    "overrun_seconds": 0.04008739500022784,
+    "counts": {
+      "picard_iterations": 1,
+      "epochs": 300,
+      "optimizer_steps": 3000,
+      "label_refreshes": 2,
+      "generated_pairs": 20000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.07306203307949606,
+      "relative_ub": 0.11820252775853918,
+      "score": 0.11820252775853918
+    },
+    "test": {
+      "relative_u": 0.07345968372961119,
+      "relative_ub": 0.11684480514801432,
+      "score": 0.11684480514801432
+    },
+    "evaluation_seconds": 0.18267952800033527,
+    "cold_solve_seconds": 22.683292911000535,
+    "process_seconds": 23.71546593400035,
+    "input_manifest_sha256": "c12ef4350096b3218c587487f86559d7c3b80dade4835cc5ed36e8483176dec4"
+  },
+  {
+    "stage": "test",
+    "method": "picard",
+    "budget": 20.0,
+    "config_index": 0,
+    "seed": 2103,
+    "settings": {
+      "M": 10000,
+      "batch_size": 1000,
+      "epochs": 200
+    },
+    "startup_seconds": 2.810628186000031,
+    "setup_seconds": 0.04450006899969594,
+    "solve_seconds": 19.9628985319996,
+    "execution_seconds": 20.059983125000144,
+    "overrun_seconds": 0.059983125000144355,
+    "counts": {
+      "picard_iterations": 1,
+      "epochs": 293,
+      "optimizer_steps": 2930,
+      "label_refreshes": 2,
+      "generated_pairs": 20000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.08109326691748353,
+      "relative_ub": 0.137222207127823,
+      "score": 0.137222207127823
+    },
+    "test": {
+      "relative_u": 0.08116123694181533,
+      "relative_ub": 0.1364652796032123,
+      "score": 0.1364652796032123
+    },
+    "evaluation_seconds": 0.1986919709997892,
+    "cold_solve_seconds": 22.77352671799963,
+    "process_seconds": 23.872465528000248,
+    "input_manifest_sha256": "8132190ef27dde3f975b9ee671cd46453ac1add4119e39941dffd7cdbbd766b6"
+  },
+  {
+    "stage": "test",
+    "method": "picard",
+    "budget": 20.0,
+    "config_index": 0,
+    "seed": 2104,
+    "settings": {
+      "M": 10000,
+      "batch_size": 1000,
+      "epochs": 200
+    },
+    "startup_seconds": 2.68726796899864,
+    "setup_seconds": 0.045332386000154656,
+    "solve_seconds": 19.95545890500034,
+    "execution_seconds": 20.051482443999703,
+    "overrun_seconds": 0.05148244399970281,
+    "counts": {
+      "picard_iterations": 1,
+      "epochs": 298,
+      "optimizer_steps": 2980,
+      "label_refreshes": 2,
+      "generated_pairs": 20000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.07600387360865206,
+      "relative_ub": 0.09987878781795026,
+      "score": 0.09987878781795026
+    },
+    "test": {
+      "relative_u": 0.07592464738433577,
+      "relative_ub": 0.09866556876119527,
+      "score": 0.09866556876119527
+    },
+    "evaluation_seconds": 0.18947603199922014,
+    "cold_solve_seconds": 22.64272687399898,
+    "process_seconds": 23.74626262899983,
+    "input_manifest_sha256": "8132190ef27dde3f975b9ee671cd46453ac1add4119e39941dffd7cdbbd766b6"
+  },
+  {
+    "stage": "test",
+    "method": "picard",
+    "budget": 30.0,
+    "config_index": 0,
+    "seed": 2100,
+    "settings": {
+      "M": 10000,
+      "batch_size": 1000,
+      "epochs": 200
+    },
+    "startup_seconds": 2.6812410390002697,
+    "setup_seconds": 0.04423470600067958,
+    "solve_seconds": 29.95295293700019,
+    "execution_seconds": 30.045326131000365,
+    "overrun_seconds": 0.04532613100036542,
+    "counts": {
+      "picard_iterations": 2,
+      "epochs": 442,
+      "optimizer_steps": 4420,
+      "label_refreshes": 3,
+      "generated_pairs": 30000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.03346032002937788,
+      "relative_ub": 0.06792322110482803,
+      "score": 0.06792322110482803
+    },
+    "test": {
+      "relative_u": 0.033929616709443854,
+      "relative_ub": 0.06769007527319293,
+      "score": 0.06769007527319293
+    },
+    "evaluation_seconds": 0.1873185000004014,
+    "cold_solve_seconds": 32.63419397600046,
+    "process_seconds": 33.639215058000445,
+    "input_manifest_sha256": "b0a030b2d1e60b312a33070134fc273464735499060846a64dcc4d7d59a63fd7"
+  },
+  {
+    "stage": "test",
+    "method": "picard",
+    "budget": 30.0,
+    "config_index": 0,
+    "seed": 2101,
+    "settings": {
+      "M": 10000,
+      "batch_size": 1000,
+      "epochs": 200
+    },
+    "startup_seconds": 2.72264350200021,
+    "setup_seconds": 0.04264333599985548,
+    "solve_seconds": 29.976324309999654,
+    "execution_seconds": 30.07487631999993,
+    "overrun_seconds": 0.07487631999993027,
+    "counts": {
+      "picard_iterations": 2,
+      "epochs": 455,
+      "optimizer_steps": 4550,
+      "label_refreshes": 3,
+      "generated_pairs": 30000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.030782525431643205,
+      "relative_ub": 0.06455606427029324,
+      "score": 0.06455606427029324
+    },
+    "test": {
+      "relative_u": 0.031027509208684592,
+      "relative_ub": 0.06423330376353766,
+      "score": 0.06423330376353766
+    },
+    "evaluation_seconds": 0.17522215799999685,
+    "cold_solve_seconds": 32.698967811999864,
+    "process_seconds": 33.680952081000214,
+    "input_manifest_sha256": "b0a030b2d1e60b312a33070134fc273464735499060846a64dcc4d7d59a63fd7"
+  },
+  {
+    "stage": "test",
+    "method": "picard",
+    "budget": 30.0,
+    "config_index": 0,
+    "seed": 2102,
+    "settings": {
+      "M": 10000,
+      "batch_size": 1000,
+      "epochs": 200
+    },
+    "startup_seconds": 2.613827533999938,
+    "setup_seconds": 0.0437725980000323,
+    "solve_seconds": 29.990243364999515,
+    "execution_seconds": 30.086959716999445,
+    "overrun_seconds": 0.08695971699944494,
+    "counts": {
+      "picard_iterations": 2,
+      "epochs": 454,
+      "optimizer_steps": 4540,
+      "label_refreshes": 3,
+      "generated_pairs": 30000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.05529531254760937,
+      "relative_ub": 0.07562704821887146,
+      "score": 0.07562704821887146
+    },
+    "test": {
+      "relative_u": 0.055361053451885786,
+      "relative_ub": 0.07539574552682926,
+      "score": 0.07539574552682926
+    },
+    "evaluation_seconds": 0.18188534999990225,
+    "cold_solve_seconds": 32.60407089899945,
+    "process_seconds": 33.5947010079999,
+    "input_manifest_sha256": "b0a030b2d1e60b312a33070134fc273464735499060846a64dcc4d7d59a63fd7"
+  },
+  {
+    "stage": "test",
+    "method": "picard",
+    "budget": 30.0,
+    "config_index": 0,
+    "seed": 2103,
+    "settings": {
+      "M": 10000,
+      "batch_size": 1000,
+      "epochs": 200
+    },
+    "startup_seconds": 2.681877615999838,
+    "setup_seconds": 0.04392712100161589,
+    "solve_seconds": 29.97250401200108,
+    "execution_seconds": 30.071642198001427,
+    "overrun_seconds": 0.07164219800142746,
+    "counts": {
+      "picard_iterations": 2,
+      "epochs": 438,
+      "optimizer_steps": 4380,
+      "label_refreshes": 3,
+      "generated_pairs": 30000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.03527943000745397,
+      "relative_ub": 0.061706185889572135,
+      "score": 0.061706185889572135
+    },
+    "test": {
+      "relative_u": 0.035170623102936185,
+      "relative_ub": 0.061225536887392386,
+      "score": 0.061225536887392386
+    },
+    "evaluation_seconds": 0.1931678010005271,
+    "cold_solve_seconds": 32.65438162800092,
+    "process_seconds": 33.70279171399852,
+    "input_manifest_sha256": "8132190ef27dde3f975b9ee671cd46453ac1add4119e39941dffd7cdbbd766b6"
+  },
+  {
+    "stage": "test",
+    "method": "picard",
+    "budget": 30.0,
+    "config_index": 0,
+    "seed": 2104,
+    "settings": {
+      "M": 10000,
+      "batch_size": 1000,
+      "epochs": 200
+    },
+    "startup_seconds": 6.088493774999733,
+    "setup_seconds": 0.05093914600001881,
+    "solve_seconds": 29.934823899999174,
+    "execution_seconds": 30.03346368899838,
+    "overrun_seconds": 0.03346368899838126,
+    "counts": {
+      "picard_iterations": 2,
+      "epochs": 454,
+      "optimizer_steps": 4540,
+      "label_refreshes": 3,
+      "generated_pairs": 30000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.030905810899513088,
+      "relative_ub": 0.08021665998520593,
+      "score": 0.08021665998520593
+    },
+    "test": {
+      "relative_u": 0.0310117884285004,
+      "relative_ub": 0.08031945655163139,
+      "score": 0.08031945655163139
+    },
+    "evaluation_seconds": 0.1918876010004169,
+    "cold_solve_seconds": 36.02331767499891,
+    "process_seconds": 37.064530077999734,
+    "input_manifest_sha256": "8132190ef27dde3f975b9ee671cd46453ac1add4119e39941dffd7cdbbd766b6"
+  },
+  {
+    "stage": "test",
+    "method": "picard",
+    "budget": 100.0,
+    "config_index": 1,
+    "seed": 2100,
+    "settings": {
+      "M": 30000,
+      "batch_size": 1000,
+      "epochs": 200
+    },
+    "startup_seconds": 2.6540167540006223,
+    "setup_seconds": 0.04491461599991453,
+    "solve_seconds": 99.95061995300057,
+    "execution_seconds": 100.17583548700077,
+    "overrun_seconds": 0.1758354870007679,
+    "counts": {
+      "picard_iterations": 3,
+      "epochs": 701,
+      "optimizer_steps": 21030,
+      "label_refreshes": 4,
+      "generated_pairs": 120000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.017435387127288513,
+      "relative_ub": 0.044828051897820825,
+      "score": 0.044828051897820825
+    },
+    "test": {
+      "relative_u": 0.01754295375634363,
+      "relative_ub": 0.04425809620273767,
+      "score": 0.04425809620273767
+    },
+    "evaluation_seconds": 0.17848611999943387,
+    "cold_solve_seconds": 102.60463670700119,
+    "process_seconds": 103.77573177799968,
+    "input_manifest_sha256": "b0a030b2d1e60b312a33070134fc273464735499060846a64dcc4d7d59a63fd7"
+  },
+  {
+    "stage": "test",
+    "method": "picard",
+    "budget": 100.0,
+    "config_index": 1,
+    "seed": 2101,
+    "settings": {
+      "M": 30000,
+      "batch_size": 1000,
+      "epochs": 200
+    },
+    "startup_seconds": 2.7232829200002016,
+    "setup_seconds": 0.04348647499955405,
+    "solve_seconds": 99.88115937899966,
+    "execution_seconds": 100.1048860310002,
+    "overrun_seconds": 0.10488603100020555,
+    "counts": {
+      "picard_iterations": 3,
+      "epochs": 697,
+      "optimizer_steps": 20910,
+      "label_refreshes": 4,
+      "generated_pairs": 120000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.02418098349892543,
+      "relative_ub": 0.07498121565398287,
+      "score": 0.07498121565398287
+    },
+    "test": {
+      "relative_u": 0.024200949257142824,
+      "relative_ub": 0.07460228931159818,
+      "score": 0.07460228931159818
+    },
+    "evaluation_seconds": 0.18085504600003333,
+    "cold_solve_seconds": 102.60444229899986,
+    "process_seconds": 103.72909020299994,
+    "input_manifest_sha256": "b0a030b2d1e60b312a33070134fc273464735499060846a64dcc4d7d59a63fd7"
+  },
+  {
+    "stage": "test",
+    "method": "picard",
+    "budget": 100.0,
+    "config_index": 1,
+    "seed": 2102,
+    "settings": {
+      "M": 30000,
+      "batch_size": 1000,
+      "epochs": 200
+    },
+    "startup_seconds": 2.907497809999768,
+    "setup_seconds": 0.042578349999530474,
+    "solve_seconds": 99.99225276400011,
+    "execution_seconds": 100.21053621299961,
+    "overrun_seconds": 0.21053621299961378,
+    "counts": {
+      "picard_iterations": 3,
+      "epochs": 702,
+      "optimizer_steps": 21060,
+      "label_refreshes": 4,
+      "generated_pairs": 120000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.015875131704299775,
+      "relative_ub": 0.04901301771605043,
+      "score": 0.04901301771605043
+    },
+    "test": {
+      "relative_u": 0.016148515317903858,
+      "relative_ub": 0.048784466588699366,
+      "score": 0.048784466588699366
+    },
+    "evaluation_seconds": 0.17563450500074396,
+    "cold_solve_seconds": 102.89975057399988,
+    "process_seconds": 103.99097649600026,
+    "input_manifest_sha256": "b0a030b2d1e60b312a33070134fc273464735499060846a64dcc4d7d59a63fd7"
+  },
+  {
+    "stage": "test",
+    "method": "picard",
+    "budget": 100.0,
+    "config_index": 1,
+    "seed": 2103,
+    "settings": {
+      "M": 30000,
+      "batch_size": 1000,
+      "epochs": 200
+    },
+    "startup_seconds": 2.6934604460002447,
+    "setup_seconds": 0.04614240599948971,
+    "solve_seconds": 99.91218380300052,
+    "execution_seconds": 100.1203770810007,
+    "overrun_seconds": 0.12037708100069722,
+    "counts": {
+      "picard_iterations": 3,
+      "epochs": 690,
+      "optimizer_steps": 20700,
+      "label_refreshes": 4,
+      "generated_pairs": 120000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.015719056143828045,
+      "relative_ub": 0.03444861053881334,
+      "score": 0.03444861053881334
+    },
+    "test": {
+      "relative_u": 0.01583769969412868,
+      "relative_ub": 0.034237664779895656,
+      "score": 0.034237664779895656
+    },
+    "evaluation_seconds": 0.1861976460004371,
+    "cold_solve_seconds": 102.60564424900076,
+    "process_seconds": 103.77955533800014,
+    "input_manifest_sha256": "8132190ef27dde3f975b9ee671cd46453ac1add4119e39941dffd7cdbbd766b6"
+  },
+  {
+    "stage": "test",
+    "method": "picard",
+    "budget": 100.0,
+    "config_index": 1,
+    "seed": 2104,
+    "settings": {
+      "M": 30000,
+      "batch_size": 1000,
+      "epochs": 200
+    },
+    "startup_seconds": 3.0356715470006748,
+    "setup_seconds": 0.05203075600002194,
+    "solve_seconds": 99.94661212200117,
+    "execution_seconds": 100.16579233800076,
+    "overrun_seconds": 0.165792338000756,
+    "counts": {
+      "picard_iterations": 3,
+      "epochs": 697,
+      "optimizer_steps": 20910,
+      "label_refreshes": 4,
+      "generated_pairs": 120000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.020046187338542618,
+      "relative_ub": 0.03103228490823356,
+      "score": 0.03103228490823356
+    },
+    "test": {
+      "relative_u": 0.02010533043322739,
+      "relative_ub": 0.030833905486885853,
+      "score": 0.030833905486885853
+    },
+    "evaluation_seconds": 0.1887128530015616,
+    "cold_solve_seconds": 102.98228366900184,
+    "process_seconds": 104.16833245599992,
+    "input_manifest_sha256": "8132190ef27dde3f975b9ee671cd46453ac1add4119e39941dffd7cdbbd766b6"
+  },
+  {
+    "stage": "test",
+    "method": "direct",
+    "budget": 5.0,
+    "config_index": 0,
+    "seed": 2100,
+    "settings": {
+      "M": 300,
+      "batch_size": 512,
+      "update_frequency": 100
+    },
+    "startup_seconds": 2.6424039129997254,
+    "setup_seconds": 0.040737454000009166,
+    "solve_seconds": 4.998396609000338,
+    "execution_seconds": 5.014096636999966,
+    "overrun_seconds": 0.014096636999965995,
+    "counts": {
+      "picard_iterations": 0,
+      "epochs": 0,
+      "optimizer_steps": 610,
+      "label_refreshes": 7,
+      "generated_pairs": 1075200
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.12044129022512862,
+      "relative_ub": 0.13824719390885476,
+      "score": 0.13824719390885476
+    },
+    "test": {
+      "relative_u": 0.12043816158024657,
+      "relative_ub": 0.13958470441736817,
+      "score": 0.13958470441736817
+    },
+    "evaluation_seconds": 0.17825095999978657,
+    "cold_solve_seconds": 7.640800522000063,
+    "process_seconds": 8.54517549799948,
+    "input_manifest_sha256": "c12ef4350096b3218c587487f86559d7c3b80dade4835cc5ed36e8483176dec4"
+  },
+  {
+    "stage": "test",
+    "method": "direct",
+    "budget": 5.0,
+    "config_index": 0,
+    "seed": 2101,
+    "settings": {
+      "M": 300,
+      "batch_size": 512,
+      "update_frequency": 100
+    },
+    "startup_seconds": 2.8388124520006386,
+    "setup_seconds": 0.03921108699978504,
+    "solve_seconds": 4.9197126629997,
+    "execution_seconds": 5.35485727699961,
+    "overrun_seconds": 0.3548572769996099,
+    "counts": {
+      "picard_iterations": 0,
+      "epochs": 0,
+      "optimizer_steps": 700,
+      "label_refreshes": 7,
+      "generated_pairs": 1075200
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.33910314564295385,
+      "relative_ub": 0.21975755008135728,
+      "score": 0.33910314564295385
+    },
+    "test": {
+      "relative_u": 0.3400938510614978,
+      "relative_ub": 0.21823709746317757,
+      "score": 0.3400938510614978
+    },
+    "evaluation_seconds": 0.180744008000147,
+    "cold_solve_seconds": 7.758525115000339,
+    "process_seconds": 9.075126871000066,
+    "input_manifest_sha256": "c12ef4350096b3218c587487f86559d7c3b80dade4835cc5ed36e8483176dec4"
+  },
+  {
+    "stage": "test",
+    "method": "direct",
+    "budget": 5.0,
+    "config_index": 0,
+    "seed": 2102,
+    "settings": {
+      "M": 300,
+      "batch_size": 512,
+      "update_frequency": 100
+    },
+    "startup_seconds": 2.571046853000553,
+    "setup_seconds": 0.04337811400000646,
+    "solve_seconds": 4.638770325000223,
+    "execution_seconds": 5.127552124999966,
+    "overrun_seconds": 0.1275521249999656,
+    "counts": {
+      "picard_iterations": 0,
+      "epochs": 0,
+      "optimizer_steps": 700,
+      "label_refreshes": 7,
+      "generated_pairs": 1075200
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.1322596085554785,
+      "relative_ub": 0.2095641441193842,
+      "score": 0.2095641441193842
+    },
+    "test": {
+      "relative_u": 0.13504739596111873,
+      "relative_ub": 0.206382440918279,
+      "score": 0.206382440918279
+    },
+    "evaluation_seconds": 0.26686835100008466,
+    "cold_solve_seconds": 7.209817178000776,
+    "process_seconds": 8.767209859999639,
+    "input_manifest_sha256": "c12ef4350096b3218c587487f86559d7c3b80dade4835cc5ed36e8483176dec4"
+  },
+  {
+    "stage": "test",
+    "method": "direct",
+    "budget": 5.0,
+    "config_index": 0,
+    "seed": 2103,
+    "settings": {
+      "M": 300,
+      "batch_size": 512,
+      "update_frequency": 100
+    },
+    "startup_seconds": 2.7268340930004342,
+    "setup_seconds": 0.04067886300072132,
+    "solve_seconds": 4.932836920999762,
+    "execution_seconds": 5.426435445000607,
+    "overrun_seconds": 0.4264354450006067,
+    "counts": {
+      "picard_iterations": 0,
+      "epochs": 0,
+      "optimizer_steps": 700,
+      "label_refreshes": 7,
+      "generated_pairs": 1075200
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.17279423901502886,
+      "relative_ub": 0.0791823572380621,
+      "score": 0.17279423901502886
+    },
+    "test": {
+      "relative_u": 0.17248249408077243,
+      "relative_ub": 0.07789040458513873,
+      "score": 0.17248249408077243
+    },
+    "evaluation_seconds": 0.18337184400115802,
+    "cold_solve_seconds": 7.659671014000196,
+    "process_seconds": 9.075652171999536,
+    "input_manifest_sha256": "8132190ef27dde3f975b9ee671cd46453ac1add4119e39941dffd7cdbbd766b6"
+  },
+  {
+    "stage": "test",
+    "method": "direct",
+    "budget": 5.0,
+    "config_index": 0,
+    "seed": 2104,
+    "settings": {
+      "M": 300,
+      "batch_size": 512,
+      "update_frequency": 100
+    },
+    "startup_seconds": 2.79709173899937,
+    "setup_seconds": 0.042064592000315315,
+    "solve_seconds": 4.661251585001082,
+    "execution_seconds": 5.134131574999628,
+    "overrun_seconds": 0.13413157499962836,
+    "counts": {
+      "picard_iterations": 0,
+      "epochs": 0,
+      "optimizer_steps": 700,
+      "label_refreshes": 7,
+      "generated_pairs": 1075200
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.05347022716160146,
+      "relative_ub": 0.13203055096907873,
+      "score": 0.13203055096907873
+    },
+    "test": {
+      "relative_u": 0.0531943113595189,
+      "relative_ub": 0.13066633735706906,
+      "score": 0.13066633735706906
+    },
+    "evaluation_seconds": 0.18577478399856773,
+    "cold_solve_seconds": 7.458343324000452,
+    "process_seconds": 8.841606478999893,
+    "input_manifest_sha256": "8132190ef27dde3f975b9ee671cd46453ac1add4119e39941dffd7cdbbd766b6"
+  },
+  {
+    "stage": "test",
+    "method": "direct",
+    "budget": 10.0,
+    "config_index": 0,
+    "seed": 2100,
+    "settings": {
+      "M": 300,
+      "batch_size": 512,
+      "update_frequency": 100
+    },
+    "startup_seconds": 2.7138435230008326,
+    "setup_seconds": 0.03954393699950742,
+    "solve_seconds": 9.879023118999612,
+    "execution_seconds": 10.418381165000028,
+    "overrun_seconds": 0.418381165000028,
+    "counts": {
+      "picard_iterations": 0,
+      "epochs": 0,
+      "optimizer_steps": 1600,
+      "label_refreshes": 16,
+      "generated_pairs": 2457600
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.03590980445885343,
+      "relative_ub": 0.04852139813484934,
+      "score": 0.04852139813484934
+    },
+    "test": {
+      "relative_u": 0.03636827036317468,
+      "relative_ub": 0.047773632069225726,
+      "score": 0.047773632069225726
+    },
+    "evaluation_seconds": 0.2123116980001214,
+    "cold_solve_seconds": 12.592866642000445,
+    "process_seconds": 14.15330580400041,
+    "input_manifest_sha256": "b0a030b2d1e60b312a33070134fc273464735499060846a64dcc4d7d59a63fd7"
+  },
+  {
+    "stage": "test",
+    "method": "direct",
+    "budget": 10.0,
+    "config_index": 0,
+    "seed": 2101,
+    "settings": {
+      "M": 300,
+      "batch_size": 512,
+      "update_frequency": 100
+    },
+    "startup_seconds": 2.7711197469998297,
+    "setup_seconds": 0.04042621600001439,
+    "solve_seconds": 9.997756750999542,
+    "execution_seconds": 10.012925031000123,
+    "overrun_seconds": 0.012925031000122544,
+    "counts": {
+      "picard_iterations": 0,
+      "epochs": 0,
+      "optimizer_steps": 1610,
+      "label_refreshes": 17,
+      "generated_pairs": 2611200
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.015092993819928536,
+      "relative_ub": 0.0692104373286193,
+      "score": 0.0692104373286193
+    },
+    "test": {
+      "relative_u": 0.01501453318228723,
+      "relative_ub": 0.06793043335147023,
+      "score": 0.06793043335147023
+    },
+    "evaluation_seconds": 0.18519073900006333,
+    "cold_solve_seconds": 12.768876497999372,
+    "process_seconds": 13.690244913000242,
+    "input_manifest_sha256": "b0a030b2d1e60b312a33070134fc273464735499060846a64dcc4d7d59a63fd7"
+  },
+  {
+    "stage": "test",
+    "method": "direct",
+    "budget": 10.0,
+    "config_index": 0,
+    "seed": 2102,
+    "settings": {
+      "M": 300,
+      "batch_size": 512,
+      "update_frequency": 100
+    },
+    "startup_seconds": 2.620894575999955,
+    "setup_seconds": 0.04199272799996834,
+    "solve_seconds": 9.565745242999583,
+    "execution_seconds": 10.050769756999216,
+    "overrun_seconds": 0.05076975699921604,
+    "counts": {
+      "picard_iterations": 0,
+      "epochs": 0,
+      "optimizer_steps": 1400,
+      "label_refreshes": 14,
+      "generated_pairs": 2150400
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.04983107566159535,
+      "relative_ub": 0.04141187507766196,
+      "score": 0.04983107566159535
+    },
+    "test": {
+      "relative_u": 0.050233196252417636,
+      "relative_ub": 0.040924260943772,
+      "score": 0.050233196252417636
+    },
+    "evaluation_seconds": 0.18668229399918346,
+    "cold_solve_seconds": 12.186639818999538,
+    "process_seconds": 13.72416184299982,
+    "input_manifest_sha256": "b0a030b2d1e60b312a33070134fc273464735499060846a64dcc4d7d59a63fd7"
+  },
+  {
+    "stage": "test",
+    "method": "direct",
+    "budget": 10.0,
+    "config_index": 0,
+    "seed": 2103,
+    "settings": {
+      "M": 300,
+      "batch_size": 512,
+      "update_frequency": 100
+    },
+    "startup_seconds": 2.76625924200016,
+    "setup_seconds": 0.04537811599948327,
+    "solve_seconds": 9.883523336000508,
+    "execution_seconds": 10.279665530000784,
+    "overrun_seconds": 0.2796655300007842,
+    "counts": {
+      "picard_iterations": 0,
+      "epochs": 0,
+      "optimizer_steps": 1800,
+      "label_refreshes": 18,
+      "generated_pairs": 2764800
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.03333871159997654,
+      "relative_ub": 0.024629575319937962,
+      "score": 0.03333871159997654
+    },
+    "test": {
+      "relative_u": 0.037264026653854296,
+      "relative_ub": 0.024297225297095767,
+      "score": 0.037264026653854296
+    },
+    "evaluation_seconds": 0.1835864099994069,
+    "cold_solve_seconds": 12.649782578000668,
+    "process_seconds": 13.989085502998932,
+    "input_manifest_sha256": "8132190ef27dde3f975b9ee671cd46453ac1add4119e39941dffd7cdbbd766b6"
+  },
+  {
+    "stage": "test",
+    "method": "direct",
+    "budget": 10.0,
+    "config_index": 0,
+    "seed": 2104,
+    "settings": {
+      "M": 300,
+      "batch_size": 512,
+      "update_frequency": 100
+    },
+    "startup_seconds": 2.7153619550008443,
+    "setup_seconds": 0.041958444999181665,
+    "solve_seconds": 9.941766144000212,
+    "execution_seconds": 10.385074271000121,
+    "overrun_seconds": 0.38507427100012137,
+    "counts": {
+      "picard_iterations": 0,
+      "epochs": 0,
+      "optimizer_steps": 1600,
+      "label_refreshes": 16,
+      "generated_pairs": 2457600
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.06225574549309295,
+      "relative_ub": 0.02523710977238781,
+      "score": 0.06225574549309295
+    },
+    "test": {
+      "relative_u": 0.062441649575558325,
+      "relative_ub": 0.025097405283432107,
+      "score": 0.062441649575558325
+    },
+    "evaluation_seconds": 0.19740636599999561,
+    "cold_solve_seconds": 12.657128099001056,
+    "process_seconds": 14.098401200000808,
+    "input_manifest_sha256": "8132190ef27dde3f975b9ee671cd46453ac1add4119e39941dffd7cdbbd766b6"
+  },
+  {
+    "stage": "test",
+    "method": "direct",
+    "budget": 20.0,
+    "config_index": 0,
+    "seed": 2100,
+    "settings": {
+      "M": 300,
+      "batch_size": 512,
+      "update_frequency": 100
+    },
+    "startup_seconds": 2.5414480350000304,
+    "setup_seconds": 0.03955138299988903,
+    "solve_seconds": 19.799542424999345,
+    "execution_seconds": 20.252432911999676,
+    "overrun_seconds": 0.25243291199967643,
+    "counts": {
+      "picard_iterations": 0,
+      "epochs": 0,
+      "optimizer_steps": 3500,
+      "label_refreshes": 35,
+      "generated_pairs": 5376000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.01348931733585059,
+      "relative_ub": 0.027078460676259918,
+      "score": 0.027078460676259918
+    },
+    "test": {
+      "relative_u": 0.013408624214098807,
+      "relative_ub": 0.027062367892955186,
+      "score": 0.027062367892955186
+    },
+    "evaluation_seconds": 0.17746751199956634,
+    "cold_solve_seconds": 22.340990459999375,
+    "process_seconds": 23.67792887500036,
+    "input_manifest_sha256": "c12ef4350096b3218c587487f86559d7c3b80dade4835cc5ed36e8483176dec4"
+  },
+  {
+    "stage": "test",
+    "method": "direct",
+    "budget": 20.0,
+    "config_index": 0,
+    "seed": 2101,
+    "settings": {
+      "M": 300,
+      "batch_size": 512,
+      "update_frequency": 100
+    },
+    "startup_seconds": 2.693680372000017,
+    "setup_seconds": 0.04616441300004226,
+    "solve_seconds": 19.993178305000583,
+    "execution_seconds": 20.008596338000643,
+    "overrun_seconds": 0.0085963380006433,
+    "counts": {
+      "picard_iterations": 0,
+      "epochs": 0,
+      "optimizer_steps": 3780,
+      "label_refreshes": 38,
+      "generated_pairs": 5836800
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.025242711629632944,
+      "relative_ub": 0.024719442594046848,
+      "score": 0.025242711629632944
+    },
+    "test": {
+      "relative_u": 0.02539011912728735,
+      "relative_ub": 0.024619203388462244,
+      "score": 0.02539011912728735
+    },
+    "evaluation_seconds": 0.17603132299973367,
+    "cold_solve_seconds": 22.6868586770006,
+    "process_seconds": 23.602934301999994,
+    "input_manifest_sha256": "c12ef4350096b3218c587487f86559d7c3b80dade4835cc5ed36e8483176dec4"
+  },
+  {
+    "stage": "test",
+    "method": "direct",
+    "budget": 20.0,
+    "config_index": 0,
+    "seed": 2102,
+    "settings": {
+      "M": 300,
+      "batch_size": 512,
+      "update_frequency": 100
+    },
+    "startup_seconds": 2.597788082000079,
+    "setup_seconds": 0.038828504000775865,
+    "solve_seconds": 19.895336262000455,
+    "execution_seconds": 20.394607156000347,
+    "overrun_seconds": 0.39460715600034746,
+    "counts": {
+      "picard_iterations": 0,
+      "epochs": 0,
+      "optimizer_steps": 3400,
+      "label_refreshes": 34,
+      "generated_pairs": 5222400
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.02460144756129451,
+      "relative_ub": 0.024515108085141325,
+      "score": 0.02460144756129451
+    },
+    "test": {
+      "relative_u": 0.024695153741866226,
+      "relative_ub": 0.024095826251137587,
+      "score": 0.024695153741866226
+    },
+    "evaluation_seconds": 0.23843223200037755,
+    "cold_solve_seconds": 22.493124344000535,
+    "process_seconds": 24.10350465800002,
+    "input_manifest_sha256": "c12ef4350096b3218c587487f86559d7c3b80dade4835cc5ed36e8483176dec4"
+  },
+  {
+    "stage": "test",
+    "method": "direct",
+    "budget": 20.0,
+    "config_index": 0,
+    "seed": 2103,
+    "settings": {
+      "M": 300,
+      "batch_size": 512,
+      "update_frequency": 100
+    },
+    "startup_seconds": 2.6762786109993613,
+    "setup_seconds": 0.048558292000961956,
+    "solve_seconds": 19.753327743999762,
+    "execution_seconds": 20.137429878001058,
+    "overrun_seconds": 0.13742987800105766,
+    "counts": {
+      "picard_iterations": 0,
+      "epochs": 0,
+      "optimizer_steps": 3700,
+      "label_refreshes": 37,
+      "generated_pairs": 5683200
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.04573518145928104,
+      "relative_ub": 0.038573431699881436,
+      "score": 0.04573518145928104
+    },
+    "test": {
+      "relative_u": 0.04719612443137489,
+      "relative_ub": 0.03759831921414002,
+      "score": 0.04719612443137489
+    },
+    "evaluation_seconds": 0.19535409799937042,
+    "cold_solve_seconds": 22.429606354999123,
+    "process_seconds": 23.75348339300035,
+    "input_manifest_sha256": "8132190ef27dde3f975b9ee671cd46453ac1add4119e39941dffd7cdbbd766b6"
+  },
+  {
+    "stage": "test",
+    "method": "direct",
+    "budget": 20.0,
+    "config_index": 0,
+    "seed": 2104,
+    "settings": {
+      "M": 300,
+      "batch_size": 512,
+      "update_frequency": 100
+    },
+    "startup_seconds": 3.4249271849985234,
+    "setup_seconds": 0.06164149500000349,
+    "solve_seconds": 19.982009225001093,
+    "execution_seconds": 20.008597141999417,
+    "overrun_seconds": 0.008597141999416635,
+    "counts": {
+      "picard_iterations": 0,
+      "epochs": 0,
+      "optimizer_steps": 3490,
+      "label_refreshes": 35,
+      "generated_pairs": 5376000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.026954120489398603,
+      "relative_ub": 0.0253416436256935,
+      "score": 0.026954120489398603
+    },
+    "test": {
+      "relative_u": 0.026964548473392507,
+      "relative_ub": 0.025111641622498473,
+      "score": 0.026964548473392507
+    },
+    "evaluation_seconds": 0.2839825949995429,
+    "cold_solve_seconds": 23.406936409999616,
+    "process_seconds": 24.68007781900087,
+    "input_manifest_sha256": "8132190ef27dde3f975b9ee671cd46453ac1add4119e39941dffd7cdbbd766b6"
+  },
+  {
+    "stage": "test",
+    "method": "direct",
+    "budget": 30.0,
+    "config_index": 0,
+    "seed": 2100,
+    "settings": {
+      "M": 300,
+      "batch_size": 512,
+      "update_frequency": 100
+    },
+    "startup_seconds": 3.296290192000015,
+    "setup_seconds": 0.050694438999926206,
+    "solve_seconds": 29.77089531799993,
+    "execution_seconds": 30.16227870900002,
+    "overrun_seconds": 0.16227870900002017,
+    "counts": {
+      "picard_iterations": 0,
+      "epochs": 0,
+      "optimizer_steps": 5600,
+      "label_refreshes": 56,
+      "generated_pairs": 8601600
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.04262452706330181,
+      "relative_ub": 0.018779213453956757,
+      "score": 0.04262452706330181
+    },
+    "test": {
+      "relative_u": 0.04285260026527349,
+      "relative_ub": 0.018779660090700225,
+      "score": 0.04285260026527349
+    },
+    "evaluation_seconds": 0.1739921400003368,
+    "cold_solve_seconds": 33.067185509999945,
+    "process_seconds": 34.42121750899969,
+    "input_manifest_sha256": "b0a030b2d1e60b312a33070134fc273464735499060846a64dcc4d7d59a63fd7"
+  },
+  {
+    "stage": "test",
+    "method": "direct",
+    "budget": 30.0,
+    "config_index": 0,
+    "seed": 2101,
+    "settings": {
+      "M": 300,
+      "batch_size": 512,
+      "update_frequency": 100
+    },
+    "startup_seconds": 2.5214042790003077,
+    "setup_seconds": 0.0438250170000174,
+    "solve_seconds": 29.729939324999577,
+    "execution_seconds": 30.10370775699994,
+    "overrun_seconds": 0.10370775699993828,
+    "counts": {
+      "picard_iterations": 0,
+      "epochs": 0,
+      "optimizer_steps": 5700,
+      "label_refreshes": 57,
+      "generated_pairs": 8755200
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.04910511985761125,
+      "relative_ub": 0.03578375004168542,
+      "score": 0.04910511985761125
+    },
+    "test": {
+      "relative_u": 0.04944445822554231,
+      "relative_ub": 0.03523609885924186,
+      "score": 0.04944445822554231
+    },
+    "evaluation_seconds": 0.18788012200002413,
+    "cold_solve_seconds": 32.251343603999885,
+    "process_seconds": 33.50205862899929,
+    "input_manifest_sha256": "b0a030b2d1e60b312a33070134fc273464735499060846a64dcc4d7d59a63fd7"
+  },
+  {
+    "stage": "test",
+    "method": "direct",
+    "budget": 30.0,
+    "config_index": 0,
+    "seed": 2102,
+    "settings": {
+      "M": 300,
+      "batch_size": 512,
+      "update_frequency": 100
+    },
+    "startup_seconds": 2.644945099999859,
+    "setup_seconds": 0.03940318200056936,
+    "solve_seconds": 29.86939459900077,
+    "execution_seconds": 30.32853414800047,
+    "overrun_seconds": 0.32853414800047176,
+    "counts": {
+      "picard_iterations": 0,
+      "epochs": 0,
+      "optimizer_steps": 5600,
+      "label_refreshes": 56,
+      "generated_pairs": 8601600
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.018377732689555937,
+      "relative_ub": 0.022312990895182922,
+      "score": 0.022312990895182922
+    },
+    "test": {
+      "relative_u": 0.01856933766980617,
+      "relative_ub": 0.02206837135490568,
+      "score": 0.02206837135490568
+    },
+    "evaluation_seconds": 0.20362915100031387,
+    "cold_solve_seconds": 32.51433969900063,
+    "process_seconds": 33.899621214000035,
+    "input_manifest_sha256": "b0a030b2d1e60b312a33070134fc273464735499060846a64dcc4d7d59a63fd7"
+  },
+  {
+    "stage": "test",
+    "method": "direct",
+    "budget": 30.0,
+    "config_index": 0,
+    "seed": 2103,
+    "settings": {
+      "M": 300,
+      "batch_size": 512,
+      "update_frequency": 100
+    },
+    "startup_seconds": 2.7776944580000418,
+    "setup_seconds": 0.04253545500068867,
+    "solve_seconds": 29.74428486999932,
+    "execution_seconds": 30.161316367000836,
+    "overrun_seconds": 0.16131636700083618,
+    "counts": {
+      "picard_iterations": 0,
+      "epochs": 0,
+      "optimizer_steps": 5200,
+      "label_refreshes": 52,
+      "generated_pairs": 7987200
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.03687699742016774,
+      "relative_ub": 0.040315076851253163,
+      "score": 0.040315076851253163
+    },
+    "test": {
+      "relative_u": 0.0369142021329831,
+      "relative_ub": 0.0399046480474014,
+      "score": 0.0399046480474014
+    },
+    "evaluation_seconds": 0.18763116599984642,
+    "cold_solve_seconds": 32.52197932799936,
+    "process_seconds": 33.88676974900045,
+    "input_manifest_sha256": "8132190ef27dde3f975b9ee671cd46453ac1add4119e39941dffd7cdbbd766b6"
+  },
+  {
+    "stage": "test",
+    "method": "direct",
+    "budget": 30.0,
+    "config_index": 0,
+    "seed": 2104,
+    "settings": {
+      "M": 300,
+      "batch_size": 512,
+      "update_frequency": 100
+    },
+    "startup_seconds": 2.9117685459987115,
+    "setup_seconds": 0.05178657099895645,
+    "solve_seconds": 29.630183342998862,
+    "execution_seconds": 30.011911108000277,
+    "overrun_seconds": 0.011911108000276727,
+    "counts": {
+      "picard_iterations": 0,
+      "epochs": 0,
+      "optimizer_steps": 5000,
+      "label_refreshes": 50,
+      "generated_pairs": 7680000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.014725930034012354,
+      "relative_ub": 0.016948125006682035,
+      "score": 0.016948125006682035
+    },
+    "test": {
+      "relative_u": 0.014732340585560524,
+      "relative_ub": 0.01680949338885736,
+      "score": 0.01680949338885736
+    },
+    "evaluation_seconds": 0.20058677999986685,
+    "cold_solve_seconds": 32.54195188899757,
+    "process_seconds": 33.88591223000003,
+    "input_manifest_sha256": "8132190ef27dde3f975b9ee671cd46453ac1add4119e39941dffd7cdbbd766b6"
+  },
+  {
+    "stage": "test",
+    "method": "direct",
+    "budget": 100.0,
+    "config_index": 2,
+    "seed": 2100,
+    "settings": {
+      "M": 3000,
+      "batch_size": 512,
+      "update_frequency": 100
+    },
+    "startup_seconds": 2.9796217149996664,
+    "setup_seconds": 0.03960149399972579,
+    "solve_seconds": 94.50773718999972,
+    "execution_seconds": 100.91764358099954,
+    "overrun_seconds": 0.9176435809995382,
+    "counts": {
+      "picard_iterations": 0,
+      "epochs": 0,
+      "optimizer_steps": 1500,
+      "label_refreshes": 15,
+      "generated_pairs": 23040000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.014947821418631248,
+      "relative_ub": 0.030942722368681938,
+      "score": 0.030942722368681938
+    },
+    "test": {
+      "relative_u": 0.014993833464809491,
+      "relative_ub": 0.030819899678591348,
+      "score": 0.030819899678591348
+    },
+    "evaluation_seconds": 0.20424801699937234,
+    "cold_solve_seconds": 97.48735890499938,
+    "process_seconds": 104.82619365200026,
+    "input_manifest_sha256": "b0a030b2d1e60b312a33070134fc273464735499060846a64dcc4d7d59a63fd7"
+  },
+  {
+    "stage": "test",
+    "method": "direct",
+    "budget": 100.0,
+    "config_index": 2,
+    "seed": 2101,
+    "settings": {
+      "M": 3000,
+      "batch_size": 512,
+      "update_frequency": 100
+    },
+    "startup_seconds": 2.589502449000065,
+    "setup_seconds": 0.03789725299975544,
+    "solve_seconds": 96.18464430099993,
+    "execution_seconds": 102.44512212400059,
+    "overrun_seconds": 2.4451221240005907,
+    "counts": {
+      "picard_iterations": 0,
+      "epochs": 0,
+      "optimizer_steps": 1600,
+      "label_refreshes": 16,
+      "generated_pairs": 24576000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.022850413547889026,
+      "relative_ub": 0.039919042859774795,
+      "score": 0.039919042859774795
+    },
+    "test": {
+      "relative_u": 0.022882550607341595,
+      "relative_ub": 0.039742259710527444,
+      "score": 0.039742259710527444
+    },
+    "evaluation_seconds": 0.1805668480001259,
+    "cold_solve_seconds": 98.77414675,
+    "process_seconds": 106.04055290399992,
+    "input_manifest_sha256": "b0a030b2d1e60b312a33070134fc273464735499060846a64dcc4d7d59a63fd7"
+  },
+  {
+    "stage": "test",
+    "method": "direct",
+    "budget": 100.0,
+    "config_index": 2,
+    "seed": 2102,
+    "settings": {
+      "M": 3000,
+      "batch_size": 512,
+      "update_frequency": 100
+    },
+    "startup_seconds": 2.7828582829997686,
+    "setup_seconds": 0.040746939000200655,
+    "solve_seconds": 96.28252558399981,
+    "execution_seconds": 102.58431103000021,
+    "overrun_seconds": 2.584311030000208,
+    "counts": {
+      "picard_iterations": 0,
+      "epochs": 0,
+      "optimizer_steps": 1500,
+      "label_refreshes": 15,
+      "generated_pairs": 23040000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.03198455023828462,
+      "relative_ub": 0.02157533010505438,
+      "score": 0.03198455023828462
+    },
+    "test": {
+      "relative_u": 0.03190033249028432,
+      "relative_ub": 0.02131441741753551,
+      "score": 0.03190033249028432
+    },
+    "evaluation_seconds": 0.18047232499975507,
+    "cold_solve_seconds": 99.06538386699958,
+    "process_seconds": 106.26720923100038,
+    "input_manifest_sha256": "b0a030b2d1e60b312a33070134fc273464735499060846a64dcc4d7d59a63fd7"
+  },
+  {
+    "stage": "test",
+    "method": "direct",
+    "budget": 100.0,
+    "config_index": 2,
+    "seed": 2103,
+    "settings": {
+      "M": 3000,
+      "batch_size": 512,
+      "update_frequency": 100
+    },
+    "startup_seconds": 3.374584428000162,
+    "setup_seconds": 0.05135411999981443,
+    "solve_seconds": 97.79787772300006,
+    "execution_seconds": 104.73917072699987,
+    "overrun_seconds": 4.739170726999873,
+    "counts": {
+      "picard_iterations": 0,
+      "epochs": 0,
+      "optimizer_steps": 1400,
+      "label_refreshes": 14,
+      "generated_pairs": 21504000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.038907993813794485,
+      "relative_ub": 0.058026644715411364,
+      "score": 0.058026644715411364
+    },
+    "test": {
+      "relative_u": 0.03919447612619414,
+      "relative_ub": 0.057325396601572015,
+      "score": 0.057325396601572015
+    },
+    "evaluation_seconds": 0.21570650399917213,
+    "cold_solve_seconds": 101.17246215100022,
+    "process_seconds": 109.34826634300043,
+    "input_manifest_sha256": "8132190ef27dde3f975b9ee671cd46453ac1add4119e39941dffd7cdbbd766b6"
+  },
+  {
+    "stage": "test",
+    "method": "direct",
+    "budget": 100.0,
+    "config_index": 2,
+    "seed": 2104,
+    "settings": {
+      "M": 3000,
+      "batch_size": 512,
+      "update_frequency": 100
+    },
+    "startup_seconds": 2.952014248001433,
+    "setup_seconds": 0.04195956500007014,
+    "solve_seconds": 97.99764205700012,
+    "execution_seconds": 104.81971967000027,
+    "overrun_seconds": 4.819719670000268,
+    "counts": {
+      "picard_iterations": 0,
+      "epochs": 0,
+      "optimizer_steps": 1400,
+      "label_refreshes": 14,
+      "generated_pairs": 21504000
+    },
+    "cpu_affinity": [
+      0
+    ],
+    "numpy_version": "2.2.6",
+    "tensorflow_version": "2.21.0",
+    "validation": {
+      "relative_u": 0.059128043096743695,
+      "relative_ub": 0.05388637475526801,
+      "score": 0.059128043096743695
+    },
+    "test": {
+      "relative_u": 0.05918890225110735,
+      "relative_ub": 0.05318550927700677,
+      "score": 0.05918890225110735
+    },
+    "evaluation_seconds": 0.18360708900036116,
+    "cold_solve_seconds": 100.94965630500155,
+    "process_seconds": 108.7407052790004,
+    "input_manifest_sha256": "8132190ef27dde3f975b9ee671cd46453ac1add4119e39941dffd7cdbbd766b6"
+  }
+]

@@ -1,6 +1,5 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from numba import jit
 from time import time
 from numpy import linalg as LA
 
@@ -80,9 +79,9 @@ class GridScheme:
         :return: value of the interpolated function at point x
         '''
 
-        # Projection of x outside the domain
-        x[x > (self.Ntilde * self.delta)] = self.Ntilde * self.delta
-        x[x < -(self.Ntilde * self.delta)] = -self.Ntilde * self.delta
+        # Clip only interpolation coordinates: phi still needs the original samples.
+        bound = self.Ntilde * self.delta
+        x = np.clip(x, -bound, bound)
 
         # coordinates of the cell where x lives
         aux = np.floor(x / self.delta) + self.Ntilde

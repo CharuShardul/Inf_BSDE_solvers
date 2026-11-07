@@ -28,7 +28,7 @@ We propose three algorithms based on two main approaches-
 2. `1d_generalSDE.py` — grid-based Picard iterations where the forward process is a 1‑D SDE.
 3. `NN_Picard_mult.py` — Picard iterations with NNs replacing the spatial grid (suitable for higher d).
    
-In addition, we have `NN_direct_scheme_2.py`, which implements the second approach based on the direct NN scheme that bypasses the contraction operator (direct solver).
+In addition, we have `NN_direct_scheme.py`, which implements the second approach based on the direct NN scheme that bypasses the contraction operator (direct solver).
 
 
 
@@ -44,7 +44,7 @@ $$ \bar{u}^{i+1} = \bar \Phi(u^i, \bar u^i)(x) = \mathbb E\Big[\big(f(X_{\bar{E}
 where $w$ and $\bar{w}$ are some exponential functions and $U_t^x$ are the Malliavin weights. For simplicity and without loss of generality, we consider the drift of the forward SDE to be zero,
 $$dX^x_t = \sigma(X^x_t) dW_t, \quad X^x_0 = x,$$
 where we consider the following two cases for $\sigma(x)$:
-1. $\sigma(x) = 1$, meaning that $X^x_t = x + W_t$, eliminating the need to simulate paths of the SDE. We consider this setting for `vect_grid_scheme.py`, `NN_Picard_mult.py` and `NN_direct_scheme_2.py`.
+1. $\sigma(x) = 1$, meaning that $X^x_t = x + W_t$, eliminating the need to simulate paths of the SDE. We consider this setting for `vect_grid_scheme.py`, `NN_Picard_mult.py` and `NN_direct_scheme.py`.
 2. $\sigma(x) = 1 + \varepsilon \tanh(x)$ for instance, where $\varepsilon=0.9$. We use this setting for `1d_generalSDE.py`.
 
 Next, for the generator and the analytical solutions for $u$ and $\bar u$, we take the following,
@@ -71,6 +71,25 @@ The code implements Monte‑Carlo estimation of expectations above and interpola
 
 * Using `requirements.txt`:
     - pip install -r requirements.txt
+
+## Numerical experiments
+
+Shared training settings are defined in `experiment_settings.py`: NN Picard uses 200 epochs per Picard iteration, and direct NN uses 3,000 optimizer updates by default, arranged as 30 epochs with an epoch length of 100 updates between input and target refreshes. The direct solver's training length is controlled by `n_steps`; grid schemes use Picard iterations and Monte-Carlo sample counts. Older article figures span different source versions, including an earlier 300-epoch NN Picard setting; complete historical run metadata is unavailable.
+
+Experiment drivers follow a calculate/save/reload pattern using NumPy files. Set `re_calculate=True` to generate results, then `False` to plot the saved data. Current repeated-run NN Picard results use `epochs_200/` subdirectories so they remain separate from older cached results.
+
+Article figures are stored in `plots_article/`. The [CPU performance comparison](plots_article/scheme_comparison.pdf) measures the larger relative L2 error of `u` and `ub` at 5, 10, 20, 30, and 100-second budgets on one CPU core in float64, with validation-based parameter selection, five independent final runs per setting, shown as IQR boxes with individual points, and runtime startup measured separately.
+
+For the one-dimensional Brownian example (`K_z=0.1`), grid Picard reaches about 1% median error within the 10-second budget. At 100 seconds, median errors are 0.68% (grid Picard), 3.97% (direct NN), and 4.43% (NN Picard), for the tested settings.
+
+The versioned [reference data](Numerical_experiments/scheme_comparison/reference/) contain all 120 run records in JSON and CSV (45 tuning and 75 final runs), selected parameters, exact evaluation points, source snapshots, recorded package versions, and checksums. Working caches remain separate. Regenerate the figure from these saved data, or run a fresh comparison in a new directory:
+
+```bash
+python compare_schemes.py
+python compare_schemes.py --run --output-dir Numerical_experiments/scheme_comparison/reproduction
+```
+
+Plotting uses the saved measurements; fresh time-limited training varies with hardware and load. The recorded environment is in `reference/environment.json` and `reference/requirements.txt` under the data directory. A fresh five-budget comparison takes about 70 CPU minutes; the original `--full` protocol takes about four CPU hours.
 
 ## Notes on extending the experiments
 

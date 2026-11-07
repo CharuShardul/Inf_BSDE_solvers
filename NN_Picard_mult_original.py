@@ -7,6 +7,7 @@ layers = keras.layers
 import time
 import logging
 from datetime import datetime
+from experiment_settings import NN_PICARD_EPOCHS
 #from tensorflow.python.ops.numpy_ops import np_config
 
 #np_config.enable_numpy_behavior()
@@ -24,7 +25,7 @@ M = 30000           # number of samples
 M_err = 1000        # number of samples for error computations
 Ntilde = 21         # number of points in each axis of the grid (used for plotting and evaluating errors) = 2n+1
 batch_size = 1000
-epochs = 200
+epochs = NN_PICARD_EPOCHS  # Per Picard iteration; see README.md for older figures.
 activation = 'relu'
 initial_learning_rate = 5e-4
 lr_decay = 0.97

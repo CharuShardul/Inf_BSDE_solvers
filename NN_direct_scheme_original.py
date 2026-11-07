@@ -9,6 +9,7 @@ layers = keras.layers
 import time
 import logging
 from datetime import datetime
+from experiment_settings import DIRECT_N_STEPS
 #from tensorflow.python.ops.numpy_ops import np_config
 
 #np_config.enable_numpy_behavior()
@@ -36,9 +37,8 @@ activation = 'relu'
 initial_learning_rate = 5e-4
 lr_decay = 0.6
 n_decays = 10
-n_steps = 3000
+n_steps = DIRECT_N_STEPS  # Optimizer updates, not epochs.
 batch_size = 512    # mini-batch size used while training
-epochs = 500
 
 a = 2.0             # >0.5
 b = 2.0             # >1.0
@@ -270,7 +270,7 @@ class NN_model(tf.keras.Model):
     def __init__(self):
         super().__init__()
         self.model = NN #tf.keras.Sequential([layers.Dense()])
-        self.num_steps = n_steps #int(epochs*Mx/batch_size)
+        self.num_steps = n_steps
         lr_schedule = tf.keras.optimizers.schedules.PiecewiseConstantDecay(
                     self.lr_schedule()[0], self.lr_schedule()[1])
         self.optimizer = tf.keras.optimizers.Adam(learning_rate=lr_schedule, epsilon=1e-7)
@@ -452,7 +452,7 @@ elif d>=3:
              '\t theta = {},'
              '\t theta_bar = {},\n'
              '\t batch_size={},'
-             '\t epochs={}'
+             '\t n_steps={}'
              '\t activation={}'
              '\t learning_rate={}'
-             .format(num_pic, M, K_z, c, a, b, sig_X, theta, theta_bar, batch_size, epochs, activation, learning_rate))'''
+             .format(num_pic, M, K_z, c, a, b, sig_X, theta, theta_bar, batch_size, n_steps, activation, learning_rate))'''

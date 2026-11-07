@@ -2,6 +2,7 @@ import os
 import numpy as np
 import matplotlib.pyplot as plt
 from NN_direct_scheme import NNDirecSolver
+from experiment_settings import DIRECT_N_STEPS
 
 
 def main():
@@ -38,9 +39,8 @@ def main():
                     initial_learning_rate=5e-4,
                     lr_decay=0.6,
                     n_decays=10,
-                    n_steps=3000,
+                    n_steps=DIRECT_N_STEPS,
                     batch_size=512,
-                    epochs=500,
                     a=2.0,
                     b=2.0,
                     theta=1.5,

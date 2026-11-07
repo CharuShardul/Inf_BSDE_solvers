@@ -1,0 +1,244 @@
+% Self-contained source. No external bibliography or figures are required.
+% Compile twice with: pdflatex third_scheme_note.tex
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[margin=24mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[hidelinks]{hyperref}
+\allowdisplaybreaks
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.55em}
+\setlength{\emergencystretch}{2em}
+\newcommand{\E}{\mathbb E}
+\newcommand{\R}{\mathbb R}
+\newcommand{\HH}{\mathcal H}
+\newcommand{\PP}{\mathcal P}
+\newcommand{\Id}{\mathrm{Id}}
+\newcommand{\spr}{\operatorname{spr}}
+\newcommand{\norm}[1]{\left\lVert #1\right\rVert}
+\newtheorem{proposition}{Proposition}
+\title{Proposed additions for the third neural scheme}
+\author{}
+\date{}
+\begin{document}
+\maketitle
+\vspace{-2em}
+
+\emph{Placement: in Section~3.2.2 of~\cite{GRS}, after the introductory
+sentence describing the epoch structure and before Algorithm~2. The two
+paragraphs below explain the method's relationship to existing approaches.}
+
+Let $\mathcal U_\zeta=(u_\zeta,z_\zeta)$ denote the network approximation
+of $(u,\bar u)$, and let $\Phi$ be the nonlinear Feynman--Kac operator
+introduced in Section~2.3. The third scheme seeks to satisfy the integral
+model constraint $R_\zeta:=\mathcal U_\zeta-\Phi(\mathcal U_\zeta)=0$.
+This relates the method to physics-informed neural networks
+(PINNs)~\cite{RPK}, which impose a model equation through a residual loss.
+Here the residual comes from a probabilistic integral representation;
+strong-form PINNs typically use the differential residual
+$\mathcal L u_\zeta+f(x,u_\zeta,\nabla u_\zeta\sigma)$.
+The Malliavin representation supplies the gradient component through
+an expectation, so evaluating the model constraint requires no spatial
+derivatives of the network. A close precedent is the derivative-free
+PDE method of Han, Nica, and Stinchcombe~\cite{HNS}, which also combines
+probabilistic representations with neural regression. The present scheme
+uses the coupled representations of the solution and its gradient for
+an infinite-horizon BSDE.
+
+The training procedure also connects to fitted value iteration~\cite{MS}
+and target-network methods~\cite{Mnih}. At epoch $i$, starting points
+$x_k$ are sampled and targets
+$Y_k^i=\widehat\Phi_M(\mathcal U_{\bar\zeta_i})(x_k)$ are computed from
+the parameters $\bar\zeta_i$ at the start of the epoch. These targets
+are held fixed during $\PP$ optimizer updates. With
+$\HH=L^2(\mu_0;\R^{d'+d'd})$, the empirical squared loss and its
+population counterpart are
+\begin{align}
+ \widehat Q_i(\zeta)
+  &=\frac{1}{2M_x}\sum_{k=1}^{M_x}
+           |\mathcal U_\zeta(x_k)-Y_k^i|^2,\notag\\
+ Q(\zeta;\vartheta)
+  &=\tfrac12\norm{\mathcal U_\zeta-\Phi(\mathcal U_\vartheta)}_\HH^2.
+                                                        \label{eq:third-loss}
+\end{align}
+Thus the method performs regression towards a periodically refreshed
+model-based target. This connection also specifies which derivative is
+used: writing $J_\zeta=D_\zeta\mathcal U_\zeta$ and
+$T_\zeta=D_\zeta[\Phi(\mathcal U_\zeta)]$, one obtains, where differentiable,
+\begin{equation}
+ \left.\nabla_1 Q(\zeta;\vartheta)\right|_{\vartheta=\zeta}
+       =J_\zeta^*R_\zeta,
+ \qquad
+ \nabla_\zeta\!\left(\tfrac12\norm{R_\zeta}_\HH^2\right)
+       =(J_\zeta-T_\zeta)^*R_\zeta.                       \label{eq:third-gradient}
+\end{equation}
+The stars denote Hilbert adjoints. The frozen-target update uses the
+first derivative, so its stability must be studied as a regression
+iteration with changing targets.
+
+\emph{Placement: immediately after Algorithm~2 and before Section~4,
+replacing the sentence that defers the convergence study entirely to
+future work. The proposition states a conditional result for the
+population, fixed-preconditioner version of the algorithm.}
+
+Consider an epoch consisting of $\PP$ population gradient updates with
+constant learning rate $\eta>0$ and a fixed symmetric positive definite
+preconditioner $D$:
+\begin{equation}
+ \zeta_{i,0}=\bar\zeta_i,\qquad
+ \zeta_{i,\ell+1}=\zeta_{i,\ell}
+       -\eta D\nabla_1 Q(\zeta_{i,\ell};\bar\zeta_i),
+ \qquad \bar\zeta_{i+1}=\zeta_{i,\PP}=: \Psi_\PP(\bar\zeta_i).
+                                                        \label{eq:third-epoch}
+\end{equation}
+Ordinary gradient descent corresponds to $D=\Id$.
+
+\begin{proposition}[Conditional local convergence]\label{prop:third-local}
+Assume $\zeta\mapsto\mathcal U_\zeta$ and
+$\zeta\mapsto\Phi(\mathcal U_\zeta)$ are $C^2$ as maps into $\HH$ near
+$\zeta_*$, where $R_{\zeta_*}=0$. In locally identifiable coordinates,
+assume $G=J_*^*J_*\succ0$, and define
+\begin{equation}
+ C=J_*^*T_*,\qquad B=G^{-1}C,\qquad A=\Id-\eta DG.
+                                                        \label{eq:third-matrices}
+\end{equation}
+Then the derivative of one complete epoch is
+\begin{equation}
+ S_\PP:=D\Psi_\PP(\zeta_*)
+       =A^\PP+\eta\sum_{j=0}^{\PP-1}A^jDC
+       =A^\PP+(\Id-A^\PP)B.                             \label{eq:third-jacobian}
+\end{equation}
+If $\spr(S_\PP)<1$, there exist $W\succ0$, $r>0$, and $q\in(0,1)$ such
+that every initialization satisfying
+$\norm{\bar\zeta_0-\zeta_*}_W\leq r$ converges according to
+\begin{equation}
+ \norm{\bar\zeta_i-\zeta_*}_W
+       \leq q^i\norm{\bar\zeta_0-\zeta_*}_W,
+ \qquad \norm{h}_W=(h^\top Wh)^{1/2}.                    \label{eq:third-rate}
+\end{equation}
+Here $\spr$ denotes spectral radius.
+\end{proposition}
+\begin{proof}
+At $(\zeta_*,\zeta_*)$, the zero residual gives
+$\partial_{11}Q=G$ and $\partial_{12}Q=-C$. An initial perturbation $h$
+therefore satisfies $h_0=h$ and
+$h_{\ell+1}=Ah_\ell+\eta DC h$. Iteration gives the sum
+in~\eqref{eq:third-jacobian}; using $\eta DG=\Id-A$ gives its last
+expression. If $\spr(S_\PP)<1$, the discrete Lyapunov equation
+$S_\PP^\top W S_\PP-W=-\Id$ admits $W\succ0$.
+In the induced norm, $\norm{S_\PP}_W<1$. Continuity of the derivative
+makes $\Psi_\PP$ a $q$-contraction on a sufficiently small convex ball
+about its fixed point $\zeta_*$. The ball is invariant, and the
+contraction theorem gives~\eqref{eq:third-rate}; see also~\cite{Kelley}.
+\end{proof}
+
+A neighborhood can also be certified around an approximate learned
+candidate $\widehat\zeta$. Fix $W\succ0$ and a closed ball
+$\mathcal B_r=\{\zeta:\norm{\zeta-\widehat\zeta}_W\leq r\}$ in the
+$C^1$ domain of the epoch map $\Psi=\Psi_\PP$. Suppose
+\begin{align}
+ \epsilon&=\norm{\Psi(\widehat\zeta)-\widehat\zeta}_W,
+ &s&=\norm{D\Psi(\widehat\zeta)}_W,\notag\\
+ \norm{D\Psi(\zeta)-D\Psi(\widehat\zeta)}_W
+      &\leq L\norm{\zeta-\widehat\zeta}_W\quad(\zeta\in\mathcal B_r),
+ &q&=s+Lr<1,\notag\\
+ \epsilon+qr&\leq r.                                    \label{eq:third-ball}
+\end{align}
+These bounds make $\mathcal B_r$ invariant and $\Psi$ a contraction on
+it. Every initialization in this ball therefore converges to its unique
+fixed point $\zeta^\dagger$, with
+$\norm{\zeta^\dagger-\widehat\zeta}_W\leq\epsilon/(1-q)$.
+The bounds must hold on the whole ball; the spectrum at the candidate
+alone does not certify a region of convergence. Identifying this training
+fixed point with a BSDE solution additionally requires $R_{\zeta^\dagger}=0$
+and admissibility in the solution class.
+
+This local criterion differs from the global requirement used for the
+first two schemes,
+\begin{equation}
+ \norm{\Phi(w)-\Phi(\widetilde w)}_{\mathcal X}
+       \leq\kappa_p\norm{w-\widetilde w}_{\mathcal X}
+       \quad\text{for all admissible }w,\widetilde w,
+ \qquad \kappa_p<1.                                    \label{eq:third-global}
+\end{equation}
+The condition $\spr(S_\PP)<1$ only constrains the training dynamics near
+one root, and depends on the learning rate, the epoch length, and the
+local neural representation. If the global $p=2$ estimate holds in the
+same $\HH$ as the loss, then
+$\norm{B}_G\leq\kappa_2$, where
+$\norm{h}_G^2=h^\top Gh$; this comparison requires the measure-stability
+assumptions of that estimate. When $\spr(A)<1$, letting $\PP\to\infty$
+in~\eqref{eq:third-jacobian} gives $B$, the derivative of a locally fully
+fitted projected Picard step. Finite training blocks change this matrix
+and can therefore change its stability.
+
+For the curvature preconditioner $D=G^{-1}$ and $0<\eta<1$, the
+linearization takes the relaxed Picard form
+\begin{equation}
+ S_\PP=(1-\alpha)\Id+\alpha B,
+ \qquad \alpha=1-(1-\eta)^\PP.                           \label{eq:third-relaxation}
+\end{equation}
+A mode $\lambda=1$ is neutral. For
+$\lambda\in\operatorname{spec}(B)\setminus\{1\}$, stability is equivalent to
+\begin{equation}
+ |1-\alpha+\alpha\lambda|<1
+ \quad\Longleftrightarrow\quad
+ \operatorname{Re}\lambda<1\ \text{ and }
+ 0<\alpha<\frac{2(1-\operatorname{Re}\lambda)}{|1-\lambda|^2}.
+                                                        \label{eq:third-region}
+\end{equation}
+Consequently finite fitting can stabilize modes with $|\lambda|>1$
+whose real part is below $1$. This supplies a local mechanism for
+convergence beyond the Picard stability region. The general fixed
+preconditioner is governed by~\eqref{eq:third-jacobian}. Failure of a
+global upper bound $\kappa_p<1$ by itself establishes neither Picard
+instability nor stability of the third scheme.
+
+The result concerns the population squared-loss iteration
+\eqref{eq:third-epoch}. Applying it to the implementation's stochastic
+Adam updates, RMS objective, and evolving batch-normalization state
+requires the corresponding state and sampling analysis. Local smoothness
+and identifiability must also be justified for the network being used.
+These qualifications specify the scope of the proposition; the existing
+numerical results alone do not verify its hypotheses.
+
+\begin{thebibliography}{9}
+\bibitem{GRS}
+E.~Gobet, A.~Richou, and C.~Shardul.
+\emph{Numerical approximation of Markovian BSDEs in infinite horizon
+and elliptic PDEs}. arXiv:2604.24392, 2026.
+\url{https://arxiv.org/abs/2604.24392}.
+
+\bibitem{RPK}
+M.~Raissi, P.~Perdikaris, and G.~E.~Karniadakis.
+Physics-informed neural networks: A deep learning framework for solving
+forward and inverse problems involving nonlinear partial differential
+equations. \emph{Journal of Computational Physics}, 378:686--707, 2019.
+\url{https://doi.org/10.1016/j.jcp.2018.10.045}.
+
+\bibitem{HNS}
+J.~Han, M.~Nica, and A.~R.~Stinchcombe.
+\emph{A derivative-free method for solving elliptic partial
+differential equations with deep neural networks}.
+arXiv:2001.06145, 2020.
+\url{https://arxiv.org/abs/2001.06145}.
+
+\bibitem{MS}
+R.~Munos and C.~Szepesv\'ari.
+Finite-time bounds for fitted value iteration.
+\emph{Journal of Machine Learning Research}, 9:815--857, 2008.
+\url{https://jmlr.org/papers/v9/munos08a.html}.
+
+\bibitem{Mnih}
+V.~Mnih et al.
+Human-level control through deep reinforcement learning.
+\emph{Nature}, 518:529--533, 2015.
+\url{https://doi.org/10.1038/nature14236}.
+
+\bibitem{Kelley}
+C.~T.~Kelley.
+\emph{Iterative Methods for Linear and Nonlinear Equations}.
+SIAM, 1995.
+\url{https://doi.org/10.1137/1.9781611970944}.
+\end{thebibliography}
+\end{document}

@@ -1,0 +1,106 @@
+{
+  "version": 2,
+  "budgets": [
+    10.0,
+    30.0,
+    100.0
+  ],
+  "tuning_runs": 1,
+  "tuning_seed": 1101,
+  "runs": 3,
+  "configs": {
+    "grid": [
+      {
+        "Ntilde": 10,
+        "M": 2000,
+        "R": 6,
+        "r": 0
+      },
+      {
+        "Ntilde": 20,
+        "M": 10000,
+        "R": 6,
+        "r": 0
+      },
+      {
+        "Ntilde": 40,
+        "M": 40000,
+        "R": 6,
+        "r": 0
+      }
+    ],
+    "picard": [
+      {
+        "M": 10000,
+        "batch_size": 1000,
+        "epochs": 200
+      },
+      {
+        "M": 30000,
+        "batch_size": 1000,
+        "epochs": 200
+      },
+      {
+        "M": 60000,
+        "batch_size": 1000,
+        "epochs": 200
+      }
+    ],
+    "direct": [
+      {
+        "M": 300,
+        "batch_size": 512,
+        "update_frequency": 100
+      },
+      {
+        "M": 1000,
+        "batch_size": 512,
+        "update_frequency": 100
+      },
+      {
+        "M": 3000,
+        "batch_size": 512,
+        "update_frequency": 100
+      }
+    ]
+  },
+  "validation_size": 10000,
+  "test_size": 100000,
+  "validation_seed": 24001,
+  "test_seed": 24002,
+  "dtype": "float64",
+  "cpu_threads": 1,
+  "initial_learning_rate": 0.0005,
+  "picard_lr_decay": 0.97,
+  "picard_decay_steps": 1000,
+  "direct_lr_decay": 0.6,
+  "direct_decay_steps": 500,
+  "common_parameters": {
+    "d": 1,
+    "c": 2.0,
+    "K_z": 0.1,
+    "a": 2.0,
+    "b": 2.0,
+    "theta": 1.5,
+    "theta_bar": 1.5,
+    "sig_X": 2.0
+  },
+  "nn_architecture": {
+    "hidden_layers": [
+      21,
+      21
+    ],
+    "activation": "relu",
+    "batch_normalization": true,
+    "linear_outputs": 2
+  },
+  "platform": "Linux-6.18.54.1-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+  "cpu": "AMD Ryzen 5 5600H with Radeon Graphics",
+  "code_hashes": {
+    "compare_schemes.py": "53f0f055e058cb5c2cdda8076a987e7b6cbcacfc85cb0204b61f4d3e6fe3df2c",
+    "vect_grid_scheme.py": "9a3042d5df969e2063d164e77ec1de0e7e95e7ac1526a99eedcb60180e820ae2",
+    "NN_Picard_mult_alt.py": "30ce88dc53f76b67d31efe842b6bbd33b01912623900f67b4452872af0a08dcf",
+    "NN_direct_scheme.py": "3f9c79c58b12c5d05d4714eb127e7326e5266e2202228d07c9ec683ac47b553a",
+    "experiment_settings.py": "904fc33b12ae3295b8fa3b51abf30564a6fc090de63b7dc6d321bc858ee45151"
+  }
+}

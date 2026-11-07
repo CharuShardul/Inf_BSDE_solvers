@@ -1,0 +1,28 @@
+{
+  "style": "boxplots",
+  "box_percentiles": [
+    25,
+    75
+  ],
+  "whisker_iqr_multiple": 1.5,
+  "individual_run_points": true,
+  "runs_per_box": [
+    5
+  ],
+  "box_position": "median elapsed solve time",
+  "figure_size_inches": [
+    7,
+    5.2
+  ],
+  "axis_scales": {
+    "x": "log",
+    "y": "log"
+  },
+  "axis_margins": {
+    "x": 0.025,
+    "y": 0.04
+  },
+  "numerical_manifest_sha256": "e0c32efef76a942041fd7ab13e793c71da44ca0e96aa6b4ee0ee963330ee4cac",
+  "results_sha256": "7a499cbeaf73efca3ca546fcc75c4eaddfc9cf878972a3c03e2fa0bffbdb736a",
+  "rendering_source_sha256": "76cc13a3b09e838e7e97748a4c44ee26e73a023a280e2cba8b3762050fe5aa47"
+}
